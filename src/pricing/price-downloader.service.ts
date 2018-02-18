@@ -16,7 +16,7 @@ export class PriceDownloaderService {
       console.log('Requesting prices for ' + symbols.length + ' symbols.');
       const prices = await this.getPriceForSymbols(symbols);
       console.log(`Got ${prices.length} prices`);
-      const Key = dateUtil.formatDate(new Date()) + '.csv';
+      const Key = dateUtil.formatDate(dateUtil.today) + '.csv';
       const Bucket = `tempest-artifacts/price-snapshots`;
       const Body = prices.map(i => {
         return [i.symbol, i.price].join(',');
