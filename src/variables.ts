@@ -5,7 +5,7 @@ class Variables {
   numPredictedDays = 6;
 
   deprecationAmount = 0.85;
-  useSymbolSubset = true;
+  useSymbolSubset = false;
 
   topNumToBuy = 10;
   startDate = '1/1/2012'
