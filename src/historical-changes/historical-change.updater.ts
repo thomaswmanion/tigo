@@ -1,4 +1,4 @@
-import { fileUtil } from './../util/file.util';
+import { fileUtil } from '../util/file.util';
 import { Calculator } from '../util/calculator.util';
 import { Indicator } from '../indicators/indicator.model';
 import { PriceChange } from '../pricing/price-change.model';

@@ -1,6 +1,6 @@
 import { PriceSnapshot } from './price-snapshot.model';
-import { fileUtil } from './../util/file.util';
-import { dateUtil } from './../util/date.util';
+import { fileUtil } from '../util/file.util';
+import { dateUtil } from '../util/date.util';
 import { Robinhood } from '../robinhood/robinhood.api';
 import { chunk } from 'lodash';
 import S3 from 'aws-sdk/clients/s3';

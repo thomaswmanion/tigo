@@ -1,6 +1,6 @@
-import { predictionCheckerUtil } from './../../checkers/prediction-checker.util';
-import { Prediction } from './../../predictions/prediction.model';
-import { predictionUtil } from './../../predictions/prediction.util';
+import { predictionCheckerUtil } from '../../checkers/prediction-checker.util';
+import { Prediction } from '../../predictions/prediction.model';
+import { predictionUtil } from '../../predictions/prediction.util';
 import { StockMap } from '../../historical-changes/stock-map.model';
 import { Indicator } from '../../indicators/indicator.model';
 import { fileUtil } from '../../util/file.util';

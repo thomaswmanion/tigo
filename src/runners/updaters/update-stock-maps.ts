@@ -1,5 +1,5 @@
 import { dateUtil } from '../../util/date.util';
-import { HistoricalChangeUpdater } from './../../historical-changes/historical-change.updater';
+import { HistoricalChangeUpdater } from '../../historical-changes/historical-change.updater';
 import { variables } from '../../variables';
 
 export async function run() {

@@ -1,4 +1,4 @@
-import { symbolUtil } from './../../util/symbol.util';
+import { symbolUtil } from '../../util/symbol.util';
 import { PriceDownloaderService } from '../../pricing/price-downloader.service';
 import { Robinhood } from '../../robinhood/robinhood.api';
 

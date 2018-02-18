@@ -1,4 +1,4 @@
-import { Calculator } from './../util/calculator.util';
+import { Calculator } from '../util/calculator.util';
 import { dateUtil } from '../util/date.util';
 import { PriceSnapshot } from './price-snapshot.model';
 import { variables } from '../variables';

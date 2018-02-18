@@ -8,6 +8,7 @@ class Variables {
   useSymbolSubset = false;
 
   topNumToBuy = 10;
+  minStocksForBuying = 5;
   startDate = '1/1/2012'
   endDate = '1/1/2013'
 }

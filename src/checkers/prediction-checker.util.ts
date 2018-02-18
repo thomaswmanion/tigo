@@ -1,5 +1,5 @@
-import { dateUtil } from './../util/date.util';
-import { PriceChange } from './../pricing/price-change.model';
+import { dateUtil } from '../util/date.util';
+import { PriceChange } from '../pricing/price-change.model';
 import { Prediction } from '../predictions/prediction.model';
 import { Calculator } from '../util/calculator.util';
 import { variables } from '../variables';

@@ -1,5 +1,5 @@
-import { symbolUtil } from './../util/symbol.util';
-import { fileUtil } from './../util/file.util';
+import { symbolUtil } from '../util/symbol.util';
+import { fileUtil } from '../util/file.util';
 export class StockMap {
   static dir = 'maps';
 

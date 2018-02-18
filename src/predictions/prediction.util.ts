@@ -1,5 +1,5 @@
-import { fileUtil } from './../util/file.util';
-import { dateUtil } from './../util/date.util';
+import { fileUtil } from '../util/file.util';
+import { dateUtil } from '../util/date.util';
 import { Prediction } from './prediction.model';
 import { indicatorUtil } from '../indicators/indicator.util';
 import { Indicator } from '../indicators/indicator.model';
@@ -36,6 +36,11 @@ class PredictionUtil {
       await fileUtil.saveObject(Prediction.dir, `${dateUtil.formatDate(date)}.json`, predictions);
     }
     return predictions;
+  }
+
+  async readPredictions(date: Date): Promise<Prediction[]> {
+    const raw: any[] = await fileUtil.readObject(Prediction.dir, `${dateUtil.formatDate(date)}.json`);
+    return raw.map(rawP => new Prediction(rawP.symbol, rawP.value));
   }
 }
 export const predictionUtil = new PredictionUtil();

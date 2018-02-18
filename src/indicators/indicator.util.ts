@@ -1,5 +1,5 @@
-import { fileUtil } from './../util/file.util';
-import { dateUtil } from './../util/date.util';
+import { fileUtil } from '../util/file.util';
+import { dateUtil } from '../util/date.util';
 import { Indicator } from './indicator.model';
 class IndicatorUtil {
   async readAndSortIndicatorsForDateAndType(date: Date, type: string): Promise<Indicator[]> {

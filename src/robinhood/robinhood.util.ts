@@ -35,6 +35,18 @@ export class RobinhoodUtil {
     const markets = await this.robinhood.get('https://api.robinhood.com/markets/XNYS/hours/' + dateUtil.formatDate(dateUtil.today) + '/');
     return markets.is_open;
   }
+
+  async getCurrentMoney(robinhood: Robinhood): Promise<number> {
+    const portfoliosPromise = robinhood.portfolios();
+    const accountsPromise = robinhood.accounts();
+    const portfolios = await portfoliosPromise;
+    const accounts = await accountsPromise;
+
+    const account = accounts.results[0];
+    const buyingPower: number = parseFloat(account.margin_balances.unallocated_margin_cash);
+    const marketValue: number = parseFloat(portfolios.results[0].market_value);
+    return buyingPower + marketValue;
+  }
 }
 
 export interface Position {
