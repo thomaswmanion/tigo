@@ -41,10 +41,8 @@ export class LastUpdateManager {
   updateLastUpdates(sellSymbols: SellSymbol[]): void {
     for (const ss of sellSymbols) {
       const symbolRecentPredictions = this.recentPredictions.filter(p => p.prediction.symbol === ss.symbol);
-      console.log(ss.symbol, symbolRecentPredictions);
       symbolRecentPredictions.forEach(r => ss.updateLastUpdate(r.date))
       const symbolsPurchasedOnDate = this.symbolsPurchasedOnDate.find(s => ss.symbol === s);
-      console.log(ss.symbol, symbolsPurchasedOnDate);
       if (symbolsPurchasedOnDate) {
         ss.updateLastUpdate(this.date);
       }

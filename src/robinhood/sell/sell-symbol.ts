@@ -21,6 +21,5 @@ export class SellSymbol {
     sellDate = new Date(+sellDate - (dateUtil.oneDay / 2));
 
     return +dateUtil.today > +sellDate;
+  }
 }
-}
-
