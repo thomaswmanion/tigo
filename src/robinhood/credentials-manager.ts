@@ -1,5 +1,4 @@
 import { fileUtil } from '../util/file.util';
-import * as path from 'path';
 
 export class CredentialsManager {
     static async readCredentials(): Promise<Credentials> {
