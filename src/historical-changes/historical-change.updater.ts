@@ -69,10 +69,9 @@ export class HistoricalChangeUpdater {
     try {
       priceChanges = await PriceChange.createPrevious(date);
     } catch (e) {
-      console.log(`${dateUtil.formatDate(date)} - No price changes for date.`);
+      console.log(`${dateUtil.formatDate(date)} - No price changes for date.`, e.message);
       return;
     }
-
     for (const priceChange of priceChanges) {
       try {
         const stockMap = await StockMap.readStockMap(priceChange.symbol);
@@ -80,8 +79,10 @@ export class HistoricalChangeUpdater {
         if (indicator) {
           indicators.push(indicator);
         }
-        
-      } catch (e) { }
+
+      } catch (e) {
+        console.log(e);
+      }
     }
     if (indicators.length > 0) {
       console.log(`${dateUtil.formatDate(date)} - Saving ${indicators.length} indicators.`);

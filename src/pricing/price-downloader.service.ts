@@ -21,7 +21,8 @@ export class PriceDownloaderService {
       const Body = prices.map(i => {
         return [i.symbol, i.price].join(',');
       }).join('\n') + '\n';
-      await fileUtil.saveObject(PriceSnapshot.dir, Key, Body);
+      await fileUtil.saveString(PriceSnapshot.dir, Key, Body);
+      console.log(`Created ${Key}!`);
       await s3.putObject({ Key, Bucket, Body }).promise();
       return prices;
     }

@@ -33,6 +33,7 @@ export class RobinhoodUtil {
 
   async isMarketOpen(): Promise<boolean> {
     const markets = await this.robinhood.get('https://api.robinhood.com/markets/XNYS/hours/' + dateUtil.formatDate(dateUtil.today) + '/');
+    console.log(markets);
     return markets.is_open;
   }
 

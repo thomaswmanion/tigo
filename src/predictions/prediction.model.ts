@@ -6,3 +6,10 @@ export class Prediction {
     public value: number
   ) { }
 }
+
+export class PredictionDate {
+  constructor(
+    public prediction: Prediction,
+    public date: Date
+  ) { }
+}

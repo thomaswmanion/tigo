@@ -5,12 +5,13 @@ class Variables {
   numPredictedDays = 6;
 
   deprecationAmount = 0.85;
-  useSymbolSubset = false;
+  useSymbolSubset = true;
+  symbolSubset = 3;
 
   topNumToBuy = 10;
   minStocksForBuying = 5;
-  startDate = '1/1/2012'
-  endDate = '1/1/2013'
+  startDate = '1/1/2018'
+  endDate = '3/10/2018'
 }
 
 export const variables = new Variables();
