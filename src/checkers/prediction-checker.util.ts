@@ -38,17 +38,19 @@ class PredictionCheckerUtil {
 
     if (result.mean && result.median) {
       this.results.push(result);
-      const allMean = all.mean * 100;
-      this.allResultsMeans.push(allMean);
+      // const allMean = all.mean * 100;
+      const allMedian = all.median * 100;
+      this.allResultsMeans.push(allMedian);
+      // this.allResultsMeans.push(allMean);
       console.log(this.allResultsMeans);
       const overallAllStockMean = Calculator.findMean(this.allResultsMeans).toFixed(3);
-      const mean = (result.mean * 100).toFixed(3);
-      // const median = (result.median * 100).toFixed(3);
+      // const mean = (result.mean * 100).toFixed(3);
+      const median = (result.median * 100).toFixed(3);
       const rMeans = this.results.map(r => r.mean);
-      const overallMean = (Calculator.findMean(rMeans) * 100).toFixed(3);
-      // const overallMedian = (Calculator.findMedian(rMeans) * 100).toFixed(3);
-      // console.log(`${dateUtil.formatDate(date)} - Mean: ${mean}% - Median: ${median}% - All Stock Mean: ${all.mean.toFixed(3)}% - Overall Mean: ${overallMean}% - Overall Median: ${overallMedian}% - Overall All Stock Mean: ${overallAllStockMean}%`);
-      console.log(`${dateUtil.formatDate(date)} - Mean: ${mean}% - All Stock Mean: ${allMean.toFixed(3)}% - Overall Mean: ${overallMean}% - Overall All Stock Mean: ${overallAllStockMean}%`);
+      // const overallMean = (Calculator.findMean(rMeans) * 100).toFixed(3);
+      const overallMedian = (Calculator.findMedian(rMeans) * 100).toFixed(3);
+      console.log(`${dateUtil.formatDate(date)} - Median: ${median}% - All Stock Median: ${allMedian.toFixed(3)}% - Overall Mean: ${overallMedian}% - Overall All Stock Mean: ${overallAllStockMean}%`);
+      // console.log(`${dateUtil.formatDate(date)} - Mean: ${mean}% - All Stock Mean: ${allMean.toFixed(3)}% - Overall Mean: ${overallMean}% - Overall All Stock Mean: ${overallAllStockMean}%`);
     }
     else {
       console.log(`No result... ` + JSON.stringify(result));

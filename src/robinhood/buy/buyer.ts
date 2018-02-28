@@ -1,3 +1,4 @@
+import { argv } from 'yargs';
 import { QuoteDataResult } from '../robinhood.api';
 import { SymbolTradeMeta } from '../symbol-trade-meta.model';
 import { dateUtil } from '../../util/date.util';
@@ -17,8 +18,10 @@ export class Buyer {
     meta = meta.filter(b => b.count !== 0);
     for (const sc of meta) {
       console.log(`Requesting ${sc.count} shares of ${sc.symbol}...`);
-      price = await robinhood.buy(sc.symbol, sc.count);
-      console.log(`Completed purchase request for ${sc.count} shares of ${sc.symbol}!`, price);
+      if (argv.prod) {
+        price = await robinhood.buy(sc.symbol, sc.count);
+        console.log(`Completed purchase request for ${sc.count} shares of ${sc.symbol}!`, price);
+      }
     }
     console.log('Completed purchases.');
   }

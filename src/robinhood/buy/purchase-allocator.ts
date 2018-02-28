@@ -15,7 +15,7 @@ export class PurchaseAllocator {
 
         const previousEquity = parseFloat(portfolioBody.last_core_equity);
         const equityOnStockCount = numStocks > 4 ? previousEquity : previousEquity / 4;
-        const maxAmountOfMoneyToSpend = Math.max(0, Math.min(buyingPowerWithGold, equityOnStockCount));
+        const maxAmountOfMoneyToSpend = Math.max(0, Math.min(buyingPowerWithGold, equityOnStockCount)) * 0.95;
         console.log(`Previous Equity: ${previousEquity} - Max Amount of Money to Spend: ${maxAmountOfMoneyToSpend}`);
         console.log(`Amount of money to spend: $${maxAmountOfMoneyToSpend}`);
         return maxAmountOfMoneyToSpend;

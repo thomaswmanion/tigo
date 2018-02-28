@@ -44,12 +44,17 @@ class PredictionUtil {
     return raw.map(rawP => new Prediction(rawP.symbol, rawP.value));
   }
 
+  async readTopPredictions(date: Date): Promise<Prediction[]> {
+    const p = await this.readPredictions(date);
+    return p.filter((_, i) => i < variables.topNumToBuy);
+  }
+
   async getRecentPredictions(date: Date): Promise<PredictionDate[]> {
     const predictions: PredictionDate[] = [];
     let curDate = date;
     for (let i = 0; i < variables.numPredictedDays; i++) {
       try {
-        const p = await this.readPredictions(curDate);
+        const p = await this.readTopPredictions(curDate);
         predictions.push(...p.map(ps => new PredictionDate(ps, curDate)));
       } catch (e) { }
       curDate = dateUtil.getPreviousWorkDay(curDate);

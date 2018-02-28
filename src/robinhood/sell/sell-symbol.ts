@@ -6,13 +6,12 @@ export class SellSymbol {
 
   isReadyToSell(): boolean {
     const hasTimeElapsed = this.hasEnoughTimeElapsedFromDate(this.lastUpdate, variables.numPredictedDays);
-    console.log('isReadyToSell', this.lastUpdate, hasTimeElapsed);
-    return false;
+    // console.log('isReadyToSell', this.symbol, this.lastUpdate, hasTimeElapsed);
+    return hasTimeElapsed;
   }
 
   updateLastUpdate(date: Date): void {
     if (date > this.lastUpdate) {
-      console.log('updated last update!', date);
       this.lastUpdate = date;
     }
   }
