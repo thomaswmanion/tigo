@@ -48,7 +48,7 @@ export class HistoricalChangeUpdater {
       changes = await PriceChange.createPrevious(date);
       futureChanges = await PriceChange.createFuture(date);
     } catch (e) {
-      console.log(`${dateUtil.formatDate(date)} - Missing price changes...`);
+      console.log(`${dateUtil.formatDate(date)} - Missing price changes... ` + e.message);
       return;
     }
 
