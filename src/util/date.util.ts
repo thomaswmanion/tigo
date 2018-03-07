@@ -82,8 +82,7 @@ export class DateUtil {
     return msChange;
   }
 
-  getDaysAgo(n: number, refDate?: Date): Date {
-    refDate = refDate || this.today;
+  getDaysAgo(n: number, refDate: Date): Date {
     let daysRemoved = 0, i = 0;
     let posMultiplier = n >= 0 ? 1 : -1;
     let date: Date = refDate;
@@ -105,7 +104,7 @@ export class DateUtil {
     return new Date(+date + (this.oneDay * n));
   }
 
-  getDaysInTheFuture(n: number, refDate?: Date): Date {
+  getDaysInTheFuture(n: number, refDate: Date): Date {
     return this.getDaysAgo(n * -1, refDate);
   }
 

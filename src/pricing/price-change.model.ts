@@ -14,12 +14,12 @@ export class PriceChange {
   ) { }
 
   static createPrevious(date: Date): Promise<PriceChange[]> {
-    const prevDate = dateUtil.getDaysAgo(variables.numPrevDays);
+    const prevDate = dateUtil.getDaysAgo(variables.numPrevDays, date);
     return this.createChange(date, prevDate);
   }
 
   static createFuture(date: Date): Promise<PriceChange[]> {
-    const futureDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays);
+    const futureDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, date);
     return this.createChange(futureDate, date);
   }
 

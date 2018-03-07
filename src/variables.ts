@@ -4,14 +4,14 @@ class Variables {
   numPrevDays = 6;
   numPredictedDays = 6;
 
-  deprecationAmount = 0.85;
+  deprecationAmount = 0.95;
   useSymbolSubset = true;
   symbolSubset = 3;
 
   topNumToBuy = 10;
   minStocksForBuying = 5;
-  startDate = '1/1/2018'
-  endDate = '3/10/2018'
+  startDate = '1/1/2016'
+  endDate = '1/1/2018'
 }
 
 export const variables = new Variables();
@@ -20,6 +20,8 @@ Object.keys(argv).forEach(key => {
   let value: any;
   if (key === 'startDate' || key === 'endDate') {
     value = argv[key];
+  } else if (key === 'useSymbolSubset') {
+    value = argv[key] === 'true';
   } else {
     try {
       value = parseFloat(argv[key]);

@@ -11,6 +11,7 @@ import { variables } from '../../variables';
 
 
 export async function run() {
+  let v = 1;
   console.log(`Clearing folders...`);
   await fileUtil.empty(Indicator.dir);
   await fileUtil.empty(StockMap.dir);
@@ -27,7 +28,7 @@ export async function run() {
     const dateStartTime = Date.now();
     dateUtil.overrideToday = curDate;
 
-    if (i > 10) {
+    if (i > 25) {
       await updater.createChangeIndicatorsForDate(curDate);
       const predictions = await predictionUtil.createPredictions(curDate);
       if (predictions && predictions.length > 0) {

@@ -18,6 +18,7 @@ export class Seller {
       return;
     }
     const positions = await robinhoodUtil.getAllPositions();
+    console.log('Positions: ' + positions.length);
     let sellSymbols: SellSymbol[] = await Promise.all(positions.map(async p => {
         const instrument: InstrumentResult = await robinhood.get(p.instrument);
         const quantity = parseFloat(p.quantity);
