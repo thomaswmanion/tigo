@@ -7,9 +7,7 @@ import { variables } from '../variables';
 import { dateUtil } from '../util/date.util';
 
 export class HistoricalChangeUpdater {
-  async updateForSymbol(changes: PriceChange[], futureChange: PriceChange): Promise<void> {
-    const symbol = futureChange.symbol;
-    const stockMap = await StockMap.readStockMap(symbol);
+  updateForSymbol(changes: PriceChange[], futureChange: PriceChange, stockMap: StockMap): void {
     const resultingChange = futureChange.change;
 
     for (const change of changes) {
@@ -37,7 +35,6 @@ export class HistoricalChangeUpdater {
       }
 
     }
-    await stockMap.write();
   }
 
   async updateForSymbols(date: Date): Promise<void> {
@@ -55,7 +52,9 @@ export class HistoricalChangeUpdater {
     let num = 0;
     for (const futureChange of futureChanges) {
       try {
-        await this.updateForSymbol(changes, futureChange);
+        const stockMap = await StockMap.readStockMap(futureChange.symbol);
+        this.updateForSymbol(changes, futureChange, stockMap);
+        await stockMap.write();
         num++;
       } catch (e) { }
     }
@@ -72,10 +71,12 @@ export class HistoricalChangeUpdater {
       console.log(`${dateUtil.formatDate(date)} - No price changes for date.`, e.message);
       return;
     }
+    const stockMaps = await StockMap.createStockMapsForDate(date);
     for (const priceChange of priceChanges) {
       try {
-        const stockMap = await StockMap.readStockMap(priceChange.symbol);
-        const indicator = this.createChangeIndicatorForSymbol(priceChange.symbol, stockMap, priceChanges)
+        // const stockMap = await StockMap.readStockMap(priceChange.symbol);
+        const stockMap = stockMaps.find(sm => sm.stock === priceChange.symbol);
+        const indicator = stockMap && this.createChangeIndicatorForSymbol(priceChange.symbol, stockMap, priceChanges);
         if (indicator) {
           indicators.push(indicator);
         }

@@ -28,18 +28,16 @@ export async function run() {
     const dateStartTime = Date.now();
     dateUtil.overrideToday = curDate;
 
-    if (i > 25) {
-      await updater.createChangeIndicatorsForDate(curDate);
-      const predictions = await predictionUtil.createPredictions(curDate);
-      if (predictions && predictions.length > 0) {
-        await predictionCheckerUtil.printPredictionResults(curDate, predictions);
-      } else {
-        console.log('Invalid predictions');
-      }
+    await updater.createChangeIndicatorsForDate(curDate);
+    const predictions = await predictionUtil.createPredictions(curDate);
+    if (predictions && predictions.length > 0) {
+      await predictionCheckerUtil.printPredictionResults(curDate, predictions);
+    } else {
+      console.log('Invalid predictions');
     }
 
-    const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
-    await updater.updateForSymbols(prevDate);
+    //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
+    // await updater.updateForSymbols(prevDate);
 
     console.log(`Runtime for ${dateUtil.formatDate(curDate)}: ${prettyMs(Date.now() - dateStartTime)}, Total: ${prettyMs(Date.now() - startTime)}`);
   }

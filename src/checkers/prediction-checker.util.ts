@@ -30,6 +30,9 @@ class PredictionCheckerUtil {
       const change = changes.find(p => p.symbol === prediction.symbol);
       if (change) {
         results.push(change.change);
+        if (!checkAll) {
+          console.log(change.symbol, (change.change * 100).toFixed(3) + '%');
+        }
       }
     }
 

@@ -3,8 +3,9 @@ import { argv } from 'yargs';
 class Variables {
   numPrevDays = 6;
   numPredictedDays = 6;
-
-  deprecationAmount = 0.95;
+  
+  numPrevMapDays = 50;
+  deprecationAmount = 1;
   useSymbolSubset = true;
   symbolSubset = 3;
 

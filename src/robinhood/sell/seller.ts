@@ -1,4 +1,6 @@
-import { dateUtil } from './../../util/date.util';
+import { Prediction } from '../../predictions/prediction.model';
+import { fileUtil } from '../../util/file.util';
+import { dateUtil } from '../../util/date.util';
 import { LastUpdateManager } from './last-update-manager';
 import { CredentialsManager } from '../credentials-manager';
 import { Robinhood, InstrumentResult } from '../robinhood.api';
@@ -7,39 +9,46 @@ import { SellSymbol } from './sell-symbol';
 import { argv } from 'yargs';
 
 export class Seller {
-  async runSell(): Promise<void> {
-    const credentials = await CredentialsManager.readCredentials();
-    const robinhood = new Robinhood(credentials.username, credentials.password);
-    await robinhood.login();
-    const robinhoodUtil = new RobinhoodUtil(robinhood);
-    const isMarketOpen = await robinhoodUtil.isMarketOpen();
-    if (!isMarketOpen) {
-      console.log('Market is not open... Exiting');
-      return;
-    }
-    const positions = await robinhoodUtil.getAllPositions();
-    console.log('Positions: ' + positions.length);
-    let sellSymbols: SellSymbol[] = await Promise.all(positions.map(async p => {
-        const instrument: InstrumentResult = await robinhood.get(p.instrument);
-        const quantity = parseFloat(p.quantity);
-        return new SellSymbol(instrument.symbol, quantity, new Date(p.updated_at), parseFloat(p.average_buy_price));
-    }));
-    const manager = new LastUpdateManager(robinhood, dateUtil.today);
-    await manager.inflateData();
-    manager.updateLastUpdates(sellSymbols);
-    await this.sellStocks(robinhood, sellSymbols);
-  }
-
-  async sellStocks(robinhood: Robinhood, sellSymbols: SellSymbol[]) {
-      const symbolsReady = sellSymbols.filter(s => s.isReadyToSell());
-      for (const ss of symbolsReady) {
-        console.log(`${ss.symbol} is ready to sell - ${ss.quantity} stocks`);
-        if (argv.prod) {
-            const price = await robinhood.sell(ss.symbol, ss.quantity);
-            console.log(`${ss.symbol} Sell Request at ${price}`);
+    async runSell(): Promise<void> {
+        // Check if predictions exists. Do not sell if they dont
+        const predictionsExist = await fileUtil.exists(Prediction.dir, dateUtil.formatDate(dateUtil.today) + '.json');
+        if (!predictionsExist) {
+            console.log('Predictions do not exist. Skipping sell.');
+            return;
         }
-      }
-  }
+
+        const credentials = await CredentialsManager.readCredentials();
+        const robinhood = new Robinhood(credentials.username, credentials.password);
+        await robinhood.login();
+        const robinhoodUtil = new RobinhoodUtil(robinhood);
+        const isMarketOpen = await robinhoodUtil.isMarketOpen();
+        if (!isMarketOpen) {
+            console.log('Market is not open... Exiting');
+            return;
+        }
+        const positions = await robinhoodUtil.getAllPositions();
+        console.log('Positions: ' + positions.length);
+        let sellSymbols: SellSymbol[] = await Promise.all(positions.map(async p => {
+            const instrument: InstrumentResult = await robinhood.get(p.instrument);
+            const quantity = parseFloat(p.quantity);
+            return new SellSymbol(instrument.symbol, quantity, new Date(p.updated_at), parseFloat(p.average_buy_price));
+        }));
+        const manager = new LastUpdateManager(robinhood, dateUtil.today);
+        await manager.inflateData();
+        manager.updateLastUpdates(sellSymbols);
+        await this.sellStocks(robinhood, sellSymbols);
+    }
+
+    async sellStocks(robinhood: Robinhood, sellSymbols: SellSymbol[]) {
+        const symbolsReady = sellSymbols.filter(s => s.isReadyToSell());
+        for (const ss of symbolsReady) {
+            console.log(`${ss.symbol} is ready to sell - ${ss.quantity} stocks`);
+            if (argv.prod) {
+                const price = await robinhood.sell(ss.symbol, ss.quantity);
+                console.log(`${ss.symbol} Sell Request at ${price}`);
+            }
+        }
+    }
 }
 
 

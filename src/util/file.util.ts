@@ -46,7 +46,8 @@ export class FileUtil {
   }
 
   async exists(directoryName: string, file: string): Promise<boolean> {
-    return fs.pathExists(path.join(this.tempestHome, directoryName, file));
+    const f = path.join(this.tempestHome, directoryName, file);
+    return fs.pathExists(f);
   }
 
   async readSymbols(): Promise<string[]> {

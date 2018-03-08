@@ -1,5 +1,9 @@
+import { dateUtil } from './../util/date.util';
 import { symbolUtil } from '../util/symbol.util';
 import { fileUtil } from '../util/file.util';
+import { variables } from '../variables';
+import { HistoricalChangeUpdater } from './historical-change.updater';
+import { PriceChange } from '../pricing/price-change.model';
 export class StockMap {
   static dir = 'maps';
 
@@ -37,6 +41,47 @@ export class StockMap {
     }
   }
 
+  static async createStockMapsForDate(date: Date): Promise<StockMap[]> {
+    const symbols = await symbolUtil.getSymbols();
+    const maps = symbols.map(s => {
+      const pc = PreviousComparison.createNewArrayFromSymbols(symbols);
+      const map = new StockMap(s, 0, 0, 0, 0, pc);
+      return map;
+    })
+    const hcu = new HistoricalChangeUpdater();
+
+    const startDate = dateUtil.getDaysAgo(variables.numPrevMapDays, date);
+    let curDate = startDate;
+    let nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
+    while (nextDate <= date) {
+      console.log(dateUtil.formatDate(curDate), dateUtil.formatDate(nextDate), dateUtil.formatDate(date))
+      let changes: PriceChange[];
+      let futureChanges: PriceChange[];
+      try {
+        changes = await PriceChange.createPrevious(curDate);
+        futureChanges = await PriceChange.createFuture(curDate);
+      } catch (e) {
+        console.log(`${dateUtil.formatDate(curDate)} - Missing price changes... ` + e.message);
+        curDate = dateUtil.getNextWorkDay(curDate);
+        nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
+        continue;
+      }
+
+      for (const futureChange of futureChanges) {
+        try {
+          const stockMap = maps.find(m => m.stock === futureChange.symbol);
+          if (stockMap) {
+            await hcu.updateForSymbol(changes, futureChange, stockMap);
+          }
+        } catch (e) { }
+      }
+
+      curDate = dateUtil.getNextWorkDay(curDate);
+      nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
+    }
+    return maps;
+  }
+
   async write(): Promise<void> {
     await fileUtil.saveObject(StockMap.dir, `${this.stock}.json`, {
       stock: this.stock,
@@ -64,6 +109,10 @@ export class PreviousComparison {
   static async createNewArray(): Promise<PreviousComparison[]> {
     const stocks = await symbolUtil.getSymbols();
     return stocks.map(s => new PreviousComparison(s, 0, 0, 0, 0));
+  }
+
+  static createNewArrayFromSymbols(symbols: string[]): PreviousComparison[] {
+    return symbols.map(s => new PreviousComparison(s, 0, 0, 0, 0));
   }
 
   static parseContentsFromFile(arr: any[]): PreviousComparison[] {
