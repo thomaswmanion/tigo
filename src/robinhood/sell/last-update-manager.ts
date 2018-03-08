@@ -19,7 +19,6 @@ export class LastUpdateManager {
   }
   async inflateRecentPredictions(): Promise<void> {
     this.recentPredictions = await predictionUtil.getRecentPredictions(this.date);
-    console.log(this.recentPredictions);
   }
   async inflateSymbolsPurchasedOnDate() {
     const today = dateUtil.formatDate(this.date);
