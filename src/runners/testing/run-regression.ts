@@ -11,7 +11,6 @@ import { variables } from '../../variables';
 
 
 export async function run() {
-  let v = 1;
   console.log(`Clearing folders...`);
   await fileUtil.empty(Indicator.dir);
   await fileUtil.empty(StockMap.dir);
