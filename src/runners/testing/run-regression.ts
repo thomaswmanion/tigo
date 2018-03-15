@@ -8,6 +8,7 @@ import { HistoricalChangeUpdater } from '../../historical-changes/historical-cha
 import { dateUtil } from '../../util/date.util';
 import prettyMs from 'pretty-ms';
 import { variables } from '../../variables';
+import { StockPickerUtil } from '../../predictions/stock-picker/stock-picker.util';
 
 
 export async function run() {
@@ -27,6 +28,7 @@ export async function run() {
     const dateStartTime = Date.now();
     dateUtil.overrideToday = curDate;
 
+    await StockPickerUtil.pickStocksForDate(curDate);
     await updater.createChangeIndicatorsForDate(curDate);
     const predictions = await predictionUtil.createPredictions(curDate);
     if (predictions && predictions.length > 0) {

@@ -32,6 +32,10 @@ export class FileUtil {
     return JSON.parse(await this.readString(directoryName, filename));
   }
 
+  async saveLocalObject(filename: string, obj: any): Promise<void> {
+    await fs.writeFile(filename, JSON.stringify(obj, null, 4), 'utf-8');
+  }
+
   async readLocalObject(f: string): Promise<any> {
     return JSON.parse(await fs.readFile(f, 'utf-8'));
   }

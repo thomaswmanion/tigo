@@ -4,15 +4,19 @@ class Variables {
   numPrevDays = 6;
   numPredictedDays = 6;
   
-  numPrevMapDays = 50;
+  numPrevMapDays = 45;
+
+  stockPickRange = 10; // days
+  numSymbolsToCompare = 200;
+
   deprecationAmount = 1;
-  useSymbolSubset = true;
+  useSymbolSubset = false;
   symbolSubset = 3;
 
   topNumToBuy = 10;
   minStocksForBuying = 5;
-  startDate = '1/1/2016'
-  endDate = '1/1/2018'
+  startDate = '1/1/2012'
+  endDate = '3/1/2018'
 }
 
 export const variables = new Variables();

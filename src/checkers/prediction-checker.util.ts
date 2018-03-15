@@ -1,3 +1,4 @@
+import { symbolUtil } from './../util/symbol.util';
 
 import { dateUtil } from '../util/date.util';
 import { PriceChange } from '../pricing/price-change.model';
@@ -7,12 +8,13 @@ import { variables } from '../variables';
 
 class PredictionCheckerUtil {
   results: Result[] = [];
-  allResultsMeans: number[] = [];
+  allResultsMedians: number[] = [];
   above = 0;
   below = 0;
 
   v = 1;
   prevDate: Date;
+  industryResults: { industry: string, above: number, below: number }[] = [];
 
   async checkPredictions(date: Date, predictions: Prediction[], checkAll?: boolean): Promise<Result> {
     const results: number[] = [];
@@ -55,30 +57,50 @@ class PredictionCheckerUtil {
     return this.v;
   }
 
+  addIndustryResult(mean: number, industry: string): void {
+    let industryResult = this.industryResults.find(i => i.industry === industry)
+    if (!industryResult) {
+      industryResult = {
+        industry, below: 0, above: 0
+      };
+      this.industryResults.push(industryResult);
+    }
+    if (mean > 0) {
+      industryResult.above++;
+    } else if (mean < 0) {
+      industryResult.below++;
+    }
+  }
+
+  industryResultString(): string {
+    return `[Industry Results - ${this.industryResults.map(ir => ir.industry + ' - Above: ' + ir.above + ' - Below: ' + ir.below).join(', ')}]`;
+  }
+
   async printPredictionResults(date: Date, predictions: Prediction[]): Promise<void> {
     const result = await this.checkPredictions(date, predictions);
     const all = await this.checkPredictions(date, predictions, true);
 
     if (result.mean && result.median) {
       this.results.push(result);
-      // const allMean = all.mean * 100;
       const allMedian = all.median * 100;
-      this.allResultsMeans.push(allMedian);
-      // this.allResultsMeans.push(allMean);
-      const overallAllStockMean = Calculator.findMean(this.allResultsMeans).toFixed(3);
-      // const mean = (result.mean * 100).toFixed(3);
-      const median = (result.median * 100).toFixed(3);
-      if (result.median > 0) {
+      this.allResultsMedians.push(allMedian);
+      const overallAllStockMedian = Calculator.findMean(this.allResultsMedians).toFixed(3);
+      const mean = (result.mean * 100).toFixed(3);
+      if (result.mean > 0) {
         this.above++;
-      } else if (result.median < 0) {
+      } else if (result.mean < 0) {
         this.below++;
       }
+
+      const industry = await symbolUtil.getCurrentIndustry();
+      this.addIndustryResult(result.mean, industry);
+
       const rMeans = this.results.map(r => r.mean);
       this.updateVal(result.mean, date);
-      // const overallMean = (Calculator.findMean(rMeans) * 100).toFixed(3);
-      const overallMedian = (Calculator.findMedian(rMeans) * 100).toFixed(3);
-      console.log(`${dateUtil.formatDate(date)} - Median: ${median}% - All Stock Median: ${allMedian.toFixed(3)}% - Overall Mean: ${overallMedian}% - Overall All Stock Mean: ${overallAllStockMean}% - Above: ${this.above} - Below: ${this.below} - Above Percent: ${this.abovePercent()} - Val: ${this.v.toFixed(3)}`);
-      // console.log(`${dateUtil.formatDate(date)} - Mean: ${mean}% - All Stock Mean: ${allMean.toFixed(3)}% - Overall Mean: ${overallMean}% - Overall All Stock Mean: ${overallAllStockMean}%`);
+      const overallMean = (Calculator.findMean(rMeans) * 100).toFixed(3);
+      console.log(`[${dateUtil.formatDate(date)} - Picked Mean: ${mean}% - All Median: ${allMedian.toFixed(3)}%]`);
+      console.log(`[Overall - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Val: ${this.v.toFixed(3)} ]`);
+      console.log(this.industryResultString());
     }
     else {
       console.log(`No result... ` + JSON.stringify(result));

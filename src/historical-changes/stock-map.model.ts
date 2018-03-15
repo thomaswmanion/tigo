@@ -1,4 +1,4 @@
-import { dateUtil } from './../util/date.util';
+import { dateUtil } from '../util/date.util';
 import { symbolUtil } from '../util/symbol.util';
 import { fileUtil } from '../util/file.util';
 import { variables } from '../variables';
@@ -60,8 +60,11 @@ export class StockMap {
       try {
         changes = await PriceChange.createPrevious(curDate);
         futureChanges = await PriceChange.createFuture(curDate);
+
+        changes = changes.filter(c => symbols.indexOf(c.symbol) !== -1);
+        futureChanges = futureChanges.filter(c => symbols.indexOf(c.symbol) !== -1);
       } catch (e) {
-        console.log(`${dateUtil.formatDate(curDate)} - Missing price changes... ` + e.message);
+        // console.log(`${dateUtil.formatDate(curDate)} - Missing price changes... ` + e.message);
         curDate = dateUtil.getNextWorkDay(curDate);
         nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
         continue;
@@ -71,7 +74,7 @@ export class StockMap {
         try {
           const stockMap = maps.find(m => m.stock === futureChange.symbol);
           if (stockMap) {
-            await hcu.updateForSymbol(changes, futureChange, stockMap);
+            hcu.updateForSymbol(changes, futureChange, stockMap);
           }
         } catch (e) { }
       }

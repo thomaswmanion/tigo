@@ -8,7 +8,7 @@ export class PriceSnapshot {
     public symbol: string,
     public price: number,
     public date: Date
-  ) {}
+  ) { }
 
   static async readForDate(date: Date): Promise<PriceSnapshot[]> {
     const str: string = await fileUtil.readString(this.dir, this.convertDateToFilename(date));
@@ -31,5 +31,16 @@ export class PriceSnapshot {
 
   static convertDateToFilename(fileDate: Date): string {
     return dateUtil.formatDate(fileDate) + '.csv';
+  }
+
+  static async readNearDate(date: Date, numPrevious: number = 3): Promise<PriceSnapshot[]> {
+    for (let i = 0; i < numPrevious; i++) {
+      try {
+        return await this.readForDate(date);
+      } catch (e) {
+      }
+      date = dateUtil.getPreviousWorkDay(date);
+    }
+    return [];
   }
 }

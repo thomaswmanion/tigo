@@ -27,12 +27,14 @@ class PredictionUtil {
       const indicatorsForSymbol: Indicator[] = allIndicators.map(indicators => indicators.find(i => i.symbol === symbol)).filter(i => i && i.value !== 0) as Indicator[];
       const value = indicatorsForSymbol.map(a => a.value).reduce((a, b) => a + b, 0);
 
-      if (value !== 0) {
+      if (value !== 0 && value !== 1) {
         predictions.push(new Prediction(symbol, value));
       }
 
     }
     predictions.sort((a, b) => b.value - a.value);
+    const ps = predictions.filter((_, i) => i < variables.topNumToBuy).map((a) => `${a.symbol}: ${a.value.toFixed(3)}`);
+    console.log(`Predictions: ${ps.join(', ')}`);
     if (predictions.length) {
       await fileUtil.saveObject(Prediction.dir, `${dateUtil.formatDate(date)}.json`, predictions);
     }
