@@ -32,10 +32,6 @@ export class PriceChange {
       return p && t ? new PriceChange(p, t) : undefined;
     }).filter(p => p instanceof PriceChange) as PriceChange[];
 
-    if (variables.useSymbolSubset) {
-      const symbols = await symbolUtil.getSymbols();
-      changes = changes.filter(c => symbols.indexOf(c.symbol) !== -1);
-    }
     return changes;
   }
 }

@@ -33,7 +33,7 @@ class PredictionCheckerUtil {
       if (change) {
         results.push(change.change);
         if (!checkAll) {
-          console.log(change.symbol, (change.change * 100).toFixed(3) + '%');
+          console.log(change.symbol, (change.change * 100).toFixed(3) + '%', prediction.value);
         }
       }
     }
@@ -98,8 +98,10 @@ class PredictionCheckerUtil {
       const rMeans = this.results.map(r => r.mean);
       this.updateVal(result.mean, date);
       const overallMean = (Calculator.findMean(rMeans) * 100).toFixed(3);
-      console.log(`[${dateUtil.formatDate(date)} - Picked Mean: ${mean}% - All Median: ${allMedian.toFixed(3)}%]`);
-      console.log(`[Overall - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Val: ${this.v.toFixed(3)} ]`);
+      
+      const yearlyValue = Math.pow(1 + Calculator.findMean(rMeans), 250 / variables.numPredictedDays);
+      console.log(`[Date ${dateUtil.formatDate(date)} - Picked Mean: ${mean}% - All Median: ${allMedian.toFixed(3)}%]`);
+      console.log(`[Overall ${dateUtil.formatDate(date)} - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Yearly Value: ${yearlyValue.toFixed(3)}]`);
       console.log(this.industryResultString());
     }
     else {

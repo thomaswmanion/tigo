@@ -25,7 +25,7 @@ export class StockMap {
   }
 
   get total(): number {
-    return this.increases + this.decreases;
+    return this.previousComparisons.map(p => p.getCount()).reduce((a, b) => a + b, 0) / this.previousComparisons.length;
   }
 
   get averageChange(): number {
@@ -43,45 +43,39 @@ export class StockMap {
 
   static async createStockMapsForDate(date: Date): Promise<StockMap[]> {
     const symbols = await symbolUtil.getSymbols();
-    const maps = symbols.map(s => {
+    let maps = symbols.map(s => {
       const pc = PreviousComparison.createNewArrayFromSymbols(symbols);
       const map = new StockMap(s, 0, 0, 0, 0, pc);
       return map;
     })
     const hcu = new HistoricalChangeUpdater();
-
-    const startDate = dateUtil.getDaysAgo(variables.numPrevMapDays, date);
-    let curDate = startDate;
-    let nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
-    while (nextDate <= date) {
-      console.log(dateUtil.formatDate(curDate), dateUtil.formatDate(nextDate), dateUtil.formatDate(date))
-      let changes: PriceChange[];
-      let futureChanges: PriceChange[];
+    let curDate = dateUtil.getDaysAgo(variables.numPredictedDays, date);
+    for (let i = 0; i < variables.mapSteps; i++) {
+      console.log(dateUtil.formatDate(curDate));
+      let changes: PriceChange[] = [];
+      let futureChanges: PriceChange[] = [];
       try {
         changes = await PriceChange.createPrevious(curDate);
         futureChanges = await PriceChange.createFuture(curDate);
 
         changes = changes.filter(c => symbols.indexOf(c.symbol) !== -1);
         futureChanges = futureChanges.filter(c => symbols.indexOf(c.symbol) !== -1);
-      } catch (e) {
-        // console.log(`${dateUtil.formatDate(curDate)} - Missing price changes... ` + e.message);
-        curDate = dateUtil.getNextWorkDay(curDate);
-        nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
-        continue;
+      } catch (e) { }
+
+      if (changes.length && futureChanges.length) {
+        for (const futureChange of futureChanges) {
+          try {
+            const stockMap = maps.find(m => m.stock === futureChange.symbol);
+            if (stockMap) {
+              hcu.updateForSymbol(changes, futureChange, stockMap);
+            }
+          } catch (e) { }
+        }
       }
 
-      for (const futureChange of futureChanges) {
-        try {
-          const stockMap = maps.find(m => m.stock === futureChange.symbol);
-          if (stockMap) {
-            hcu.updateForSymbol(changes, futureChange, stockMap);
-          }
-        } catch (e) { }
-      }
-
-      curDate = dateUtil.getNextWorkDay(curDate);
-      nextDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
+      curDate = dateUtil.getDaysAgo(variables.mapStepSize, curDate);
     }
+
     return maps;
   }
 
@@ -116,6 +110,10 @@ export class PreviousComparison {
 
   static createNewArrayFromSymbols(symbols: string[]): PreviousComparison[] {
     return symbols.map(s => new PreviousComparison(s, 0, 0, 0, 0));
+  }
+
+  getCount(): number {
+    return this.previousDecreaseImpliedDecrease + this.previousDecreaseImpliedIncrease + this.previousIncreaseImpliedDecrease + this.previousIncreaseImpliedIncrease;
   }
 
   static parseContentsFromFile(arr: any[]): PreviousComparison[] {

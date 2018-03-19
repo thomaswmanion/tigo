@@ -1,1 +1,6 @@
---base
+--mapStepSize=6
+--mapStepSize=5
+--mapStepSize=4
+--mapStepSize=3
+--mapStepSize=2
+--mapStepSize=1

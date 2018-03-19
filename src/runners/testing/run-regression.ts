@@ -24,7 +24,7 @@ export async function run() {
   const startTime = Date.now();
   const updater = new HistoricalChangeUpdater();
 
-  for (let i = 0; curDate < endDate; i++ , curDate = dateUtil.getNextWorkDay(curDate)) {
+  for (let i = 0; curDate < endDate; i++ , curDate = dateUtil.getDaysInTheFuture(variables.testStepSize, curDate)) {
     const dateStartTime = Date.now();
     dateUtil.overrideToday = curDate;
 

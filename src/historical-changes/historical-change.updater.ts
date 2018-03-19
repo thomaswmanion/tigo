@@ -13,10 +13,6 @@ export class HistoricalChangeUpdater {
     for (const change of changes) {
       const comparison = stockMap.previousComparisons.find(p => p.stock === change.symbol);
       if (comparison) {
-        comparison.previousDecreaseImpliedDecrease *= variables.deprecationAmount;
-        comparison.previousDecreaseImpliedIncrease *= variables.deprecationAmount;
-        comparison.previousIncreaseImpliedDecrease *= variables.deprecationAmount;
-        comparison.previousIncreaseImpliedIncrease *= variables.deprecationAmount;
 
         const currentChange = change.change;
         if (resultingChange >= 0) {
@@ -95,6 +91,7 @@ export class HistoricalChangeUpdater {
 
   createChangeIndicatorForSymbol(symbol: string, stockMap: StockMap, priceChanges: PriceChange[]): Indicator | undefined {
     let values: number[] = [];
+    const thisChange = priceChanges.find(p => p.symbol === symbol);
     for (const priceChange of priceChanges) {
       const pc = stockMap.previousComparisons.find(pc1 => pc1.stock === priceChange.symbol);
       if (pc) {
@@ -115,6 +112,12 @@ export class HistoricalChangeUpdater {
     const indicator = new Indicator(symbol);
     indicator.value = Calculator.findMean(values);
     indicator.value = isNaN(indicator.value) ? 0 : indicator.value;
+
+    // Break ties
+    if (thisChange) {
+      indicator.value += (thisChange.change * 0.001);
+    }
+    
     return indicator;
   }
 }

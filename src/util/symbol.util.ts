@@ -35,9 +35,6 @@ class SymbolUtil {
   async getAllSymbols(): Promise<string[]> {
     const s = await fs.readFile(path.join(__dirname, '../../all-symbols.json', ), 'utf-8');
     let symbols: string[] = JSON.parse(s);
-    if (variables.useSymbolSubset) {
-      symbols = symbols.filter((_, i) => i % variables.symbolSubset === 0);
-    }
     return symbols;
   }
 }

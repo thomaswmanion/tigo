@@ -16,6 +16,7 @@ class PredictionUtil {
 
       try {
         const indicators = await indicatorUtil.readAndSortIndicatorsForDateAndType(date, type);
+        console.log(indicators);
         allIndicators.push(indicators);
       } catch (e) { }
 
@@ -26,11 +27,9 @@ class PredictionUtil {
     for (const symbol of symbols) {
       const indicatorsForSymbol: Indicator[] = allIndicators.map(indicators => indicators.find(i => i.symbol === symbol)).filter(i => i && i.value !== 0) as Indicator[];
       const value = indicatorsForSymbol.map(a => a.value).reduce((a, b) => a + b, 0);
-
-      if (value !== 0 && value !== 1) {
+      if (value > 0) {
         predictions.push(new Prediction(symbol, value));
       }
-
     }
     predictions.sort((a, b) => b.value - a.value);
     const ps = predictions.filter((_, i) => i < variables.topNumToBuy).map((a) => `${a.symbol}: ${a.value.toFixed(3)}`);
