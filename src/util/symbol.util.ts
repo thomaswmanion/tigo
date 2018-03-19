@@ -1,7 +1,6 @@
 import { fileUtil } from './file.util';
 import * as fs from 'fs-extra';
 import * as path from 'path';
-import { variables } from '../variables';
 
 class SymbolUtil {
   async getCurrentIndustry(): Promise<string> {

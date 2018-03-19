@@ -3,7 +3,6 @@ import { Calculator } from '../util/calculator.util';
 import { Indicator } from '../indicators/indicator.model';
 import { PriceChange } from '../pricing/price-change.model';
 import { StockMap } from './stock-map.model';
-import { variables } from '../variables';
 import { dateUtil } from '../util/date.util';
 
 export class HistoricalChangeUpdater {
