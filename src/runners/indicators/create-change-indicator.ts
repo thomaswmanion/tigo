@@ -1,9 +1,12 @@
+import { VolatilityIndicator } from './../../volatility/volatility.indicator';
 import { dateUtil } from '../../util/date.util';
 import { HistoricalChangeUpdater } from '../../historical-changes/historical-change.updater';
 
 export async function createChangeIndicator() {
   const updater = new HistoricalChangeUpdater();
   await updater.createChangeIndicatorsForDate(dateUtil.today);
+  const volatilityIndicator = new VolatilityIndicator();
+  await volatilityIndicator.createVolatilityIndicatorsForDate(dateUtil.today);
 }
 createChangeIndicator().catch(e => {
   console.error(e);

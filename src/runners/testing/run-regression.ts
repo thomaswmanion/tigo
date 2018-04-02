@@ -1,3 +1,4 @@
+import { PriceSnapshot } from './../../pricing/price-snapshot.model';
 import { predictionCheckerUtil } from '../../checkers/prediction-checker.util';
 import { Prediction } from '../../predictions/prediction.model';
 import { predictionUtil } from '../../predictions/prediction.util';
@@ -9,7 +10,7 @@ import { dateUtil } from '../../util/date.util';
 import prettyMs from 'pretty-ms';
 import { variables } from '../../variables';
 import { StockPickerUtil } from '../../predictions/stock-picker/stock-picker.util';
-
+import { VolatilityIndicator } from '../../volatility/volatility.indicator';
 
 export async function run() {
   console.log(`Clearing folders...`);
@@ -23,20 +24,40 @@ export async function run() {
 
   const startTime = Date.now();
   const updater = new HistoricalChangeUpdater();
+  const volatilityIndicator = new VolatilityIndicator();
 
   for (let i = 0; curDate < endDate; i++ , curDate = dateUtil.getDaysInTheFuture(variables.testStepSize, curDate)) {
     const dateStartTime = Date.now();
     dateUtil.overrideToday = curDate;
+    const previousDate = dateUtil.getDaysAgo(variables.numPrevDays, curDate);
+    const futureDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, curDate);
+    const prevExists = await PriceSnapshot.existsForDate(previousDate);
+    const curExists = await PriceSnapshot.existsForDate(curDate);
+    const futureExists = await PriceSnapshot.existsForDate(futureDate);
 
-    await StockPickerUtil.pickStocksForDate(curDate);
-    await updater.createChangeIndicatorsForDate(curDate);
-    const predictions = await predictionUtil.createPredictions(curDate);
-    if (predictions && predictions.length > 0) {
-      await predictionCheckerUtil.printPredictionResults(curDate, predictions);
-    } else {
-      console.log('Invalid predictions');
+    if (prevExists && curExists && futureExists) {
+      const pickedStocks = await StockPickerUtil.pickStocksForDate(curDate);
+      if (pickedStocks) {
+        try {
+          if (variables.indicatorTypes.indexOf('change') !== -1) {
+            await updater.createChangeIndicatorsForDate(curDate);
+          }
+          if (variables.indicatorTypes.indexOf('long-change') !== -1) {
+            await updater.createChangeIndicatorsForDate(curDate, 'long-change');
+          }
+          if (variables.indicatorTypes.indexOf('volatility') !== -1) {
+            await volatilityIndicator.createVolatilityIndicatorsForDate(curDate);
+          }
+
+          const predictions = await predictionUtil.createPredictions(curDate);
+          if (predictions && predictions.length > 0) {
+            await predictionCheckerUtil.printPredictionResults(curDate, predictions);
+          } else {
+            console.log('Invalid predictions');
+          }
+        } catch (e) { }
+      }
     }
-
     //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
     // await updater.updateForSymbols(prevDate);
 

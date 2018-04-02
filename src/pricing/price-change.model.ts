@@ -13,8 +13,16 @@ export class PriceChange {
   ) { }
 
   static createPrevious(date: Date): Promise<PriceChange[]> {
-    const prevDate = dateUtil.getDaysAgo(variables.numPrevDays, date);
+    return this.createPreviousNDays(date, variables.numPrevDays);
+  }
+
+  static createPreviousNDays(date: Date, n: number): Promise<PriceChange[]> {
+    const prevDate = dateUtil.getDaysAgo(n, date);
     return this.createChange(date, prevDate);
+  }
+
+  static median(priceChanges: PriceChange[]): number {
+    return Calculator.findMedian(priceChanges.map(p => p.change));
   }
 
   static createFuture(date: Date): Promise<PriceChange[]> {

@@ -8,16 +8,16 @@ import { variables } from '../variables';
 class PredictionUtil {
   async createPredictions(date: Date): Promise<Prediction[]> {
     console.log(`${dateUtil.formatDate(date)} - Creating predictions.`);
-    const indicatorTypes = ['change'];
 
     const allIndicators: Indicator[][] = [];
 
-    for (const type of indicatorTypes) {
+    for (const type of variables.indicatorTypes) {
 
       try {
+
         const indicators = await indicatorUtil.readAndSortIndicatorsForDateAndType(date, type);
-        console.log(indicators);
         allIndicators.push(indicators);
+        console.log(`Collected ${type}.`);
       } catch (e) { }
 
     }

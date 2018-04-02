@@ -4,6 +4,7 @@ import { fileUtil } from '../util/file.util';
 import { variables } from '../variables';
 import { HistoricalChangeUpdater } from './historical-change.updater';
 import { PriceChange } from '../pricing/price-change.model';
+
 export class StockMap {
   static dir = 'maps';
 
@@ -41,7 +42,7 @@ export class StockMap {
     }
   }
 
-  static async createStockMapsForDate(date: Date): Promise<StockMap[]> {
+  static async createStockMapsForDate(date: Date, type: string): Promise<StockMap[]> {
     const symbols = await symbolUtil.getSymbols();
     let maps = symbols.map(s => {
       const pc = PreviousComparison.createNewArrayFromSymbols(symbols);
@@ -50,7 +51,8 @@ export class StockMap {
     })
     const hcu = new HistoricalChangeUpdater();
     let curDate = dateUtil.getDaysAgo(variables.numPredictedDays, date);
-    for (let i = 0; i < variables.mapSteps; i++) {
+    const steps = type === 'change' ? variables.mapSteps : variables.longMapSteps;
+    for (let i = 0; i < steps; i++) {
       console.log(dateUtil.formatDate(curDate));
       let changes: PriceChange[] = [];
       let futureChanges: PriceChange[] = [];
@@ -60,7 +62,9 @@ export class StockMap {
 
         changes = changes.filter(c => symbols.indexOf(c.symbol) !== -1);
         futureChanges = futureChanges.filter(c => symbols.indexOf(c.symbol) !== -1);
-      } catch (e) { }
+      } catch (e) {
+        // console.log(e);
+      }
 
       if (changes.length && futureChanges.length) {
         for (const futureChange of futureChanges) {

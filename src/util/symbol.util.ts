@@ -1,9 +1,10 @@
 import { fileUtil } from './file.util';
 import * as fs from 'fs-extra';
 import * as path from 'path';
+import { variables } from '../variables';
 
 class SymbolUtil {
-  async getCurrentIndustry(): Promise<string> {
+  async getCurrentIndustries(): Promise<string[]> {
     return await fileUtil.readObject('.', `industry.json`);
   }
 
@@ -15,8 +16,12 @@ class SymbolUtil {
 
   async getIndustryFilepaths(): Promise<string[]> {
     const p = path.join(__dirname, '../../symbols');
-    const ls = await fs.readdir(path.join(p));
-    // const ls = ['healthcare.1.json'];
+    let ls: string[];
+    if (variables.symbolFile === 'all') {
+      ls = await fs.readdir(path.join(p));
+    } else {
+      ls = [variables.symbolFile];
+    }
     return ls.map(i => path.join(p, i));
   }
 
@@ -26,8 +31,13 @@ class SymbolUtil {
     return symbols;
   }
   async getSymbols(): Promise<string[]> {
-    const industry = await this.getCurrentIndustry();
-    const symbols = await this.readIndustryFile(industry);
+    const industries = await this.getCurrentIndustries();
+    const symbols: string[] = [];
+    for (const industry of industries) {
+      const s = await this.readIndustryFile(industry);
+      symbols.push(...s);
+    }
+
     return symbols;
   }
 

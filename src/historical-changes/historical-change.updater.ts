@@ -4,6 +4,7 @@ import { Indicator } from '../indicators/indicator.model';
 import { PriceChange } from '../pricing/price-change.model';
 import { StockMap } from './stock-map.model';
 import { dateUtil } from '../util/date.util';
+import { variables } from '../variables';
 
 export class HistoricalChangeUpdater {
   updateForSymbol(changes: PriceChange[], futureChange: PriceChange, stockMap: StockMap): void {
@@ -56,7 +57,7 @@ export class HistoricalChangeUpdater {
     console.log(`${dateUtil.formatDate(date)} - Finished updating ${num} stock maps!`);
   }
 
-  async createChangeIndicatorsForDate(date: Date): Promise<void> {
+  async createChangeIndicatorsForDate(date: Date, type: 'change' | 'long-change' = 'change'): Promise<void> {
     console.log(`${dateUtil.formatDate(date)} - Creating change indicators...`);
     const indicators: Indicator[] = [];
     let priceChanges: PriceChange[] = [];
@@ -66,7 +67,7 @@ export class HistoricalChangeUpdater {
       console.log(`${dateUtil.formatDate(date)} - No price changes for date.`, e.message);
       return;
     }
-    const stockMaps = await StockMap.createStockMapsForDate(date);
+    const stockMaps = await StockMap.createStockMapsForDate(date, type);
     for (const priceChange of priceChanges) {
       try {
         // const stockMap = await StockMap.readStockMap(priceChange.symbol);
@@ -80,11 +81,11 @@ export class HistoricalChangeUpdater {
         console.log(e);
       }
     }
-    if (indicators.length > 0) {
+    if (indicators.length > 100) {
       console.log(`${dateUtil.formatDate(date)} - Saving ${indicators.length} indicators.`);
-      await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.change.json`, indicators);
+      await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.${type}.json`, indicators);
     } else {
-      console.log(`${dateUtil.formatDate(date)} - No indicators found.`);
+      console.log(`${dateUtil.formatDate(date)} - Not enough indicators found.`);
     }
   }
 
@@ -101,6 +102,13 @@ export class HistoricalChangeUpdater {
           v = pc.previousDecreaseImpliedIncrease / (pc.previousDecreaseImpliedIncrease + pc.previousDecreaseImpliedDecrease);
         }
         if (!isNaN(v)) {
+          if (variables.divideResultByIncrease) {
+            const increase = pc.previousDecreaseImpliedIncrease + pc.previousIncreaseImpliedIncrease;
+            const decrease = pc.previousDecreaseImpliedDecrease + pc.previousIncreaseImpliedDecrease;
+            const decreaseChance = decrease / (increase + decrease);
+
+            v = (v / 2) + ((v * decreaseChance) / 2);
+          }
           values.push(v);
         }
       }
