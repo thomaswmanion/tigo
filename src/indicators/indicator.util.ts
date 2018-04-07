@@ -12,5 +12,17 @@ class IndicatorUtil {
     });
     return indicatorsUnsorted.sort((a, b) => b.value - a.value);
   }
+
+  normalizeIndicators(indicators: Indicator[], weight: number = 1): void {
+    const min = Math.min(...indicators.map(i => i.value));
+    const max = Math.max(...indicators.map(i => i.value));
+    const diff = max - min;
+
+    indicators.forEach(indicator => {
+      const x = indicator.value;
+      indicator.value = (x - min) / diff;
+      indicator.value = indicator.value * weight;
+    });
+  }
 }
 export const indicatorUtil = new IndicatorUtil();

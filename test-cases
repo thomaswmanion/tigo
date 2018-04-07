@@ -1,13 +1,1 @@
---indicatorTypes=volatility
---indicatorTypes=volatility --topNumToBuy=20
---indicatorTypes=volatility --topNumToBuy=40
---indicatorTypes=volatility,change
---indicatorTypes=volatility,change,long-change
---indicatorTypes=change
---indicatorTypes=change,long-change
---indicatorTypes=long-change
---indicatorTypes=volatility,change --topNumToBuy=20
---indicatorTypes=volatility,change,long-change --topNumToBuy=20
---indicatorTypes=change --topNumToBuy=20
---indicatorTypes=change,long-change --topNumToBuy=20
---indicatorTypes=long-change --topNumToBuy=20
+--changeWeight=0 --volatilityWeight=1

@@ -37,7 +37,7 @@ class PredictionCheckerUtil {
         const volatility = await PriceSnapshot.getVolatility(date, p.symbol);
         let change = changes.find(c => c.symbol === p.symbol);
         if (volatility && change) {
-          await fileUtil.appendFile('.', 'volatility.csv', `${date.toISOString()},${p.symbol},${volatility},${change.change}\n`);
+          // await fileUtil.appendFile('.', 'volatility.csv', `${date.toISOString()},${p.symbol},${volatility},${change.change}\n`);
         }
       }
     }

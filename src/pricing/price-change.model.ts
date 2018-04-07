@@ -25,9 +25,13 @@ export class PriceChange {
     return Calculator.findMedian(priceChanges.map(p => p.change));
   }
 
-  static createFuture(date: Date): Promise<PriceChange[]> {
-    const futureDate = dateUtil.getDaysInTheFuture(variables.numPredictedDays, date);
+  static createFutureNDays(date: Date, n: number): Promise<PriceChange[]> {
+    const futureDate = dateUtil.getDaysInTheFuture(n, date);
     return this.createChange(futureDate, date);
+  }
+
+  static createFuture(date: Date): Promise<PriceChange[]> {
+    return this.createFutureNDays(date, variables.numPredictedDays);
   }
 
   static async createChange(date: Date, prevDate: Date): Promise<PriceChange[]> {

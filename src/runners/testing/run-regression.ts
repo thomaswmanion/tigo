@@ -39,13 +39,13 @@ export async function run() {
       const pickedStocks = await StockPickerUtil.pickStocksForDate(curDate);
       if (pickedStocks) {
         try {
-          if (variables.indicatorTypes.indexOf('change') !== -1) {
+          if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate);
           }
-          if (variables.indicatorTypes.indexOf('long-change') !== -1) {
+          if (variables.indicatorTypes.indexOf('long-change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate, 'long-change');
           }
-          if (variables.indicatorTypes.indexOf('volatility') !== -1) {
+          if (variables.indicatorTypes.indexOf('volatility') !== -1 && variables.volatilityWeight > 0) {
             await volatilityIndicator.createVolatilityIndicatorsForDate(curDate);
           }
 

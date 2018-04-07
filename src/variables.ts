@@ -24,6 +24,8 @@ class Variables {
 
   symbolFile = 'all';
   indicatorTypes = ['change', 'volatility'];
+  changeWeight = 1;
+  volatilityWeight = 1;
 
   divideResultByIncrease = 0;
 }

@@ -5,6 +5,7 @@ import { PriceChange } from '../pricing/price-change.model';
 import { StockMap } from './stock-map.model';
 import { dateUtil } from '../util/date.util';
 import { variables } from '../variables';
+import { indicatorUtil } from '../indicators/indicator.util';
 
 export class HistoricalChangeUpdater {
   updateForSymbol(changes: PriceChange[], futureChange: PriceChange, stockMap: StockMap): void {
@@ -81,7 +82,9 @@ export class HistoricalChangeUpdater {
         console.log(e);
       }
     }
+    
     if (indicators.length > 100) {
+      indicatorUtil.normalizeIndicators(indicators, variables.changeWeight);
       console.log(`${dateUtil.formatDate(date)} - Saving ${indicators.length} indicators.`);
       await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.${type}.json`, indicators);
     } else {

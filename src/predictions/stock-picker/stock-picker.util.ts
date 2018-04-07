@@ -14,7 +14,8 @@ export class StockPickerUtil {
     if (industryMedians.length > 0) {
 
       industryMedians.forEach(im => {
-        let value = im.lastWeek / 100;
+        let value = im.lastWeek / 10000;
+
         if (im.lastDay > 0) {
           value += 0.25;
         }
@@ -32,6 +33,7 @@ export class StockPickerUtil {
       industryMedians.sort((a, b) => b.value - a.value);
 
       industryMedians.forEach(m => {
+        fileUtil.appendFile('.', 'stock-picks.csv', `${m.lastDay},${m.lastWeek},${m.lastMonth},${m.lastQuarter},${m.future * -1}\n`);
         const lastDay = printUtil.asPercent(m.lastDay);
         const lastWeek = printUtil.asPercent(m.lastWeek);
         const lastMonth = printUtil.asPercent(m.lastMonth);
