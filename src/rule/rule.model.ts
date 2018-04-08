@@ -1,4 +1,5 @@
 export class Rule {
+  public matchingItems: number;
   constructor(
     public dayMin: number = -5,
     public dayMax: number = 5,
@@ -10,4 +11,13 @@ export class Rule {
     public quarterMax: number = 5,
     public value: number
   ) { }
+}
+
+
+export interface RuleItem {
+  day: number;
+  week: number;
+  month: number;
+  quarter: number;
+  earning: number;
 }

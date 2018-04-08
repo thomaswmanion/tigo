@@ -10,6 +10,7 @@ import { variables } from '../variables';
 export class VolatilityIndicator {
   async createVolatilityIndicatorsForDate(date: Date) {
     console.log(`Creating volatility indicators for ${dateUtil.formatDate(date)}.`);
+    const rules = await ruleUtil.createRulesForDate(date);
 
     const day = await PriceChange.createPreviousNDays(date, 1);
     const week = await PriceChange.createPreviousNDays(date, 5);
@@ -24,43 +25,8 @@ export class VolatilityIndicator {
         const m = month.find(i => i.symbol === indicator.symbol);
         const q = quarter.find(i => i.symbol === indicator.symbol);
         const f = future.find(i => i.symbol === indicator.symbol);
-        /*if (l1 && l2 && l3 && l4 && f) {
-          await fileUtil.appendFile('test', 'volatility.csv', [
-            l1.change,
-            l2.change,
-            l3.change,
-            l4.change,
-            f.change
-          ].join(',') + '\n');
-        }*/
-        /*let value = 0;
-        if (l1 && l1.change > 0) {
-          value += 0.125 + (l1.change / 1000)
-          if (l1.change > 0.003 && l1.change < 0.1) {
-            value += 0.125;
-          }
-        }
-        if (l2 && l2.change > 0) {
-          value += 0.125 + (l2.change / 1000)
-          if (l2.change > 0.003 && l2.change < 0.1) {
-            value += 0.125;
-          }
-        }
-        if (l3 && l3.change > 0) {
-          value += 0.125 + (l3.change / 1000)
-          if (l3.change > 0.05) {
-            value += 0.125;
-          }
-        }
-        if (l4 && l4.change > 0) {
-          value += 0.125 + (l4.change / 1000);
-          if (l4.change > 0.05) {
-            value += 0.125;
-          }
-        }
-        indicator.value = value;*/
         if (d && w && m && q) {
-          indicator.value = ruleUtil.findMatchingRuleValue(d.change, w.change, m.change, q.change);
+          indicator.value = ruleUtil.findMatchingRuleValue(rules, d.change, w.change, m.change, q.change);
         }
       } catch (e) {
 

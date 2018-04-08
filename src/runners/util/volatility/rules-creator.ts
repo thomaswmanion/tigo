@@ -1,35 +1,39 @@
-import { printUtil } from './../../util/print.util';
-import { Calculator } from './../../util/calculator.util';
-import { fileUtil } from './../../util/file.util';
-import { Rule } from '../../rule/rule.model';
+import { printUtil } from '../../../util/print.util';
+import { Calculator } from '../../../util/calculator.util';
+import { fileUtil } from '../../../util/file.util';
+import { Rule } from '../../../rule/rule.model';
 
 export async function run() {
   let rules: Rule[] = [];
-  const items = await readFile();
-  const minLength = items.length / 100;
+  let items = await readFile();
+  const length = items.length;
+  const minLength = items.length / 1000;
   let runs = 0;
   const overallMedian = Calculator.findMedian(items.map(i => i.earning));
-  const totalRuns = 1000 * 100000;
+  const totalRuns = 1000 * 1000 * 100;
   while (runs < totalRuns) {
+    
     const rule = createRandomRule();
 
     const matchingItems = findItemsThatMatchRule(rule, items);
 
     rule.value = Calculator.findMedian(matchingItems.map(i => i.earning));
     if (matchingItems.length >= minLength && rule.value > overallMedian) {
-      
+      rule.matchingItems = matchingItems.length / length;
+
       rules.push(rule);
       rules.sort((a, b) => b.value - a.value);
       rules = rules.filter((_, i) => i < 200);
     }
 
     runs++;
-    if (runs % 1000 === 0) {
+    if (runs % 10 === 0) {
       rules.filter((_, i) => i < 5);
-      console.log(Math.floor(runs / 1000) + ` - Overall Median: ${printUtil.asPercent(overallMedian)}`);
-      rules.filter((_, i) => i < 10).forEach((item, i) => {
-        console.log(`${i} - ${printUtil.asPercent(item.value)}`);
+      console.log(`Overall Median: ${printUtil.asPercent(overallMedian)} - Runs: ${runs}`);
+      rules.filter((_, i) => i < 20).forEach((item, i) => {
+        console.log(`${i} - ${printUtil.asPercent(item.value)} - Matching Items: ${printUtil.asPercent(item.matchingItems)}`);
       });
+      console.log('');
       await fileUtil.saveObject('.', 'rules.json', rules);
     }
   }
@@ -117,6 +121,7 @@ function getValInRange(min: number, max: number): number {
 
 
 function findItemsThatMatchRule(rule: Rule, items: Item[]): Item[] {
+
   return items.filter(i => {
 
     return i.day > rule.dayMin

@@ -28,7 +28,8 @@ export class StockPickerUtil {
         if (im.lastQuarter > 0.05) {
           value += 0.25;
         }
-        im.value = value;
+        im.value = im.lastWeek;
+        // im.value = value;
       });
       industryMedians.sort((a, b) => b.value - a.value);
 

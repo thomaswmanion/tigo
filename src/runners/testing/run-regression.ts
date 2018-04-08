@@ -55,7 +55,9 @@ export async function run() {
           } else {
             console.log('Invalid predictions');
           }
-        } catch (e) { }
+        } catch (e) {
+          console.log(e);
+        }
       }
     }
     //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);

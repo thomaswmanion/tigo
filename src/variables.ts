@@ -3,7 +3,7 @@ import { argv } from 'yargs';
 class Variables {
   numPrevDays = 6;
   numPredictedDays = 6;
-  
+
   mapStepSize = 6;
   mapSteps = 6;
   longMapSteps = 30;
@@ -13,11 +13,16 @@ class Variables {
 
   numSymbolsToCompare = 200;
 
-  topNumToBuy = 10;
+  topNumToBuy = 15;
   minStocksForBuying = 5;
 
+  // Volatility
+  numPrevousVolatilitySteps = 10;
+  numDiscoveryTries = 1000;
+  maxVolatilityRules = 200;
+
   // Testing
-  startDate = '10/1/2016'
+  startDate = '2/15/2017'
   endDate = '3/15/2018'
   volatilityDays = 10;
   testStepSize = 1;
@@ -49,9 +54,9 @@ Object.keys(argv).forEach(key => {
     const num = parseFloat(argv[key]);
     variables.numPrevDays = num;
     variables.numPredictedDays = num;
-    
+
     variables.mapStepSize = num;
   }
-  
+
   (variables as any)[key] = value;
 });
