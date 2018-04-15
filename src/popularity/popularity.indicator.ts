@@ -10,7 +10,7 @@ export class PopularityIndicator {
     console.log(`Creating popularity indicators for ${dateUtil.formatDate(date)}.`);
     const indicators: Indicator[] = [];
     try {
-      const pops = await Popularity.read(date);
+      const pops = await Popularity.read(dateUtil.getPreviousWorkDay(date));
       pops.filter(p => p.numBuyRatings > 0).forEach(pop => {
         const i = new Indicator(pop.symbol);
         i.value = pop.getValue();
