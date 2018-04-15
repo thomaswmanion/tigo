@@ -16,7 +16,7 @@ export class VolatilityIndicator {
     const week = await PriceChange.createPreviousNDays(date, 5);
     const month = await PriceChange.createPreviousNDays(date, 20);
     const quarter = await PriceChange.createPreviousNDays(date, 60);
-    const future = await PriceChange.createFuture(date);
+    // const future = await PriceChange.createFuture(date);
     const indicators: Indicator[] = (await symbolUtil.getSymbols()).map(s => new Indicator(s));
     for (const indicator of indicators) {
       try {
@@ -24,7 +24,7 @@ export class VolatilityIndicator {
         const w = week.find(i => i.symbol === indicator.symbol);
         const m = month.find(i => i.symbol === indicator.symbol);
         const q = quarter.find(i => i.symbol === indicator.symbol);
-        const f = future.find(i => i.symbol === indicator.symbol);
+        // const f = future.find(i => i.symbol === indicator.symbol);
         if (d && w && m && q) {
           indicator.value = ruleUtil.findMatchingRuleValue(rules, d.change, w.change, m.change, q.change);
         }

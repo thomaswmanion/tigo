@@ -14,7 +14,7 @@ export class StockPickerUtil {
     if (industryMedians.length > 0) {
 
       industryMedians.forEach(im => {
-        let value = im.lastWeek / 10000;
+        /*let value = im.lastWeek / 10000;
 
         if (im.lastDay > 0) {
           value += 0.25;
@@ -27,7 +27,7 @@ export class StockPickerUtil {
         }
         if (im.lastQuarter > 0.05) {
           value += 0.25;
-        }
+        }*/
         im.value = im.lastWeek;
         // im.value = value;
       });

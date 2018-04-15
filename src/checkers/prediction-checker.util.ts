@@ -1,5 +1,4 @@
 import { printUtil } from './../util/print.util';
-import { fileUtil } from './../util/file.util';
 import { PriceSnapshot } from './../pricing/price-snapshot.model';
 import { symbolUtil } from './../util/symbol.util';
 

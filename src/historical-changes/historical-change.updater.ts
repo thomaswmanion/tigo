@@ -98,7 +98,7 @@ export class HistoricalChangeUpdater {
     for (const priceChange of priceChanges) {
       const pc = stockMap.previousComparisons.find(pc1 => pc1.stock === priceChange.symbol);
       if (pc) {
-        let v: number;
+        let v: number = 0;
         if (priceChange.change >= 0 && variables.includeIncrease === 1) {
           v = pc.previousIncreaseImpliedIncrease / (pc.previousIncreaseImpliedIncrease + pc.previousIncreaseImpliedDecrease);
         } else if (variables.includeDecrease === 1) {
