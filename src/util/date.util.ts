@@ -13,6 +13,9 @@ export class DateUtil {
       if (argv.today === 'yesterday') {
         this.todayDate = this.getPreviousWorkDay(new Date());
       }
+      else if (argv.today === 'tomorrow') {
+        this.todayDate = this.getNextWorkDay(new Date());
+      }
       else {
         this.todayDate = argv.today ? new Date(argv.today) : new Date();
       }
