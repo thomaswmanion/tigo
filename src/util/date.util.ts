@@ -67,6 +67,10 @@ export class DateUtil {
     return (day === 6) || (day === 0) || this.holidays.indexOf(formatted) !== -1;
   }
 
+  isSameDay(d1: Date, d2: Date): boolean {
+    return this.formatDate(d1) === this.formatDate(d2);
+  }
+
   /**
    * Calculate the weekday milliseconds between two weekday dates.
    */

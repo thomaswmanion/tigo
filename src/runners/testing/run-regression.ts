@@ -1,3 +1,4 @@
+import { PopularityIndicator } from './../../popularity/popularity.indicator';
 import { PriceSnapshot } from './../../pricing/price-snapshot.model';
 import { predictionCheckerUtil } from '../../checkers/prediction-checker.util';
 import { Prediction } from '../../predictions/prediction.model';
@@ -37,6 +38,7 @@ export async function run() {
 
     if (prevExists && curExists && futureExists) {
       const pickedStocks = await StockPickerUtil.pickStocksForDate(curDate);
+      // const pickedStocks: any = true;
       if (pickedStocks) {
         try {
           if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
@@ -47,6 +49,10 @@ export async function run() {
           }
           if (variables.indicatorTypes.indexOf('volatility') !== -1 && variables.volatilityWeight > 0) {
             await volatilityIndicator.createVolatilityIndicatorsForDate(curDate);
+          }
+          if (variables.indicatorTypes.indexOf('popularity') !== -1 && variables.popularityWeight > 0) {
+            const popIndicator = new PopularityIndicator();
+            await popIndicator.createPopularityIndicatorsForDate(curDate);
           }
 
           const predictions = await predictionUtil.createPredictions(curDate);

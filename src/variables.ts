@@ -13,24 +13,29 @@ class Variables {
 
   numSymbolsToCompare = 200;
 
-  topNumToBuy = 15;
+  topNumToBuy = 10;
   minStocksForBuying = 5;
 
+  // Change
+  includeIncrease = 1;
+  includeDecrease = 1;
+
   // Volatility
-  numPrevousVolatilitySteps = 10;
-  numDiscoveryTries = 1000;
+  numPrevousVolatilitySteps = 50;
+  numDiscoveryTries = 10000;
   maxVolatilityRules = 200;
 
   // Testing
-  startDate = '2/15/2017'
+  startDate = '3/15/2017'
   endDate = '3/15/2018'
   volatilityDays = 10;
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['change', 'volatility'];
+  indicatorTypes = ['change', 'popularity'];
   changeWeight = 1;
   volatilityWeight = 1;
+  popularityWeight = 1;
 
   divideResultByIncrease = 0;
 }

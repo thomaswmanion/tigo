@@ -1,3 +1,4 @@
+import { symbolUtil } from './../util/symbol.util';
 import { fileUtil } from './../util/file.util';
 import { PriceChange } from '../pricing/price-change.model';
 import { Rule, RuleItem } from './rule.model';
@@ -43,10 +44,12 @@ class RuleUtil {
   async createRuleItemsForDate(date: Date): Promise<RuleItem[]> {
     let items: RuleItem[] = [];
     let curDate = date;
-    for (let i = 0; i < variables.numPrevousVolatilitySteps; i++) {
+    let numAdded = 0;
+    for (let i = 0; numAdded < variables.numPrevousVolatilitySteps && i < 1000; i++) {
       try {
         console.log(dateUtil.formatDate(curDate));
         const sub = await this.createRuleItemsForSubDate(curDate);
+        numAdded++;
         items.push(...sub);
       } catch (e) { }
       curDate = dateUtil.getPreviousWorkDay(curDate);
@@ -60,7 +63,8 @@ class RuleUtil {
       return obj;
     }
     let items: RuleItem[] = [];
-    const days = await PriceChange.createPreviousNDays(date, 1);
+    const symbols = await symbolUtil.getSymbols();
+    const days = (await PriceChange.createPreviousNDays(date, 1)).filter(s => symbols.indexOf(s.symbol) !== -1);
     const weeks = await PriceChange.createPreviousNDays(date, 5);
     const months = await PriceChange.createPreviousNDays(date, 20);
     const quarters = await PriceChange.createPreviousNDays(date, 60);

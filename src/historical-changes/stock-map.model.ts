@@ -52,7 +52,8 @@ export class StockMap {
     const hcu = new HistoricalChangeUpdater();
     let curDate = dateUtil.getDaysAgo(variables.numPredictedDays, date);
     const steps = type === 'change' ? variables.mapSteps : variables.longMapSteps;
-    for (let i = 0; i < steps; i++) {
+    let numAdded = 0;
+    for (let i = 0; numAdded < steps && i < 1000; i++) {
       console.log(dateUtil.formatDate(curDate));
       let changes: PriceChange[] = [];
       let futureChanges: PriceChange[] = [];
@@ -62,6 +63,7 @@ export class StockMap {
 
         changes = changes.filter(c => symbols.indexOf(c.symbol) !== -1);
         futureChanges = futureChanges.filter(c => symbols.indexOf(c.symbol) !== -1);
+        numAdded++;
       } catch (e) {
         // console.log(e);
       }

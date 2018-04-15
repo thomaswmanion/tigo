@@ -99,12 +99,12 @@ export class HistoricalChangeUpdater {
       const pc = stockMap.previousComparisons.find(pc1 => pc1.stock === priceChange.symbol);
       if (pc) {
         let v: number;
-        if (priceChange.change >= 0) {
+        if (priceChange.change >= 0 && variables.includeIncrease === 1) {
           v = pc.previousIncreaseImpliedIncrease / (pc.previousIncreaseImpliedIncrease + pc.previousIncreaseImpliedDecrease);
-        } else {
+        } else if (variables.includeDecrease === 1) {
           v = pc.previousDecreaseImpliedIncrease / (pc.previousDecreaseImpliedIncrease + pc.previousDecreaseImpliedDecrease);
         }
-        if (!isNaN(v)) {
+        if (v && !isNaN(v)) {
           if (variables.divideResultByIncrease) {
             const increase = pc.previousDecreaseImpliedIncrease + pc.previousIncreaseImpliedIncrease;
             const decrease = pc.previousDecreaseImpliedDecrease + pc.previousIncreaseImpliedDecrease;

@@ -23,7 +23,7 @@ export class PriceSnapshot {
     let prevDate: Date = dateUtil.getDaysAgo(variables.numPrevDays, curDate);
     let volatility = 0;
     let count = 0;
-    for (let i = 0; i < variables.volatilityDays; i++) {
+    for (let i = 0; i < variables.volatilityDays && i < 100; i++) {
       try {
         const curs = await this.readForDate(curDate)
         const prevs = await this.readForDate(prevDate);
