@@ -34,7 +34,7 @@ export class StockPickerUtil {
       industryMedians.sort((a, b) => b.value - a.value);
 
       industryMedians.forEach(m => {
-        fileUtil.appendFile('.', 'stock-picks.csv', `${m.lastDay},${m.lastWeek},${m.lastMonth},${m.lastQuarter},${m.future * -1}\n`);
+        // fileUtil.appendFile('.', 'stock-picks.csv', `${m.lastDay},${m.lastWeek},${m.lastMonth},${m.lastQuarter},${m.future * -1}\n`);
         const lastDay = printUtil.asPercent(m.lastDay);
         const lastWeek = printUtil.asPercent(m.lastWeek);
         const lastMonth = printUtil.asPercent(m.lastMonth);
@@ -67,15 +67,15 @@ export class StockPickerUtil {
         const lastWeek = await this.findMedianForIndustry(file, date, 5);
         const lastMonth = await this.findMedianForIndustry(file, date, 20);
         const lastQuarter = await this.findMedianForIndustry(file, date, 60);
-        const future = await this.findMedianForIndustry(file, date, -6);
-        if (lastDay && lastWeek && lastMonth && lastQuarter && future) {
+        // const future = await this.findMedianForIndustry(file, date, -6);
+        if (lastDay && lastWeek && lastMonth && lastQuarter) {
           industryMedians.push({
             industry: path.posix.basename(industry),
             lastDay,
             lastWeek,
             lastMonth,
             lastQuarter,
-            future,
+            future: 0,
             value: 0
           });
         }
