@@ -22,6 +22,7 @@ class SymbolUtil {
     } else {
       ls = [variables.symbolFile];
     }
+    console.log('Industry Filepaths', JSON.stringify(ls));
     return ls.map(i => path.join(p, i));
   }
 
