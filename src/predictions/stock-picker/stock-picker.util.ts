@@ -79,7 +79,9 @@ export class StockPickerUtil {
             value: 0
           });
         }
-      } catch (e) { }
+      } catch (e) {
+        console.log(e);
+      }
 
     }
     return industryMedians;
