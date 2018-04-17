@@ -31,7 +31,7 @@ export class Seller {
         let sellSymbols: SellSymbol[] = await Promise.all(positions.map(async p => {
             const instrument: InstrumentResult = await robinhood.get(p.instrument);
             const quantity = parseFloat(p.quantity);
-            return new SellSymbol(instrument.symbol, quantity, new Date(p.updated_at), parseFloat(p.average_buy_price));
+            return new SellSymbol(instrument.symbol, quantity, new Date(p.created_at), parseFloat(p.average_buy_price));
         }));
         const manager = new LastUpdateManager(robinhood, dateUtil.today);
         await manager.inflateData();
