@@ -1,7 +1,10 @@
+import { S3 } from 'aws-sdk/clients/s3';
 import { dateUtil } from './../util/date.util';
 import { symbolUtil } from "../util/symbol.util";
 import { Popularity } from "./popularity.model";
 import { Robinhood } from "../robinhood/robinhood.api";
+
+const s3 = new S3();
 
 export class PopularityUtil {
 
@@ -13,12 +16,16 @@ export class PopularityUtil {
         const pop = await this.downloadSymbol(symbol);
         pops.push(pop);
         if (pops.length % 100 === 0) {
-          console.log(`Collected ${pops.length} pops...`);``
+          console.log(`Collected ${pops.length} pops...`); ``
         }
       } catch (e) { }
     }
     await Popularity.save(dateUtil.today, pops);
     console.log(`Saved ${pops.length} pops!`);
+    const Key = dateUtil.formatDate(dateUtil.today) + '.json';
+    const Bucket = `tempest-artifacts/popularity`;
+    const Body = JSON.stringify(pops);
+    await s3.putObject({ Key, Bucket, Body }).promise();
   }
 
   async downloadSymbol(symbol: string): Promise<Popularity> {
