@@ -1,4 +1,4 @@
-import { S3 } from 'aws-sdk/clients/s3';
+import S3 from 'aws-sdk/clients/s3';
 import { dateUtil } from './../util/date.util';
 import { symbolUtil } from "../util/symbol.util";
 import { Popularity } from "./popularity.model";
