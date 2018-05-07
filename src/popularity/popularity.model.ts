@@ -15,10 +15,10 @@ export class Popularity {
   }
 
   getValue(): number {
-    const total = this.numBuyRatings + this.numSellRatings;
+    const total = this.numBuyRatings + this.numSellRatings + this.numHoldRatings;
     let value = 0;
     if (total !== 0) {
-      value = this.numBuyRatings / total;
+      value = (this.numBuyRatings + this.numHoldRatings) / total;
     }
 
     value += this.numBuyRatings / 1000;

@@ -26,14 +26,14 @@ class Variables {
   maxVolatilityRules = 200;
 
   // Testing
-  startDate = '3/15/2017'
-  endDate = '3/15/2018'
+  startDate = '4/17/2018';
+  endDate = '5/27/2018';
   volatilityDays = 10;
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['change', 'popularity'];
-  changeWeight = 1;
+  indicatorTypes = ['popularity', 'change'];
+  changeWeight = 0;
   volatilityWeight = 1;
   popularityWeight = 1;
 
