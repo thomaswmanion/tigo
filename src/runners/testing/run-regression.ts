@@ -37,9 +37,6 @@ export async function run() {
     const futureExists = await PriceSnapshot.existsForDate(futureDate);
 
     if (prevExists && curExists && futureExists) {
-      const pickedStocks = await StockPickerUtil.pickStocksForDate(curDate);
-      // const pickedStocks: any = true;
-      if (pickedStocks) {
         try {
           if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate);
@@ -64,7 +61,6 @@ export async function run() {
         } catch (e) {
           console.log(e);
         }
-      }
     }
     //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
     // await updater.updateForSymbols(prevDate);

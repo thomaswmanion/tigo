@@ -13,7 +13,7 @@ class Variables {
 
   numSymbolsToCompare = 200;
 
-  topNumToBuy = 10;
+  topNumToBuy = 20;
   minStocksForBuying = 5;
 
   // Change
@@ -33,7 +33,7 @@ class Variables {
 
   symbolFile = 'all';
   indicatorTypes = ['popularity', 'change'];
-  changeWeight = 0;
+  changeWeight = 1;
   volatilityWeight = 1;
   popularityWeight = 1;
 

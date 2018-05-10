@@ -4,6 +4,7 @@ import { fileUtil } from '../util/file.util';
 import { variables } from '../variables';
 import { HistoricalChangeUpdater } from './historical-change.updater';
 import { PriceChange } from '../pricing/price-change.model';
+import { String } from 'aws-sdk/clients/ec2';
 
 export class StockMap {
   static dir = 'maps';
@@ -41,9 +42,22 @@ export class StockMap {
       return new StockMap(stock, 0, 0, 0, 0, await PreviousComparison.createNewArray());
     }
   }
-
   static async createStockMapsForDate(date: Date, type: string): Promise<StockMap[]> {
-    const symbols = await symbolUtil.getSymbols();
+    const industries = symbolUtil.getCurrentIndustries();
+    const maps: StockMap[] = [];
+    for (const industry of industries) {
+      try {
+        const m = await this.createStockMapsForDateForIndustry(date, type, industry);
+        maps.push(...m);
+      } catch (e) {}
+    }
+    return maps;
+  }
+
+  static async createStockMapsForDateForIndustry(date: Date, type: string, industry: string): Promise<StockMap[]> {
+    
+    const symbols = await symbolUtil.getSymbols(industry);
+    console.log(industry, `${symbols.length} symbols`);
     let maps = symbols.map(s => {
       const pc = PreviousComparison.createNewArrayFromSymbols(symbols);
       const map = new StockMap(s, 0, 0, 0, 0, pc);

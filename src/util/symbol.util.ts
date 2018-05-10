@@ -4,8 +4,20 @@ import * as path from 'path';
 import { variables } from '../variables';
 
 class SymbolUtil {
-  async getCurrentIndustries(): Promise<string[]> {
-    return await fileUtil.readObject('.', `industry.json`);
+  getCurrentIndustries(): string[] {
+    return [
+      'basic-industries',
+      'capital-goods',
+      'consumer-services',
+      'energy',
+      'finance',
+      'healthcare',
+      'misc',
+      'non-durables',
+      'public-utilities',
+      'technology',
+      'transportation'
+    ];
   }
 
   async readIndustryFile(industry: string): Promise<string[]> {
@@ -26,13 +38,12 @@ class SymbolUtil {
     return ls.map(i => path.join(p, i));
   }
 
-  async getAllHealthcareSymbols(): Promise<string[]> {
-    const s = await fs.readFile(path.join(__dirname, '../../symbols.json', ), 'utf-8');
-    let symbols: string[] = JSON.parse(s);
-    return symbols;
-  }
-  async getSymbols(): Promise<string[]> {
-    const industries = await this.getCurrentIndustries();
+  async getSymbols(industry?: string): Promise<string[]> {
+    if (industry) {
+      const s = await this.readIndustryFile(industry);
+      return s;
+    }
+    const industries = this.getCurrentIndustries();
     const symbols: string[] = [];
     for (const industry of industries) {
       const s = await this.readIndustryFile(industry);
