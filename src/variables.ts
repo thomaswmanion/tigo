@@ -59,7 +59,6 @@ Object.keys(argv).forEach(key => {
     const num = parseFloat(argv[key]);
     variables.numPrevDays = num;
     variables.numPredictedDays = num;
-
     variables.mapStepSize = num;
   }
 

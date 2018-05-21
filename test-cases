@@ -1,4 +1,32 @@
+--changeWeight=0 --size=12
+--changeWeight=1 --size=12
+--changeWeight=0.01 --size=12
+--changeWeight=0.1 --size=12
+--changeWeight=0 --size=7
+--changeWeight=1 --size=7
+--changeWeight=0.01 --size=7
+--changeWeight=0.1 --size=7
+--changeWeight=0 --size=6
+--changeWeight=1 --size=6
+--changeWeight=0.01 --size=6
+--changeWeight=0.1 --size=6
+--changeWeight=0 --size=3
+--changeWeight=1 --size=3
+--changeWeight=0.01 --size=3
+--changeWeight=0.1 --size=3
+--changeWeight=0 --size=2
+--changeWeight=1 --size=2
+--changeWeight=0.01 --size=2
+--changeWeight=0.1 --size=2
+--changeWeight=0 --size=1
+--changeWeight=1 --size=1
+--changeWeight=0.01 --size=1
+--changeWeight=0.1 --size=1
+--changeWeight=0 --size=15
+--changeWeight=1 --size=15
+--changeWeight=0.01 --size=15
+--changeWeight=0.1 --size=15
+--changeWeight=0
 --changeWeight=1
 --changeWeight=0.01
 --changeWeight=0.1
---changeWeight=0
