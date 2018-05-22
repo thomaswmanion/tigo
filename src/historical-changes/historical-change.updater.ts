@@ -10,8 +10,11 @@ import { indicatorUtil } from '../indicators/indicator.util';
 export class HistoricalChangeUpdater {
   updateForSymbol(changes: PriceChange[], futureChange: PriceChange, stockMap: StockMap): void {
     const resultingChange = futureChange.change;
+    const beforeCount = changes.length;
+    const largeEnoughChanges = changes.filter(c => Math.abs(c.change) >= variables.changeAmount);
+    // console.log('Before Count: ' + beforeCount + ' - After Count: ' + largeEnoughChanges.length);
 
-    for (const change of changes) {
+    for (const change of largeEnoughChanges) {
       const comparison = stockMap.previousComparisons.find(p => p.stock === change.symbol);
       if (comparison) {
 
@@ -95,7 +98,8 @@ export class HistoricalChangeUpdater {
   createChangeIndicatorForSymbol(symbol: string, stockMap: StockMap, priceChanges: PriceChange[]): Indicator | undefined {
     let values: number[] = [];
     const thisChange = priceChanges.find(p => p.symbol === symbol);
-    for (const priceChange of priceChanges) {
+    const largeEnoughChanges = priceChanges.filter(c => Math.abs(c.change) >= variables.changeAmount);
+    for (const priceChange of largeEnoughChanges) {
       const pc = stockMap.previousComparisons.find(pc1 => pc1.stock === priceChange.symbol);
       if (pc) {
         let v: number = 0;

@@ -1,3 +1,4 @@
+import { DirectionIndicator } from './../../direction/direction.indicator';
 import { PopularityIndicator } from './../../popularity/popularity.indicator';
 import { PriceSnapshot } from './../../pricing/price-snapshot.model';
 import { predictionCheckerUtil } from '../../checkers/prediction-checker.util';
@@ -41,6 +42,12 @@ export async function run() {
           if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate);
           }
+
+          if (variables.indicatorTypes.indexOf('direction') !== -1 && variables.directionWeight > 0) {
+            const directionIndicator = new DirectionIndicator();
+            await directionIndicator.createDirectionIndicatorsForDate(curDate);
+          }
+
           if (variables.indicatorTypes.indexOf('long-change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate, 'long-change');
           }

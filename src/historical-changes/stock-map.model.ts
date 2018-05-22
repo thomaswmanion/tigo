@@ -42,6 +42,7 @@ export class StockMap {
       return new StockMap(stock, 0, 0, 0, 0, await PreviousComparison.createNewArray());
     }
   }
+
   static async createStockMapsForDate(date: Date, type: string): Promise<StockMap[]> {
     const industries = symbolUtil.getCurrentIndustries();
     const maps: StockMap[] = [];
@@ -49,13 +50,13 @@ export class StockMap {
       try {
         const m = await this.createStockMapsForDateForIndustry(date, type, industry);
         maps.push(...m);
-      } catch (e) {}
+      } catch (e) { }
     }
     return maps;
   }
 
   static async createStockMapsForDateForIndustry(date: Date, type: string, industry: string): Promise<StockMap[]> {
-    
+
     const symbols = await symbolUtil.getSymbols(industry);
     console.log(industry, `${symbols.length} symbols`);
     let maps = symbols.map(s => {

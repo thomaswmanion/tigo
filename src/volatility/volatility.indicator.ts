@@ -1,32 +1,36 @@
-import { indicatorUtil } from './../indicators/indicator.util';
-import { ruleUtil } from './../rule/rule.util';
+import { PriceChange } from '../pricing/price-change.model';
+import { indicatorUtil } from '../indicators/indicator.util';
 import { fileUtil } from '../util/file.util';
 import { Indicator } from '../indicators/indicator.model';
 import { dateUtil } from '../util/date.util';
 import { symbolUtil } from '../util/symbol.util';
-import { PriceChange } from '../pricing/price-change.model';
 import { variables } from '../variables';
 
 export class VolatilityIndicator {
   async createVolatilityIndicatorsForDate(date: Date) {
     console.log(`Creating volatility indicators for ${dateUtil.formatDate(date)}.`);
-    const rules = await ruleUtil.createRulesForDate(date);
-
-    const day = await PriceChange.createPreviousNDays(date, 1);
-    const week = await PriceChange.createPreviousNDays(date, 5);
-    const month = await PriceChange.createPreviousNDays(date, 20);
-    const quarter = await PriceChange.createPreviousNDays(date, 60);
-    // const future = await PriceChange.createFuture(date);
     const indicators: Indicator[] = (await symbolUtil.getSymbols()).map(s => new Indicator(s));
+    let curDate = date;
+    const previousChanges: PriceChange[][] = [];
+    for (let i = 0; i < variables.numPrevousVolatilitySteps; i++) {
+      try {
+        const changes = await PriceChange.createPreviousNDays(curDate, 1);
+        previousChanges.push(changes);
+      } catch (e) {
+
+      }
+      curDate = dateUtil.getPreviousWorkDay(curDate);
+    }
+
     for (const indicator of indicators) {
       try {
-        const d = day.find(i => i.symbol === indicator.symbol);
-        const w = week.find(i => i.symbol === indicator.symbol);
-        const m = month.find(i => i.symbol === indicator.symbol);
-        const q = quarter.find(i => i.symbol === indicator.symbol);
-        // const f = future.find(i => i.symbol === indicator.symbol);
-        if (d && w && m && q) {
-          indicator.value = ruleUtil.findMatchingRuleValue(rules, d.change, w.change, m.change, q.change);
+        const symbolChanges: PriceChange[] = previousChanges
+          .map(c => c.find(i => i.symbol === indicator.symbol))
+          .filter(i => i !== undefined) as PriceChange[];
+        // Picked Mean: 1.449% - All Median: 0.459% - Above: 14 - Below: 4 - Good Picks Percent: 77.78% - Yearly Value: 1.821]
+        const v = symbolChanges.map(c => Math.abs(c.change)).reduce((a, b) => (a + b), 0);
+        if (v) {
+          indicator.value = v;
         }
       } catch (e) {
 
