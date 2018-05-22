@@ -10,7 +10,6 @@ import { indicatorUtil } from '../indicators/indicator.util';
 export class HistoricalChangeUpdater {
   updateForSymbol(changes: PriceChange[], futureChange: PriceChange, stockMap: StockMap): void {
     const resultingChange = futureChange.change;
-    const beforeCount = changes.length;
     const largeEnoughChanges = changes.filter(c => Math.abs(c.change) >= variables.changeAmount);
     // console.log('Before Count: ' + beforeCount + ' - After Count: ' + largeEnoughChanges.length);
 

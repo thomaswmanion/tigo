@@ -9,7 +9,6 @@ import { indicatorUtil } from '../indicators/indicator.util';
 
 export class DirectionIndicator {
   async createDirectionIndicatorsForDate(date: Date) {
-    const changes = await PriceChange.createPrevious(date);
     console.log(`Creating direction indicators for ${dateUtil.formatDate(date)}.`);
     const indicators: Indicator[] = [];
     const industries = symbolUtil.getCurrentIndustries();

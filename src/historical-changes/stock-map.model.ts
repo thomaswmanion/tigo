@@ -4,7 +4,6 @@ import { fileUtil } from '../util/file.util';
 import { variables } from '../variables';
 import { HistoricalChangeUpdater } from './historical-change.updater';
 import { PriceChange } from '../pricing/price-change.model';
-import { String } from 'aws-sdk/clients/ec2';
 
 export class StockMap {
   static dir = 'maps';

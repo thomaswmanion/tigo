@@ -1,9 +1,6 @@
-import { printUtil } from './../../util/print.util';
 import { Calculator } from '../../util/calculator.util';
 import { PriceSnapshot } from '../../pricing/price-snapshot.model';
 import { dateUtil } from '../../util/date.util';
-import { symbolUtil } from '../../util/symbol.util';
-import { variables } from '../../variables';
 import { fileUtil } from '../../util/file.util';
 import * as path from 'path';
 

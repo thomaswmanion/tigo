@@ -11,7 +11,6 @@ import { HistoricalChangeUpdater } from '../../historical-changes/historical-cha
 import { dateUtil } from '../../util/date.util';
 import prettyMs from 'pretty-ms';
 import { variables } from '../../variables';
-import { StockPickerUtil } from '../../predictions/stock-picker/stock-picker.util';
 import { VolatilityIndicator } from '../../volatility/volatility.indicator';
 
 export async function run() {
