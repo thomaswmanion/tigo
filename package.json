@@ -22,7 +22,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "sync": "cd ~/tempest/popularity && aws s3 sync s3://tempest-artifacts/popularity/ . && cd ~/tempest/price-snapshots && aws s3 sync s3://tempest-artifacts/price-snapshots/ ."
   },
   "author": "",
   "license": "ISC"

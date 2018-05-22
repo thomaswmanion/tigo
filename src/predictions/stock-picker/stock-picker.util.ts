@@ -8,55 +8,6 @@ import { fileUtil } from '../../util/file.util';
 import * as path from 'path';
 
 export class StockPickerUtil {
-  static async pickStocksForDate(date: Date): Promise<boolean> {
-    const industryFilepaths = await symbolUtil.getIndustryFilepaths();
-    const industryMedians = await this.findMediansPerIndustry(industryFilepaths, date);
-    if (industryMedians.length > 0) {
-
-      industryMedians.forEach(im => {
-        /*let value = im.lastWeek / 10000;
-
-        if (im.lastDay > 0) {
-          value += 0.25;
-        }
-        if (im.lastWeek > 0.01) {
-          value += 0.25;
-        }
-        if (im.lastMonth > 0.03) {
-          value += 0.25;
-        }
-        if (im.lastQuarter > 0.05) {
-          value += 0.25;
-        }*/
-        im.value = im.lastWeek;
-        // im.value = value;
-      });
-      industryMedians.sort((a, b) => b.value - a.value);
-
-      industryMedians.forEach(m => {
-        // fileUtil.appendFile('.', 'stock-picks.csv', `${m.lastDay},${m.lastWeek},${m.lastMonth},${m.lastQuarter},${m.future * -1}\n`);
-        const lastDay = printUtil.asPercent(m.lastDay);
-        const lastWeek = printUtil.asPercent(m.lastWeek);
-        const lastMonth = printUtil.asPercent(m.lastMonth);
-        const lastQuarter = printUtil.asPercent(m.lastQuarter);
-        const future = printUtil.asPercent(m.future * -1);
-        console.log(`${m.industry} - Last Day: ${lastDay} - Last Week: ${lastWeek} - Last Month: ${lastMonth} - Last Quarter: ${lastQuarter} - Value: ${m.value} - Future: ${future}`);
-      });
-
-      const industries = industryMedians
-        .filter((_, i) => i < variables.numTopIndustries)
-        .map(i => i.industry);
-      if (industries.length) {
-        await fileUtil.saveObject('.', `industry.json`, industries);
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      console.error('No stocks picked.');
-      return false;
-    }
-  }
 
   static async findMediansPerIndustry(industryFilepaths: string[], date: Date): Promise<IndustryMedian[]> {
     const industryMedians: IndustryMedian[] = [];

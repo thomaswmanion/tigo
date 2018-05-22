@@ -1,11 +1,11 @@
 import { argv } from 'yargs';
 
 class Variables {
-  numPrevDays = 6;
-  numPredictedDays = 6;
+  numPrevDays = 5;
+  numPredictedDays = 5;
 
-  mapStepSize = 6;
-  mapSteps = 6;
+  mapStepSize = 5;
+  mapSteps = 5;
   longMapSteps = 30;
 
   numTopIndustries = 1;
@@ -13,17 +13,17 @@ class Variables {
 
   numSymbolsToCompare = 200;
 
-  topNumToBuy = 10;
+  topNumToBuy = 20;
   minStocksForBuying = 5;
 
   // Change
   includeIncrease = 1;
   includeDecrease = 1;
+  changeAmount = 0.05;
 
   // Volatility
-  numPrevousVolatilitySteps = 50;
-  numDiscoveryTries = 10000;
-  maxVolatilityRules = 200;
+  numPrevousVolatilitySteps = 20;
+  maxVolatility = 0.05;
 
   // Testing
   startDate = '4/17/2018';
@@ -32,10 +32,11 @@ class Variables {
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['popularity', 'change'];
-  changeWeight = 0;
-  volatilityWeight = 1;
-  popularityWeight = 1;
+  indicatorTypes = ['popularity', 'direction', 'volatility'];
+  changeWeight = 1;
+  directionWeight = 0.017403542409448303;
+  volatilityWeight = 0.6960913192452312;
+  popularityWeight = 0.9133038580684016;
 
   divideResultByIncrease = 0;
 }

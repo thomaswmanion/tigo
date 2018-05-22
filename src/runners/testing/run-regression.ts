@@ -1,3 +1,4 @@
+import { DirectionIndicator } from './../../direction/direction.indicator';
 import { PopularityIndicator } from './../../popularity/popularity.indicator';
 import { PriceSnapshot } from './../../pricing/price-snapshot.model';
 import { predictionCheckerUtil } from '../../checkers/prediction-checker.util';
@@ -37,13 +38,16 @@ export async function run() {
     const futureExists = await PriceSnapshot.existsForDate(futureDate);
 
     if (prevExists && curExists && futureExists) {
-      const pickedStocks = await StockPickerUtil.pickStocksForDate(curDate);
-      // const pickedStocks: any = true;
-      if (pickedStocks) {
         try {
           if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate);
           }
+
+          if (variables.indicatorTypes.indexOf('direction') !== -1 && variables.directionWeight > 0) {
+            const directionIndicator = new DirectionIndicator();
+            await directionIndicator.createDirectionIndicatorsForDate(curDate);
+          }
+
           if (variables.indicatorTypes.indexOf('long-change') !== -1 && variables.changeWeight > 0) {
             await updater.createChangeIndicatorsForDate(curDate, 'long-change');
           }
@@ -64,7 +68,6 @@ export async function run() {
         } catch (e) {
           console.log(e);
         }
-      }
     }
     //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
     // await updater.updateForSymbols(prevDate);
