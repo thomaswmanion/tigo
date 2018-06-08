@@ -21,7 +21,7 @@ export class Popularity {
       value = (this.numBuyRatings + this.numHoldRatings) / total;
     }
 
-    value += this.numBuyRatings / 1000;
+    // value += this.numBuyRatings / 1000;
 
     return value;
   }
