@@ -1,3 +1,4 @@
+import { NasdaqRatingIndicator } from './../../nasdaq-rating/nasdaq-rating.indicator';
 import { DirectionIndicator } from './../../direction/direction.indicator';
 import { PopularityIndicator } from './../../popularity/popularity.indicator';
 import { PriceSnapshot } from './../../pricing/price-snapshot.model';
@@ -37,36 +38,40 @@ export async function run() {
     const futureExists = await PriceSnapshot.existsForDate(futureDate);
 
     if (prevExists && curExists && futureExists) {
-        try {
-          if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
-            await updater.createChangeIndicatorsForDate(curDate);
-          }
-
-          if (variables.indicatorTypes.indexOf('direction') !== -1 && variables.directionWeight > 0) {
-            const directionIndicator = new DirectionIndicator();
-            await directionIndicator.createDirectionIndicatorsForDate(curDate);
-          }
-
-          if (variables.indicatorTypes.indexOf('long-change') !== -1 && variables.changeWeight > 0) {
-            await updater.createChangeIndicatorsForDate(curDate, 'long-change');
-          }
-          if (variables.indicatorTypes.indexOf('volatility') !== -1 && variables.volatilityWeight > 0) {
-            await volatilityIndicator.createVolatilityIndicatorsForDate(curDate);
-          }
-          if (variables.indicatorTypes.indexOf('popularity') !== -1 && variables.popularityWeight > 0) {
-            const popIndicator = new PopularityIndicator();
-            await popIndicator.createPopularityIndicatorsForDate(curDate);
-          }
-
-          const predictions = await predictionUtil.createPredictions(curDate);
-          if (predictions && predictions.length > 0) {
-            await predictionCheckerUtil.printPredictionResults(curDate, predictions);
-          } else {
-            console.log('Invalid predictions');
-          }
-        } catch (e) {
-          console.log(e);
+      try {
+        if (variables.indicatorTypes.indexOf('change') !== -1 && variables.changeWeight > 0) {
+          await updater.createChangeIndicatorsForDate(curDate);
         }
+
+        if (variables.indicatorTypes.indexOf('direction') !== -1 && variables.directionWeight > 0) {
+          const directionIndicator = new DirectionIndicator();
+          await directionIndicator.createDirectionIndicatorsForDate(curDate);
+        }
+
+        if (variables.indicatorTypes.indexOf('long-change') !== -1 && variables.changeWeight > 0) {
+          await updater.createChangeIndicatorsForDate(curDate, 'long-change');
+        }
+        if (variables.indicatorTypes.indexOf('volatility') !== -1 && variables.volatilityWeight > 0) {
+          await volatilityIndicator.createVolatilityIndicatorsForDate(curDate);
+        }
+        if (variables.indicatorTypes.indexOf('popularity') !== -1 && variables.popularityWeight > 0) {
+          const popIndicator = new PopularityIndicator();
+          await popIndicator.createPopularityIndicatorsForDate(curDate);
+        }
+        if (variables.indicatorTypes.indexOf('nasdaq-rating') !== -1 && variables.nasdaqRatingWeight > 0) {
+          const nasdaqRatingIndicator = new NasdaqRatingIndicator();
+          await nasdaqRatingIndicator.createNasdaqRatingIndicatorsForDate(curDate);
+        }
+
+        const predictions = await predictionUtil.createPredictions(curDate);
+        if (predictions && predictions.length > 0) {
+          await predictionCheckerUtil.printPredictionResults(curDate, predictions);
+        } else {
+          console.log('Invalid predictions');
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
     //const prevDate = dateUtil.getDaysAgo(variables.numPredictedDays, curDate);
     // await updater.updateForSymbols(prevDate);

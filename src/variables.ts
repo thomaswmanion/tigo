@@ -26,17 +26,19 @@ class Variables {
   maxVolatility = 0.05;
 
   // Testing
-  startDate = '4/17/2018';
+  // startDate = '4/17/2018';
+  startDate = '4/27/2018';
   endDate = '6/27/2018';
   volatilityDays = 10;
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['popularity', 'direction', 'volatility'];
+  indicatorTypes = ['popularity', 'direction', 'volatility', 'nasdaq-rating'];
   changeWeight = 1;
   directionWeight = 0.017403542409448303;
   volatilityWeight = 0.6960913192452312;
   popularityWeight = 0.9133038580684016;
+  nasdaqRatingWeight = 0.1;
 
   divideResultByIncrease = 0;
 }

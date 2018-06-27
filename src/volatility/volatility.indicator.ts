@@ -29,7 +29,7 @@ export class VolatilityIndicator {
           .filter(i => i !== undefined) as PriceChange[];
         // Picked Mean: 1.449% - All Median: 0.459% - Above: 14 - Below: 4 - Good Picks Percent: 77.78% - Yearly Value: 1.821]
         const v = symbolChanges.map(c => Math.abs(c.change)).reduce((a, b) => (a + b), 0);
-        if (v) {
+        if (v && !isNaN(v)) {
           indicator.value = v;
         }
       } catch (e) {
