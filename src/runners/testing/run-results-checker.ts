@@ -106,7 +106,7 @@ async function runForDate(date: Date) {
   return tradeResults.filter(tr => tr.endPrice > 0 && tr.startPrice !== tr.endPrice);
 }
 
-async function getLastPredictions(date: Date): Promise<string[]> {
+/* async function getLastPredictions(date: Date): Promise<string[]> {
   const lastPredictions: string[] = [];
   let curDate = date;
   for (let i = 0; i < 5; i++) {
@@ -120,6 +120,7 @@ async function getLastPredictions(date: Date): Promise<string[]> {
   }
   return lastPredictions;
 }
+*/
 
 interface TradeResult {
   buyDate: Date;

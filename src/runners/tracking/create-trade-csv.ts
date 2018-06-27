@@ -5,7 +5,6 @@ import { dateUtil } from '../../util/date.util';
 import { Wallet } from './../../tracking/wallet';
 import { TradeResult } from '../../tracking/trade';
 import { MoneyTracker } from '../../tracking/money-tracker';
-import { variables } from '../../variables';
 
 export async function createTradesCsv() {
   const creds = await CredentialsManager.readCredentials();

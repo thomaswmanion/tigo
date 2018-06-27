@@ -1,5 +1,4 @@
 import S3 from 'aws-sdk/clients/s3';
-import { get } from 'request-promise-native';
 
 import { NasdaqRating } from './nasdaq-rating.model';
 import { symbolUtil } from '../util/symbol.util';
