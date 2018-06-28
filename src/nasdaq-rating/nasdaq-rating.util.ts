@@ -1,11 +1,12 @@
+import { fileUtil } from './../util/file.util';
 import S3 from 'aws-sdk/clients/s3';
 
 import { NasdaqRating } from './nasdaq-rating.model';
 import { symbolUtil } from '../util/symbol.util';
 import { dateUtil } from './../util/date.util';
 import getPixels from 'get-pixels';
-import * as tmp from 'tmp';
-import { execSync } from 'child_process';
+import * as path from 'path';
+import * as fs from 'fs-extra';
 
 const s3 = new S3();
 export class NasdaqRatingUtil {
@@ -35,21 +36,17 @@ export class NasdaqRatingUtil {
   }
 
   async downloadSymbol(symbol: string): Promise<NasdaqRating> {
-    const filename = await this.downloadImage(symbol);
+    const filename = path.join(fileUtil.tempestHome, 'nasdaq-images', `${symbol}.jpeg`);
     const location = await this.getLocation(filename);
     const rating = new NasdaqRating(symbol, location);
     return rating;
   }
 
-  async downloadImage(symbol: string): Promise<string> {
-    const tmpFile = tmp.fileSync({ postfix: '.jpeg' });
-    const url = `https://www.nasdaq.com/charts/${symbol}_rm.jpeg`;
-    await dateUtil.sleep(20);
-    execSync(`curl -s ${url} > ${tmpFile.name}`);
-    return tmpFile.name;
-  }
-
-  getLocation(file: string): Promise<number> {
+  async getLocation(file: string): Promise<number> {
+    const exists = await fs.pathExists(file);
+    if (!exists) {
+      return 0;
+    }
     return new Promise<number>((resolve, reject) => {
       getPixels(file, (err, pixels) => {
         if (err) {
@@ -58,6 +55,7 @@ export class NasdaqRatingUtil {
         const p = pixels.shape.slice();
         const width = p[0];
         const start = 15;
+
 
         for (let i = start; i < width; i++) {
           const p = this.getPoint(pixels.data, i, 70, width);
