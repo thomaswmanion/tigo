@@ -35,15 +35,16 @@ export class NasdaqRatingUtil {
   }
 
   async downloadSymbol(symbol: string): Promise<NasdaqRating> {
-    const filename = this.downloadImage(symbol);
+    const filename = await this.downloadImage(symbol);
     const location = await this.getLocation(filename);
     const rating = new NasdaqRating(symbol, location);
     return rating;
   }
 
-  downloadImage(symbol: string): string {
+  async downloadImage(symbol: string): Promise<string> {
     const tmpFile = tmp.fileSync({ postfix: '.jpeg' });
     const url = `https://www.nasdaq.com/charts/${symbol}_rm.jpeg`;
+    await dateUtil.sleep(20);
     execSync(`curl -s ${url} > ${tmpFile.name}`);
     return tmpFile.name;
   }
