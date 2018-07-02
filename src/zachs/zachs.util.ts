@@ -15,7 +15,7 @@ export class ZachsUtil {
       i++;
       console.log(`Zachs ${i} of ${symbols.length} - ${symbol}. ${zachsz.length} collected.`);
       try {
-        
+
         const page = await this.downloadPage(symbol);
         const z = await this.determineValue(symbol, page);
         if (z.rating) {
@@ -70,8 +70,3 @@ export class ZachsUtil {
   }
 }
 export const zachsUtil = new ZachsUtil();
-
-interface MiddleResponse {
-  symbol: string;
-  info: Zachs;
-}
