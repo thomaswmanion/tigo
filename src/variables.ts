@@ -33,12 +33,13 @@ class Variables {
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['popularity', 'direction', 'volatility', 'nasdaq-rating'];
+  indicatorTypes = ['popularity', 'direction', 'volatility', 'zachs'];
   changeWeight = 1;
   directionWeight = 0.017403542409448303;
   volatilityWeight = 0.6960913192452312;
   popularityWeight = 0.9133038580684016;
-  nasdaqRatingWeight = 0.1;
+  nasdaqRatingWeight = 0;
+  zachsRatingWeight = 0.1;
 
   divideResultByIncrease = 0;
 }
