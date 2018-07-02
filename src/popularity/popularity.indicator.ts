@@ -7,6 +7,7 @@ import { variables } from '../variables';
 
 export class PopularityIndicator {
   async createPopularityIndicatorsForDate(date: Date) {
+    const start = Date.now();
     console.log(`Creating popularity indicators for ${dateUtil.formatDate(date)}.`);
     const indicators: Indicator[] = [];
     try {
@@ -23,7 +24,8 @@ export class PopularityIndicator {
     if (indicators.length > 0) {
       indicatorUtil.normalizeIndicators(indicators, variables.volatilityWeight);
       await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.popularity.json`, indicators);
-      console.log(`Created ${indicators.length} popularity indicators for ${dateUtil.formatDate(date)}!`);
+      const runtime = Date.now() - start;
+      console.log(`Created ${indicators.length} popularity indicators for ${dateUtil.formatDate(date)}! Runtime: ${runtime}ms`);
     }
   }
 }

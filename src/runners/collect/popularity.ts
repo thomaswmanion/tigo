@@ -3,8 +3,9 @@ import { zachsUtil } from '../../zachs/zachs.util';
 import { popularityUtil } from './../../popularity/popularity.util';
 
 async function run() {
-  // await popularityUtil.download();
-  // await nasdaqRatingUtil.download();
-  await zachsUtil.download();
+  await Promise.all([
+    popularityUtil.download(),
+    zachsUtil.download()
+  ]);
 }
 run();

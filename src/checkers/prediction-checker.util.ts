@@ -46,9 +46,9 @@ class PredictionCheckerUtil {
       if (change) {
         let c = change.change;
         if (c > 0.25) {
-          c = 0.25;
+          // c = 0.25;
         } else if (c < -0.25) {
-          c = -0.25;
+          // c = -0.25;
         }
         results.push(c);
         if (!checkAll) {
@@ -121,7 +121,7 @@ class PredictionCheckerUtil {
       const yearlyValue = Math.pow(1 + Calculator.findMean(rMeans), 250 / variables.numPredictedDays);
       console.log(`[Date ${dateUtil.formatDate(date)} - Picked Mean: ${mean}% - All Median: ${allMedian.toFixed(3)}%]`);
       console.log(`[Overall ${dateUtil.formatDate(date)} - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Yearly Value: ${yearlyValue.toFixed(3)}]`);
-      console.log(this.industryResultString());
+      // console.log(this.industryResultString());
       try {
         /* const last1 = PriceChange.median(await PriceChange.createPreviousNDays(date, 1)) * 100;
         const last2 = PriceChange.median(await PriceChange.createPreviousNDays(date, 6)) * 100;

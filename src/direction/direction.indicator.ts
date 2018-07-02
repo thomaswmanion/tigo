@@ -9,6 +9,7 @@ import { indicatorUtil } from '../indicators/indicator.util';
 
 export class DirectionIndicator {
   async createDirectionIndicatorsForDate(date: Date) {
+    const start = Date.now();
     console.log(`Creating direction indicators for ${dateUtil.formatDate(date)}.`);
     const indicators: Indicator[] = [];
     const industries = symbolUtil.getCurrentIndustries();
@@ -31,7 +32,8 @@ export class DirectionIndicator {
     
     indicatorUtil.normalizeIndicators(indicators, variables.directionWeight);
     await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.direction.json`, indicators);
-    console.log(`Created ${indicators.length} indicators for ${dateUtil.formatDate(date)}!`);
+    const runtime = Date.now() - start;
+    console.log(`Created ${indicators.length} indicators for ${dateUtil.formatDate(date)}! Runtime: ${runtime}ms`);
   }
 
   isInRange(num: number, low: number, high: number): boolean {

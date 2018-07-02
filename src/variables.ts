@@ -27,8 +27,8 @@ class Variables {
 
   // Testing
   // startDate = '4/17/2018';
-  startDate = '4/27/2018';
-  endDate = '6/27/2018';
+  startDate = '4/17/2018';
+  endDate = '7/30/2018';
   volatilityDays = 10;
   testStepSize = 1;
 
