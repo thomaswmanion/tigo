@@ -46,11 +46,10 @@ export class Buyer {
   }
 
   async runBuy(date: Date): Promise<void> {
-
+    const credentials = await CredentialsManager.readCredentials();
     const predictions = await predictionUtil.readPredictions(date);
     const stocksToBuy = predictions.filter((_, i) => i < variables.topNumToBuy).map(p => new SymbolTradeMeta(p.symbol));
 
-    const credentials = await CredentialsManager.readCredentials();
     const robinhood = new Robinhood(credentials.username, credentials.password);
     await robinhood.login();
     const robinhoodUtil = new RobinhoodUtil(robinhood);
