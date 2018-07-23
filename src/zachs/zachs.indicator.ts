@@ -13,9 +13,12 @@ export class ZachsIndicator {
       const zachz = await Zachs.read(dateUtil.getPreviousWorkDay(date));
       zachz.forEach(z => {
         const i = new Indicator(z.symbol);
-        i.value = z.rank;
-        const bonus = (z.total - z.rating) / z.total; //percent above
-        i.value += (bonus * 2);
+        i.value = z.rating;
+        const bonus = (z.total - z.rank) / z.total; //percent above
+        // console.log(JSON.stringify(z));
+        if (!isNaN(bonus)) {
+          i.value += (bonus * variables.zachsBonusWeight);
+        }
         indicators.push(i);
       });
     } catch (e) {

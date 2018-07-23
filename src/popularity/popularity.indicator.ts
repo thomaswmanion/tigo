@@ -22,7 +22,7 @@ export class PopularityIndicator {
     }
 
     if (indicators.length > 0) {
-      indicatorUtil.normalizeIndicators(indicators, variables.volatilityWeight);
+      indicatorUtil.normalizeIndicators(indicators, variables.popularityWeight);
       await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.popularity.json`, indicators);
       const runtime = Date.now() - start;
       console.log(`Created ${indicators.length} popularity indicators for ${dateUtil.formatDate(date)}! Runtime: ${runtime}ms`);

@@ -16,6 +16,7 @@ class PredictionUtil {
       try {
 
         const indicators = await indicatorUtil.readAndSortIndicatorsForDateAndType(date, type);
+        console.log(indicators.length);
         allIndicators.push(indicators);
         console.log(`Collected ${type}.`);
       } catch (e) { }

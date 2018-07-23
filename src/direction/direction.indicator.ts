@@ -21,7 +21,10 @@ export class DirectionIndicator {
         const industryMedian = Calculator.findMedian(industryChanges.map(c => c.change));
         if (industryMedian && !isNaN(industryMedian)) {
           const is = symbols.map(s => new Indicator(s));
-          is.forEach(i => i.value = industryMedian);
+          
+          is.forEach(i => {
+            i.value = industryMedian;
+          });
           indicators.push(...is);
         }
       } catch (e) {

@@ -19,6 +19,7 @@
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
     "search": "^1.0.0",
+    "technicalindicators": "^1.1.11",
     "tmp": "0.0.33",
     "typescript": "^2.9.2",
     "yargs": "^12.0.1"
@@ -29,7 +30,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "sync": "cd ~/tempest/popularity && aws s3 sync s3://tempest-artifacts/popularity/ . && cd ~/tempest/price-snapshots && aws s3 sync s3://tempest-artifacts/price-snapshots/ ."
+    "sync": "npm run sync-pop && npm run sync-snap && npm run sync-zachs",
+    "sync-pop": "cd ~/tempest/popularity && aws s3 sync s3://tempest-artifacts/popularity/ .",
+    "sync-snap": "cd ~/tempest/price-snapshots && aws s3 sync s3://tempest-artifacts/price-snapshots/ .",
+    "sync-zachs": "cd ~/tempest/zachs && aws s3 sync s3://tempest-artifacts/zachs/ ."
   },
   "author": "",
   "license": "ISC"

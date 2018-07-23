@@ -1,3 +1,5 @@
+import { RelativeStrengthIndicator } from './../../relative-strength/relative-strength.indicator';
+import { ZachsIndicator } from './../../zachs/zachs.indicator';
 import { NasdaqRatingIndicator } from './../../nasdaq-rating/nasdaq-rating.indicator';
 import { DirectionIndicator } from './../../direction/direction.indicator';
 import { PopularityIndicator } from './../../popularity/popularity.indicator';
@@ -61,6 +63,16 @@ export async function run() {
         if (variables.indicatorTypes.indexOf('nasdaq-rating') !== -1 && variables.nasdaqRatingWeight > 0) {
           const nasdaqRatingIndicator = new NasdaqRatingIndicator();
           await nasdaqRatingIndicator.createNasdaqRatingIndicatorsForDate(curDate);
+        }
+
+        if (variables.indicatorTypes.indexOf('zachs') !== -1 && variables.zachsRatingWeight > 0) {
+          const zachsIndicator = new ZachsIndicator();
+          await zachsIndicator.createZachsIndicatorsForDate(curDate);
+        }
+
+        if (variables.indicatorTypes.indexOf('relative-strength') !== -1 && variables.relativeStrengthWeight > 0) {
+          const relativeStrengthIndicator = new RelativeStrengthIndicator();
+          await relativeStrengthIndicator.createIndicatorsForDate(curDate);
         }
 
         const predictions = await predictionUtil.createPredictions(curDate);
