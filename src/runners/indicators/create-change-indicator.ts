@@ -1,3 +1,4 @@
+import { RelativeStrengthIndicator } from './../../relative-strength/relative-strength.indicator';
 import { ZachsIndicator } from './../../zachs/zachs.indicator';
 import { VolatilityIndicator } from './../../volatility/volatility.indicator';
 import { PopularityIndicator } from './../../popularity/popularity.indicator';
@@ -11,10 +12,10 @@ export async function createChangeIndicator() {
   await dirIndicator.createDirectionIndicatorsForDate(dateUtil.today);
   const volIndicator = new VolatilityIndicator();
   await volIndicator.createVolatilityIndicatorsForDate(dateUtil.today);
-  // const nasdaqRatingIndicator = new NasdaqRatingIndicator();
-  // await nasdaqRatingIndicator.createNasdaqRatingIndicatorsForDate(dateUtil.today);
+  const relativeStrengthIndicator = new RelativeStrengthIndicator();
+  await relativeStrengthIndicator.createIndicatorsForDate(dateUtil.today);
   const zachsIndicator = new ZachsIndicator();
-  zachsIndicator.createZachsIndicatorsForDate(dateUtil.today);
+  await zachsIndicator.createZachsIndicatorsForDate(dateUtil.today);
 }
 createChangeIndicator().catch(e => {
   console.error(e);
