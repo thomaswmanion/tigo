@@ -1,4 +1,3 @@
-import { Calculator } from './../util/calculator.util';
 import { fileUtil } from '../util/file.util';
 import { dateUtil } from '../util/date.util';
 import { Indicator } from './indicator.model';
