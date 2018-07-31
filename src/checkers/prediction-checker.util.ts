@@ -25,6 +25,7 @@ class PredictionCheckerUtil {
     try {
       changes = await PriceChange.createFuture(date)
     } catch (e) {
+      console.log(e.message);
       return { mean: 0, median: 0 };
     }
 
@@ -45,10 +46,17 @@ class PredictionCheckerUtil {
       const change = changes.find(p => p.symbol === prediction.symbol);
       if (change) {
         let c = change.change;
-        if (c > 0.25) {
-          // c = 0.25;
-        } else if (c < -0.25) {
-          // c = -0.25;
+        if (!checkAll) {
+          if (c > 0) {
+            this.above++;
+          } else if (c < 0) {
+            this.below++;
+          }
+        }
+        if (c > 0.5) {
+          c = 0.5;
+        } else if (c < -0.5) {
+          c = -0.5;
         }
         results.push(c);
         if (!checkAll) {
@@ -96,18 +104,12 @@ class PredictionCheckerUtil {
     const result = await this.checkPredictions(date, predictions);
     const all = await this.checkPredictions(date, predictions, true);
 
-
-    if (result.mean && result.median) {
+    if (result.mean || result.median) {
       this.results.push(result);
       const allMedian = all.median * 100;
       this.allResultsMedians.push(allMedian);
       const overallAllStockMedian = Calculator.findMean(this.allResultsMedians).toFixed(3);
       const mean = (result.mean * 100).toFixed(3);
-      if (result.mean > 0) {
-        this.above++;
-      } else if (result.mean < 0) {
-        this.below++;
-      }
 
       const industries = await symbolUtil.getCurrentIndustries();
       for (const industry of industries) {

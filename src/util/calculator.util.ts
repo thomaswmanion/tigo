@@ -35,4 +35,14 @@ export class Calculator {
   short(num: number, digits: number = 4): number {
     return parseFloat(num.toFixed(digits));
   }
+
+  static getStdDev(data: number[]): number {
+    const mean = this.findMean(data);
+    const diffSqredArr: number[] = [];
+    for (let j = 0; j < data.length; j += 1) {
+      diffSqredArr.push(Math.pow((data[j] - mean), 2));
+    }
+    const total = diffSqredArr.reduce((a, b) => a + b);
+    return Math.sqrt(total / data.length);
+  }
 }

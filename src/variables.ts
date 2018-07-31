@@ -23,27 +23,28 @@ class Variables {
 
   // Volatility
   numPrevousVolatilitySteps = 20;
+  numKstSteps = 40;
   maxVolatility = 0.05;
 
   // Testing
   // startDate = '4/17/2018';
   // startDate = '6/1/2018';
-  startDate = '4/1/2018';
-  endDate = '7/30/2018';
+  startDate = '7/1/2018';
+  endDate = '7/20/2018';
   volatilityDays = 10;
   testStepSize = 1;
 
   symbolFile = 'all';
-  indicatorTypes = ['popularity', 'direction', 'volatility', 'zachs', 'relative-strength'];
-  changeWeight = 1;
-  directionWeight = 0.06329439146188465; //0.9133038580684016;
-  volatilityWeight = 0.6896129933778206;
-  popularityWeight = 0.5155262904678888;
-  relativeStrengthWeight = 0.036733819676656676;
+  indicatorTypes = ['popularity', 'direction', 'volatility', 'zachs', 'relative-strength', 'kst'];
+  changeWeight = 0;
+  directionWeight = 0.1; // 0.06329439146188465; //0.9133038580684016;
+  volatilityWeight = 0; // 0.6896129933778206;
+  popularityWeight = 0; // 0.5155262904678888;
+  relativeStrengthWeight = 1; // 0.036733819676656676;
+  kstWeight = 0; // 0.036733819676656676;
   nasdaqRatingWeight = 0;
-  
-  zachsRatingWeight = 0.5650440714229403;
-  zachsBonusWeight = 0.9243612055039385;
+  zachsRatingWeight = 0; // 0.5650440714229403;
+  zachsBonusWeight = 0.001; // 0.9243612055039385;
 
   divideResultByIncrease = 0;
 }

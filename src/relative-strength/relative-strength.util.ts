@@ -5,10 +5,10 @@ import { variables } from '../variables';
 import { Indicator } from '../indicators/indicator.model';
 
 class RelativeStrengthUtil {
-  async getStockPriceListMap(date: Date): Promise<Map<string, number[]>> {
+  async getStockPriceListMap(date: Date, steps = variables.numPrevousVolatilitySteps): Promise<Map<string, number[]>> {
     let curDate = date;
     const map = new Map<string, number[]>();
-    for (let i = 0; i < variables.numPrevousVolatilitySteps; i++) {
+    for (let i = 0; i < steps; i++) {
       try {
         const snaps = await PriceSnapshot.readForDate(curDate);
         snaps.forEach(snap => {

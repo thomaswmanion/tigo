@@ -1,3 +1,4 @@
+import { KstIndicator } from './../../kst/kst.indicator';
 import { RelativeStrengthIndicator } from './../../relative-strength/relative-strength.indicator';
 import { ZachsIndicator } from './../../zachs/zachs.indicator';
 import { VolatilityIndicator } from './../../volatility/volatility.indicator';
@@ -16,6 +17,8 @@ export async function createChangeIndicator() {
   await relativeStrengthIndicator.createIndicatorsForDate(dateUtil.today);
   const zachsIndicator = new ZachsIndicator();
   await zachsIndicator.createZachsIndicatorsForDate(dateUtil.today);
+  const kstIndicator = new KstIndicator();
+  await kstIndicator.createIndicatorsForDate(dateUtil.today);
 }
 createChangeIndicator().catch(e => {
   console.error(e);

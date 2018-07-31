@@ -48,7 +48,7 @@ export class VolatilityIndicator {
       }
     }
     if (indicators.length) {
-      indicatorUtil.normalizeIndicators(indicators, variables.volatilityWeight);
+      indicatorUtil.normalizeIndicators(indicators, variables.volatilityWeight, true);
 
       await fileUtil.saveObject(Indicator.dir, `${dateUtil.formatDate(date)}.volatility.json`, indicators);
       const runtime = Date.now() - start;

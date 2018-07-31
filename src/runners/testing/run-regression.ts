@@ -1,3 +1,4 @@
+import { KstIndicator } from './../../kst/kst.indicator';
 import { RelativeStrengthIndicator } from './../../relative-strength/relative-strength.indicator';
 import { ZachsIndicator } from './../../zachs/zachs.indicator';
 import { NasdaqRatingIndicator } from './../../nasdaq-rating/nasdaq-rating.indicator';
@@ -73,6 +74,10 @@ export async function run() {
         if (variables.indicatorTypes.indexOf('relative-strength') !== -1 && variables.relativeStrengthWeight > 0) {
           const relativeStrengthIndicator = new RelativeStrengthIndicator();
           await relativeStrengthIndicator.createIndicatorsForDate(curDate);
+        }
+        if (variables.indicatorTypes.indexOf('kst') !== -1 && variables.kstWeight > 0) {
+          const kstIndicator = new KstIndicator();
+          await kstIndicator.createIndicatorsForDate(curDate);
         }
 
         const predictions = await predictionUtil.createPredictions(curDate);
