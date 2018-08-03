@@ -1,1 +1,4 @@
+--popularityWeight=0.1
+--zachsRatingWeight=0.1
+--popularityWeight=0.1 --zachsRatingWeight=0.1
 --base

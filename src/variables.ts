@@ -38,7 +38,7 @@ class Variables {
   indicatorTypes = ['popularity', 'direction', 'volatility', 'zachs', 'relative-strength', 'kst'];
   changeWeight = 0;
   directionWeight = 0.1; // 0.06329439146188465; //0.9133038580684016;
-  volatilityWeight = 0; // 0.6896129933778206;
+  volatilityWeight = 0.1; // 0.6896129933778206;
   popularityWeight = 0; // 0.5155262904678888;
   relativeStrengthWeight = 1; // 0.036733819676656676;
   kstWeight = 0; // 0.036733819676656676;

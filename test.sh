@@ -1,4 +1,4 @@
-rm -rf test-results/ ~/tempest/test-data/
+#rm -rf test-results/ ~/tempest/test-data/
 rm -rf ~/tempest/volatility.csv
 
 mkdir -p test-results
