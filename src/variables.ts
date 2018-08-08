@@ -1,11 +1,11 @@
 import { argv } from 'yargs';
 
 class Variables {
-  numPrevDays = 5;
-  numPredictedDays = 5;
+  numPrevDays = 4;
+  numPredictedDays = 4;
 
-  mapStepSize = 5;
-  mapSteps = 5;
+  mapStepSize = 4;
+  mapSteps = 4;
   longMapSteps = 30;
 
   numTopIndustries = 1;
@@ -29,7 +29,7 @@ class Variables {
   // Testing
   // startDate = '4/17/2018';
   // startDate = '6/1/2018';
-  startDate = '7/1/2018';
+  startDate = '4/1/2018';
   endDate = '7/20/2018';
   volatilityDays = 10;
   testStepSize = 1;

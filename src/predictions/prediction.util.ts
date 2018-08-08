@@ -42,7 +42,7 @@ class PredictionUtil {
 
       if (value > 0) {
         try {
-          await this.appendDetails(date, symbol, indicatorsForSymbol, futureResults);
+          // await this.appendDetails(date, symbol, indicatorsForSymbol, futureResults);
         } catch (e) { }
 
         predictions.push(new Prediction(symbol, value));
