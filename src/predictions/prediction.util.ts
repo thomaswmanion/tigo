@@ -28,10 +28,10 @@ class PredictionUtil {
 
     }
 
-    let futureResults: PriceChange[] = [];
+    /* let futureResults: PriceChange[] = [];
     try {
       futureResults = await PriceChange.createFuture(date)
-    } catch (e) { }
+    } catch (e) { } */
 
     const symbols = await symbolUtil.getSymbols();
     const predictions: Prediction[] = [];

@@ -62,7 +62,7 @@ export class Buyer {
     await Canceller.cancel(robinhood);
 
     const stocksSoldToday = await this.getStocksSoldOnDate(robinhood, dateUtil.today);
-    const quoteDatas = (await robinhood.quote_data(stocksToBuy.map(s => s.symbol).join(','))).results;
+    const quoteDatas = (await robinhood.quote_data(stocksToBuy.map(s => s.symbol).join(','))).results.filter(q => !!q);
     this.inflatePrices(stocksToBuy, quoteDatas);
 
     const moneyToSpend = await PurchaseAllocator.determineMoneyToSpend(robinhood, stocksToBuy.length);
