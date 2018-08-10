@@ -1,3 +1,4 @@
+import { WprIndicator } from './../../wpr/wpr.indicator';
 import { KstIndicator } from './../../kst/kst.indicator';
 import { RelativeStrengthIndicator } from './../../relative-strength/relative-strength.indicator';
 import { ZachsIndicator } from './../../zachs/zachs.indicator';
@@ -79,6 +80,10 @@ export async function run() {
           const kstIndicator = new KstIndicator();
           await kstIndicator.createIndicatorsForDate(curDate);
         }
+        if (variables.indicatorTypes.indexOf('wpr') !== -1 && variables.wprWeight > 0) {
+            const wpr = new WprIndicator();
+            await wpr.createIndicatorsForDate(curDate);
+          }
 
         const predictions = await predictionUtil.createPredictions(curDate);
         if (predictions && predictions.length > 0) {

@@ -31,6 +31,7 @@ class RelativeStrengthUtil {
     const indicators: Indicator[] = [];
     map.forEach((values, symbol) => {
       const rsi = this.getRsi(values);
+      // console.log(rsi);
       if (rsi) {
         const i = new Indicator(symbol);
         i.value = rsi;

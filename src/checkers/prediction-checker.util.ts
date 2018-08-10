@@ -122,7 +122,7 @@ class PredictionCheckerUtil {
 
       const yearlyValue = Math.pow(1 + Calculator.findMean(rMeans), 250 / variables.numPredictedDays);
       console.log(`[Date ${dateUtil.formatDate(date)} - Picked Mean: ${mean}% - All Median: ${allMedian.toFixed(3)}%]`);
-      console.log(`[Overall ${dateUtil.formatDate(date)} - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Yearly Value: ${yearlyValue.toFixed(3)}]`);
+      console.log(`[Overall ${dateUtil.formatDate(date)} - Picked Mean: ${overallMean}% - All Median: ${overallAllStockMedian}% - Above: ${this.above} - Below: ${this.below} - Good Picks Percent: ${this.abovePercent()} - Yearly Value: ${yearlyValue.toFixed(3)}] - Num Days: ${variables.numPredictedDays}`);
       // console.log(this.industryResultString());
       try {
         /* const last1 = PriceChange.median(await PriceChange.createPreviousNDays(date, 1)) * 100;
