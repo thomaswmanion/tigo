@@ -45,7 +45,7 @@ class Variables {
   volatilityWeight = 0.0; // 0.6896129933778206;
   popularityWeight = 0; // 0.5155262904678888;
   relativeStrengthWeight = 1; // 0.036733819676656676;
-  kstWeight = 0; // 0.036733819676656676;
+  kstWeight = 0.01; // 0.036733819676656676;
   wprWeight = 0.1;
   nasdaqRatingWeight = 0;
   zachsRatingWeight = 0; // 0.5650440714229403;
