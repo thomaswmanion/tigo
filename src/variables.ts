@@ -29,13 +29,13 @@ class Variables {
   // Testing
   // startDate = '4/17/2018';
   // startDate = '6/1/2018';
-  startDate = '4/1/2018';
-  endDate = '7/20/2018';
+  startDate = '5/1/2018';
+  endDate = '8/20/2018';
   volatilityDays = 10;
-  testStepSize = 3;
+  testStepSize = 1;
 
   // WPR
-  wprStepSize = 14;
+  wprStepSize = 4;
   wprRangeSize = 40;
 
   symbolFile = 'all';
@@ -44,9 +44,9 @@ class Variables {
   directionWeight = 0; // 0.06329439146188465; //0.9133038580684016;
   volatilityWeight = 0.0; // 0.6896129933778206;
   popularityWeight = 0; // 0.5155262904678888;
-  relativeStrengthWeight = 0; // 0.036733819676656676;
+  relativeStrengthWeight = 1; // 0.036733819676656676;
   kstWeight = 0; // 0.036733819676656676;
-  wprWeight = 1;
+  wprWeight = 0.1;
   nasdaqRatingWeight = 0;
   zachsRatingWeight = 0; // 0.5650440714229403;
   zachsBonusWeight = 0.001; // 0.9243612055039385;

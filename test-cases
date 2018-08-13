@@ -1,4 +1,133 @@
---wprStepSize=14 --wprRangeSize=40
---wprStepSize=5 --wprRangeSize=40
---wprStepSize=14 --wprRangeSize=28
---wprStepSize=5 --wprRangeSize=20
+--base
+--directionWeight=0.1
+--volatilityWeight=0.1
+--popularityWeight=0.1
+--relativeStrengthWeight=0.1
+--kstWeight=0.1
+--zachsRatingWeight=0.2
+--directionWeight=0.2
+--volatilityWeight=0.2
+--popularityWeight=0.2
+--relativeStrengthWeight=0.2
+--kstWeight=0.2
+--zachsRatingWeight=0.2
+--directionWeight=0.1 --volatilityWeight=0.1
+--directionWeight=0.1 --popularityWeight=0.1
+--directionWeight=0.1 --relativeStrengthWeight=0.1
+--directionWeight=0.1 --kstWeight=0.1
+--directionWeight=0.1 --zachsRatingWeight=0.2
+--directionWeight=0.1 --volatilityWeight=0.2
+--directionWeight=0.1 --popularityWeight=0.2
+--directionWeight=0.1 --relativeStrengthWeight=0.2
+--directionWeight=0.1 --kstWeight=0.2
+--directionWeight=0.1 --zachsRatingWeight=0.2
+--volatilityWeight=0.1 --directionWeight=0.1
+--volatilityWeight=0.1 --popularityWeight=0.1
+--volatilityWeight=0.1 --relativeStrengthWeight=0.1
+--volatilityWeight=0.1 --kstWeight=0.1
+--volatilityWeight=0.1 --zachsRatingWeight=0.2
+--volatilityWeight=0.1 --directionWeight=0.2
+--volatilityWeight=0.1 --popularityWeight=0.2
+--volatilityWeight=0.1 --relativeStrengthWeight=0.2
+--volatilityWeight=0.1 --kstWeight=0.2
+--volatilityWeight=0.1 --zachsRatingWeight=0.2
+--popularityWeight=0.1 --directionWeight=0.1
+--popularityWeight=0.1 --volatilityWeight=0.1
+--popularityWeight=0.1 --relativeStrengthWeight=0.1
+--popularityWeight=0.1 --kstWeight=0.1
+--popularityWeight=0.1 --zachsRatingWeight=0.2
+--popularityWeight=0.1 --directionWeight=0.2
+--popularityWeight=0.1 --volatilityWeight=0.2
+--popularityWeight=0.1 --relativeStrengthWeight=0.2
+--popularityWeight=0.1 --kstWeight=0.2
+--popularityWeight=0.1 --zachsRatingWeight=0.2
+--relativeStrengthWeight=0.1 --directionWeight=0.1
+--relativeStrengthWeight=0.1 --volatilityWeight=0.1
+--relativeStrengthWeight=0.1 --popularityWeight=0.1
+--relativeStrengthWeight=0.1 --kstWeight=0.1
+--relativeStrengthWeight=0.1 --zachsRatingWeight=0.2
+--relativeStrengthWeight=0.1 --directionWeight=0.2
+--relativeStrengthWeight=0.1 --volatilityWeight=0.2
+--relativeStrengthWeight=0.1 --popularityWeight=0.2
+--relativeStrengthWeight=0.1 --kstWeight=0.2
+--relativeStrengthWeight=0.1 --zachsRatingWeight=0.2
+--kstWeight=0.1 --directionWeight=0.1
+--kstWeight=0.1 --volatilityWeight=0.1
+--kstWeight=0.1 --popularityWeight=0.1
+--kstWeight=0.1 --relativeStrengthWeight=0.1
+--kstWeight=0.1 --zachsRatingWeight=0.2
+--kstWeight=0.1 --directionWeight=0.2
+--kstWeight=0.1 --volatilityWeight=0.2
+--kstWeight=0.1 --popularityWeight=0.2
+--kstWeight=0.1 --relativeStrengthWeight=0.2
+--kstWeight=0.1 --zachsRatingWeight=0.2
+--zachsRatingWeight=0.2 --directionWeight=0.1
+--zachsRatingWeight=0.2 --volatilityWeight=0.1
+--zachsRatingWeight=0.2 --popularityWeight=0.1
+--zachsRatingWeight=0.2 --relativeStrengthWeight=0.1
+--zachsRatingWeight=0.2 --kstWeight=0.1
+--zachsRatingWeight=0.2 --directionWeight=0.2
+--zachsRatingWeight=0.2 --volatilityWeight=0.2
+--zachsRatingWeight=0.2 --popularityWeight=0.2
+--zachsRatingWeight=0.2 --relativeStrengthWeight=0.2
+--zachsRatingWeight=0.2 --kstWeight=0.2
+--directionWeight=0.2 --volatilityWeight=0.1
+--directionWeight=0.2 --popularityWeight=0.1
+--directionWeight=0.2 --relativeStrengthWeight=0.1
+--directionWeight=0.2 --kstWeight=0.1
+--directionWeight=0.2 --zachsRatingWeight=0.2
+--directionWeight=0.2 --volatilityWeight=0.2
+--directionWeight=0.2 --popularityWeight=0.2
+--directionWeight=0.2 --relativeStrengthWeight=0.2
+--directionWeight=0.2 --kstWeight=0.2
+--directionWeight=0.2 --zachsRatingWeight=0.2
+--volatilityWeight=0.2 --directionWeight=0.1
+--volatilityWeight=0.2 --popularityWeight=0.1
+--volatilityWeight=0.2 --relativeStrengthWeight=0.1
+--volatilityWeight=0.2 --kstWeight=0.1
+--volatilityWeight=0.2 --zachsRatingWeight=0.2
+--volatilityWeight=0.2 --directionWeight=0.2
+--volatilityWeight=0.2 --popularityWeight=0.2
+--volatilityWeight=0.2 --relativeStrengthWeight=0.2
+--volatilityWeight=0.2 --kstWeight=0.2
+--volatilityWeight=0.2 --zachsRatingWeight=0.2
+--popularityWeight=0.2 --directionWeight=0.1
+--popularityWeight=0.2 --volatilityWeight=0.1
+--popularityWeight=0.2 --relativeStrengthWeight=0.1
+--popularityWeight=0.2 --kstWeight=0.1
+--popularityWeight=0.2 --zachsRatingWeight=0.2
+--popularityWeight=0.2 --directionWeight=0.2
+--popularityWeight=0.2 --volatilityWeight=0.2
+--popularityWeight=0.2 --relativeStrengthWeight=0.2
+--popularityWeight=0.2 --kstWeight=0.2
+--popularityWeight=0.2 --zachsRatingWeight=0.2
+--relativeStrengthWeight=0.2 --directionWeight=0.1
+--relativeStrengthWeight=0.2 --volatilityWeight=0.1
+--relativeStrengthWeight=0.2 --popularityWeight=0.1
+--relativeStrengthWeight=0.2 --kstWeight=0.1
+--relativeStrengthWeight=0.2 --zachsRatingWeight=0.2
+--relativeStrengthWeight=0.2 --directionWeight=0.2
+--relativeStrengthWeight=0.2 --volatilityWeight=0.2
+--relativeStrengthWeight=0.2 --popularityWeight=0.2
+--relativeStrengthWeight=0.2 --kstWeight=0.2
+--relativeStrengthWeight=0.2 --zachsRatingWeight=0.2
+--kstWeight=0.2 --directionWeight=0.1
+--kstWeight=0.2 --volatilityWeight=0.1
+--kstWeight=0.2 --popularityWeight=0.1
+--kstWeight=0.2 --relativeStrengthWeight=0.1
+--kstWeight=0.2 --zachsRatingWeight=0.2
+--kstWeight=0.2 --directionWeight=0.2
+--kstWeight=0.2 --volatilityWeight=0.2
+--kstWeight=0.2 --popularityWeight=0.2
+--kstWeight=0.2 --relativeStrengthWeight=0.2
+--kstWeight=0.2 --zachsRatingWeight=0.2
+--zachsRatingWeight=0.2 --directionWeight=0.1
+--zachsRatingWeight=0.2 --volatilityWeight=0.1
+--zachsRatingWeight=0.2 --popularityWeight=0.1
+--zachsRatingWeight=0.2 --relativeStrengthWeight=0.1
+--zachsRatingWeight=0.2 --kstWeight=0.1
+--zachsRatingWeight=0.2 --directionWeight=0.2
+--zachsRatingWeight=0.2 --volatilityWeight=0.2
+--zachsRatingWeight=0.2 --popularityWeight=0.2
+--zachsRatingWeight=0.2 --relativeStrengthWeight=0.2
+--zachsRatingWeight=0.2 --kstWeight=0.2

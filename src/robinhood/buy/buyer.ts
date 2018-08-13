@@ -53,13 +53,14 @@ export class Buyer {
     const robinhood = new Robinhood(credentials.username, credentials.password);
     await robinhood.login();
     const robinhoodUtil = new RobinhoodUtil(robinhood);
-    const isMarketOpen = await robinhoodUtil.isMarketOpen();
-    if (!isMarketOpen) {
-      console.log('Market is not open... Exiting');
-      return;
+    if (argv.prod) {
+        const isMarketOpen = await robinhoodUtil.isMarketOpen();
+        if (!isMarketOpen) {
+          console.log('Market is not open... Exiting');
+          return;
+        }
+        await Canceller.cancel(robinhood);
     }
-
-    await Canceller.cancel(robinhood);
 
     const stocksSoldToday = await this.getStocksSoldOnDate(robinhood, dateUtil.today);
     const quoteDatas = (await robinhood.quote_data(stocksToBuy.map(s => s.symbol).join(','))).results.filter(q => !!q);
