@@ -67,10 +67,13 @@ export class Buyer {
     this.inflatePrices(stocksToBuy, quoteDatas);
 
     const moneyToSpend = await PurchaseAllocator.determineMoneyToSpend(robinhood, stocksToBuy.length);
+    console.log('Getting positions...');
     const positions = await robinhoodUtil.getAllPositionsInflated();
+    console.log(`Positions: ${positions.length}. Getting current money`);
     const currentMoney = await robinhoodUtil.getCurrentMoney(robinhood);
+    console.log(`Current Money: ${currentMoney}. Inflating stock counts`);
     this.inflateCounts(stocksToBuy, moneyToSpend, currentMoney, positions, stocksSoldToday);
-
+    console.log('Inflated... Buying now.');
     await this.buyStocks(robinhood, stocksToBuy);
   }
 
