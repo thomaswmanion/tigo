@@ -98,8 +98,10 @@ export class Buyer {
         const maxMoneyToSpendOnStock = totalValue / topNum;
         const stocksNotOwnedYet: SymbolTradeMeta[] = [];
         let currentPower = moneyToSpend;
-        meta.forEach((p) => {
+        console.log('Setting initial counts...');
+        meta.filter(p => p.price > 0).forEach((p) => {
             const price = p.price;
+            console.log(`Setting counts for  ${p.symbol}: ${p.price}`);
             const moneyToSpendOnStock = Math.min(maxMoneyToSpendOnStock, currentPower);
             // console.log(`Money to spend on ` + p.symbol + ': $' + moneyToSpendOnStock, 'Last Trade Price: ' + p.lastTradePrice);
             const ownedPosition = ownedPositions.find(po => po.symbol === p.symbol);
