@@ -1,13 +1,1002 @@
---base
---wprWeight=0.01
---wprWeight=0.2
---wprWeight=0.5
---wprWeight=0.75
---wprWeight=0.33
---wprWeight=2
---kstWeight=0.01
---kstWeight=0.2
---kstWeight=0.5
---kstWeight=0.75
---directionWeight=0.1
---directionWeight=0.01
+--zachsRatingWeight=0.1 --relativeStrengthWeight=0.1
+--relativeStrengthWeight=1 --kstWeight=0.01 --wprWeight=0.1
+--popularityWeight=0.077 --zachsRatingWeight=0.984 --kstWeight=0.078
+--relativeStrengthWeight=0.444 --volatilityWeight=0.824 --directionWeight=0.782 --zachsRatingWeight=0.737
+--volatilityWeight=0.333 --directionWeight=0.223 --kstWeight=0.490
+--volatilityWeight=0.844 --relativeStrengthWeight=0.732 --popularityWeight=0.301
+--popularityWeight=0.517 --zachsRatingWeight=0.928 --volatilityWeight=0.155
+--volatilityWeight=0.992 --popularityWeight=0.890 --directionWeight=0.664
+--kstWeight=0.720 --volatilityWeight=0.772 --directionWeight=0.901
+--relativeStrengthWeight=0.139 --volatilityWeight=0.600
+--relativeStrengthWeight=0.641 --popularityWeight=0.692 --zachsRatingWeight=0.105 --directionWeight=0.424
+--relativeStrengthWeight=0.202 --zachsRatingWeight=0.941 --kstWeight=0.360 --popularityWeight=0.611
+--zachsRatingWeight=0.917 --popularityWeight=0.652 --volatilityWeight=0.064
+--zachsRatingWeight=0.185 --popularityWeight=0.635 --relativeStrengthWeight=0.129
+--zachsRatingWeight=0.792 --kstWeight=0.337 --relativeStrengthWeight=0.492
+--directionWeight=0.586 --volatilityWeight=0.249
+--zachsRatingWeight=0.641 --relativeStrengthWeight=0.545 --volatilityWeight=0.622
+--relativeStrengthWeight=0.400 --popularityWeight=0.003 --directionWeight=0.532
+--relativeStrengthWeight=0.493 --directionWeight=0.397 --zachsRatingWeight=0.284
+--relativeStrengthWeight=0.939 --directionWeight=0.056 --kstWeight=0.516
+--kstWeight=0.742 --relativeStrengthWeight=0.309
+--kstWeight=0.821 --directionWeight=0.268 --relativeStrengthWeight=0.375
+--kstWeight=0.083 --relativeStrengthWeight=0.700 --volatilityWeight=0.372
+--volatilityWeight=0.133 --kstWeight=0.245 --directionWeight=0.415
+--relativeStrengthWeight=0.240 --popularityWeight=0.170 --kstWeight=0.325
+--zachsRatingWeight=0.849 --directionWeight=0.013 --volatilityWeight=0.986
+--relativeStrengthWeight=0.399 --directionWeight=0.392 --kstWeight=0.714
+--volatilityWeight=0.171 --directionWeight=0.484 --kstWeight=0.586 --popularityWeight=0.992
+--zachsRatingWeight=0.051 --kstWeight=0.832 --popularityWeight=0.600
+--popularityWeight=0.227 --kstWeight=0.393 --directionWeight=0.246
+--directionWeight=0.537 --relativeStrengthWeight=0.001 --popularityWeight=0.355 --kstWeight=0.058
+--volatilityWeight=0.840 --kstWeight=0.076
+--relativeStrengthWeight=0.344 --volatilityWeight=0.654 --directionWeight=0.741
+--directionWeight=0.152 --kstWeight=0.233 --relativeStrengthWeight=0.726
+--kstWeight=0.562 --popularityWeight=0.967 --zachsRatingWeight=0.771
+--relativeStrengthWeight=0.684 --kstWeight=0.515 --volatilityWeight=0.812
+--relativeStrengthWeight=0.286 --popularityWeight=0.306 --zachsRatingWeight=0.232 --volatilityWeight=0.986
+--relativeStrengthWeight=0.353 --zachsRatingWeight=0.836
+--directionWeight=0.782 --relativeStrengthWeight=0.947 --popularityWeight=0.231
+--directionWeight=0.376 --volatilityWeight=0.022 --popularityWeight=0.798
+--kstWeight=0.808 --directionWeight=0.666 --relativeStrengthWeight=0.909
+--zachsRatingWeight=0.407 --relativeStrengthWeight=0.086
+--popularityWeight=0.529 --zachsRatingWeight=0.595 --relativeStrengthWeight=0.195
+--relativeStrengthWeight=0.650 --volatilityWeight=0.966 --popularityWeight=0.825
+--directionWeight=0.658 --kstWeight=0.423 --volatilityWeight=0.296
+--directionWeight=0.188 --kstWeight=0.730 --popularityWeight=0.194
+--directionWeight=0.050 --zachsRatingWeight=0.678 --volatilityWeight=0.525 --popularityWeight=0.732
+--zachsRatingWeight=0.998 --kstWeight=0.033 --relativeStrengthWeight=0.209
+--popularityWeight=0.408 --zachsRatingWeight=0.794 --relativeStrengthWeight=0.507 --kstWeight=0.849
+--popularityWeight=0.896 --directionWeight=0.759 --volatilityWeight=0.946
+--popularityWeight=0.647 --kstWeight=0.848 --relativeStrengthWeight=0.420
+--directionWeight=0.869 --popularityWeight=0.685 --volatilityWeight=0.543
+--zachsRatingWeight=0.346 --directionWeight=0.793 --relativeStrengthWeight=0.022 --kstWeight=0.028
+--directionWeight=0.715 --volatilityWeight=0.766 --relativeStrengthWeight=0.506
+--kstWeight=0.609 --volatilityWeight=0.943 --popularityWeight=0.453
+--kstWeight=0.823 --relativeStrengthWeight=0.692 --directionWeight=0.540
+--directionWeight=0.820 --zachsRatingWeight=0.662 --volatilityWeight=0.739 --relativeStrengthWeight=0.751
+--popularityWeight=0.963 --directionWeight=0.908 --volatilityWeight=0.317
+--kstWeight=0.493 --relativeStrengthWeight=0.605 --volatilityWeight=0.678
+--kstWeight=0.796 --popularityWeight=0.173 --volatilityWeight=0.030
+--kstWeight=0.971 --zachsRatingWeight=0.009 --relativeStrengthWeight=0.917
+--directionWeight=0.938 --zachsRatingWeight=0.944 --volatilityWeight=0.700
+--zachsRatingWeight=0.341 --kstWeight=0.358
+--relativeStrengthWeight=0.360 --volatilityWeight=0.736 --kstWeight=0.180
+--kstWeight=0.062 --popularityWeight=0.483
+--popularityWeight=0.138 --zachsRatingWeight=0.055 --kstWeight=0.759 --directionWeight=0.829
+--kstWeight=0.848 --volatilityWeight=0.550
+--relativeStrengthWeight=0.897 --volatilityWeight=0.884 --zachsRatingWeight=0.371
+--directionWeight=0.128 --volatilityWeight=0.670 --kstWeight=0.246 --zachsRatingWeight=0.077
+--zachsRatingWeight=0.634 --relativeStrengthWeight=0.824
+--directionWeight=0.489 --kstWeight=0.841
+--volatilityWeight=0.022 --relativeStrengthWeight=0.997 --popularityWeight=0.474
+--kstWeight=0.004 --relativeStrengthWeight=0.986 --volatilityWeight=0.387 --popularityWeight=0.518
+--kstWeight=0.967 --popularityWeight=0.125 --directionWeight=0.348 --relativeStrengthWeight=0.114
+--popularityWeight=0.227 --volatilityWeight=0.001 --kstWeight=0.052
+--popularityWeight=0.840 --volatilityWeight=0.917 --directionWeight=0.063
+--volatilityWeight=0.767 --directionWeight=0.786 --popularityWeight=0.323
+--volatilityWeight=0.438 --directionWeight=0.087 --relativeStrengthWeight=0.981 --kstWeight=0.438
+--zachsRatingWeight=0.734 --directionWeight=0.128 --popularityWeight=0.385
+--relativeStrengthWeight=0.978 --directionWeight=0.210 --popularityWeight=0.923
+--directionWeight=0.006 --relativeStrengthWeight=0.788 --zachsRatingWeight=0.622
+--kstWeight=0.846 --relativeStrengthWeight=0.580 --popularityWeight=0.556
+--kstWeight=0.450 --directionWeight=0.147 --zachsRatingWeight=0.993 --relativeStrengthWeight=0.498
+--volatilityWeight=0.134 --directionWeight=0.117
+--zachsRatingWeight=0.472 --kstWeight=0.424 --relativeStrengthWeight=0.923
+--zachsRatingWeight=0.331 --directionWeight=0.656 --kstWeight=0.488
+--volatilityWeight=0.184 --relativeStrengthWeight=0.160 --popularityWeight=0.254 --kstWeight=0.773
+--popularityWeight=0.772 --directionWeight=0.402 --kstWeight=0.729
+--relativeStrengthWeight=0.810 --kstWeight=0.643 --directionWeight=0.370
+--zachsRatingWeight=0.945 --kstWeight=0.573 --popularityWeight=0.058
+--relativeStrengthWeight=0.270 --popularityWeight=0.179
+--relativeStrengthWeight=0.196 --popularityWeight=0.544 --directionWeight=0.956 --zachsRatingWeight=0.241
+--zachsRatingWeight=0.477 --kstWeight=0.865 --volatilityWeight=0.732 --relativeStrengthWeight=0.345
+--relativeStrengthWeight=0.211 --zachsRatingWeight=0.771 --popularityWeight=0.412 --directionWeight=0.513
+--directionWeight=0.666 --volatilityWeight=0.199 --zachsRatingWeight=0.583
+--kstWeight=0.308 --volatilityWeight=0.857 --relativeStrengthWeight=0.781 --zachsRatingWeight=0.033
+--volatilityWeight=0.438 --directionWeight=0.227 --popularityWeight=0.770 --zachsRatingWeight=0.086
+--directionWeight=0.596 --kstWeight=0.838 --volatilityWeight=0.276
+--directionWeight=0.848 --volatilityWeight=0.676 --kstWeight=0.898 --popularityWeight=0.688
+--relativeStrengthWeight=0.536 --popularityWeight=0.658
+--relativeStrengthWeight=0.767 --kstWeight=0.802 --popularityWeight=0.715 --directionWeight=0.944
+--volatilityWeight=0.103 --popularityWeight=0.251 --kstWeight=0.353
+--kstWeight=0.086 --zachsRatingWeight=0.093 --relativeStrengthWeight=0.676
+--zachsRatingWeight=0.047 --directionWeight=0.377 --kstWeight=0.417
+--popularityWeight=0.812 --kstWeight=0.618 --relativeStrengthWeight=0.296 --zachsRatingWeight=0.191
+--popularityWeight=0.951 --kstWeight=0.318 --volatilityWeight=0.839
+--kstWeight=0.948 --volatilityWeight=0.726 --popularityWeight=0.807 --zachsRatingWeight=0.203
+--zachsRatingWeight=0.182 --popularityWeight=0.386 --relativeStrengthWeight=0.251
+--zachsRatingWeight=0.832 --kstWeight=0.485 --volatilityWeight=0.090
+--directionWeight=0.075 --volatilityWeight=0.783
+--popularityWeight=0.898 --kstWeight=0.134 --relativeStrengthWeight=0.091
+--relativeStrengthWeight=0.672 --popularityWeight=0.671 --kstWeight=0.598
+--zachsRatingWeight=0.872 --popularityWeight=0.754 --kstWeight=0.097
+--relativeStrengthWeight=0.980 --directionWeight=0.525 --zachsRatingWeight=0.875
+--relativeStrengthWeight=0.130 --volatilityWeight=0.530 --zachsRatingWeight=0.100
+--kstWeight=0.934 --volatilityWeight=0.361 --popularityWeight=0.336
+--directionWeight=0.455 --popularityWeight=0.075 --relativeStrengthWeight=0.987
+--popularityWeight=0.981 --kstWeight=0.182 --relativeStrengthWeight=0.167
+--directionWeight=0.344 --volatilityWeight=0.752 --zachsRatingWeight=0.181
+--directionWeight=0.913 --popularityWeight=0.288 --volatilityWeight=0.130 --relativeStrengthWeight=0.326
+--zachsRatingWeight=0.651 --relativeStrengthWeight=0.206 --kstWeight=0.714 --popularityWeight=0.603
+--popularityWeight=0.310 --relativeStrengthWeight=0.268 --volatilityWeight=0.996 --kstWeight=0.237
+--directionWeight=0.105 --volatilityWeight=0.599 --zachsRatingWeight=0.073 --popularityWeight=0.497
+--volatilityWeight=0.596 --relativeStrengthWeight=0.683 --kstWeight=0.478
+--directionWeight=0.092 --volatilityWeight=0.475
+--directionWeight=0.963 --zachsRatingWeight=0.790 --relativeStrengthWeight=0.442
+--relativeStrengthWeight=0.366
+--popularityWeight=0.012 --zachsRatingWeight=0.294
+--directionWeight=0.399 --zachsRatingWeight=0.352 --volatilityWeight=0.377
+--directionWeight=0.924 --volatilityWeight=0.510 --relativeStrengthWeight=0.806 --zachsRatingWeight=0.830
+--popularityWeight=0.451 --volatilityWeight=0.341 --kstWeight=0.679 --directionWeight=0.973
+--relativeStrengthWeight=0.680 --zachsRatingWeight=0.544 --kstWeight=0.764
+--kstWeight=0.525 --relativeStrengthWeight=0.665 --volatilityWeight=0.284
+--volatilityWeight=0.580 --directionWeight=0.573 --zachsRatingWeight=0.019
+--zachsRatingWeight=0.589 --volatilityWeight=0.918 --popularityWeight=0.954
+--directionWeight=0.770 --volatilityWeight=0.539 --relativeStrengthWeight=0.187
+--directionWeight=0.794 --volatilityWeight=0.074
+--volatilityWeight=0.570 --relativeStrengthWeight=0.358 --kstWeight=0.434
+--relativeStrengthWeight=0.900 --zachsRatingWeight=0.920
+--volatilityWeight=0.243 --directionWeight=0.439 --kstWeight=0.673 --popularityWeight=0.890
+--relativeStrengthWeight=0.164 --zachsRatingWeight=0.098 --volatilityWeight=0.715 --directionWeight=0.992
+--directionWeight=0.728 --kstWeight=0.218 --zachsRatingWeight=0.174
+--directionWeight=0.323 --popularityWeight=0.601
+--kstWeight=0.742 --relativeStrengthWeight=0.776 --volatilityWeight=0.915
+--relativeStrengthWeight=0.374 --zachsRatingWeight=0.443 --volatilityWeight=0.693
+--volatilityWeight=0.316 --popularityWeight=0.688 --directionWeight=0.233
+--volatilityWeight=0.157 --directionWeight=0.383 --zachsRatingWeight=0.278
+--popularityWeight=0.237 --kstWeight=0.414 --directionWeight=0.902
+--directionWeight=0.756 --popularityWeight=0.797 --zachsRatingWeight=0.877 --kstWeight=0.943
+--relativeStrengthWeight=0.340 --popularityWeight=0.040 --volatilityWeight=0.745
+--volatilityWeight=0.706 --zachsRatingWeight=0.767 --kstWeight=0.305 --popularityWeight=0.726
+--kstWeight=0.121 --relativeStrengthWeight=0.532
+--zachsRatingWeight=0.297 --directionWeight=0.211
+--zachsRatingWeight=0.104 --kstWeight=0.324 --popularityWeight=0.672
+--kstWeight=0.545 --relativeStrengthWeight=0.090
+--relativeStrengthWeight=0.756 --directionWeight=0.309 --popularityWeight=0.782
+--directionWeight=0.985 --relativeStrengthWeight=0.199 --popularityWeight=0.740
+--kstWeight=0.589 --relativeStrengthWeight=0.059 --directionWeight=0.435 --zachsRatingWeight=0.500
+--relativeStrengthWeight=0.804 --volatilityWeight=0.382 --popularityWeight=0.857 --zachsRatingWeight=0.642
+--volatilityWeight=0.077 --kstWeight=0.569 --zachsRatingWeight=0.079
+--directionWeight=0.193 --popularityWeight=0.627
+--zachsRatingWeight=0.356 --volatilityWeight=0.030 --relativeStrengthWeight=0.254
+--directionWeight=0.531 --relativeStrengthWeight=0.398 --zachsRatingWeight=0.101
+--relativeStrengthWeight=0.596 --directionWeight=0.755 --volatilityWeight=0.509
+--zachsRatingWeight=0.662 --kstWeight=0.446
+--kstWeight=0.537 --relativeStrengthWeight=0.616 --volatilityWeight=0.410
+--popularityWeight=0.597 --directionWeight=0.557 --relativeStrengthWeight=0.965
+--directionWeight=0.229 --popularityWeight=0.670 --kstWeight=0.639
+--popularityWeight=0.215 --volatilityWeight=0.333 --relativeStrengthWeight=0.372 --directionWeight=0.831
+--zachsRatingWeight=0.358 --directionWeight=0.584 --kstWeight=0.156
+--kstWeight=0.152 --relativeStrengthWeight=0.405 --volatilityWeight=0.962
+--popularityWeight=0.599 --zachsRatingWeight=0.121 --kstWeight=0.113
+--volatilityWeight=0.075 --relativeStrengthWeight=0.056 --popularityWeight=0.337 --zachsRatingWeight=0.352
+--zachsRatingWeight=0.209 --directionWeight=0.935
+--relativeStrengthWeight=0.132 --kstWeight=0.622
+--relativeStrengthWeight=0.422 --zachsRatingWeight=0.180 --popularityWeight=0.403
+--relativeStrengthWeight=0.787 --kstWeight=0.549 --directionWeight=0.953
+--directionWeight=0.428 --kstWeight=0.999 --volatilityWeight=0.019 --popularityWeight=0.863
+--volatilityWeight=0.062 --kstWeight=0.148 --zachsRatingWeight=0.791
+--relativeStrengthWeight=0.339 --volatilityWeight=0.150 --popularityWeight=0.176
+--directionWeight=0.352 --kstWeight=0.999 --popularityWeight=0.520 --zachsRatingWeight=0.053
+--popularityWeight=0.120 --relativeStrengthWeight=0.303
+--volatilityWeight=0.865 --zachsRatingWeight=0.170 --popularityWeight=0.835
+--zachsRatingWeight=0.856 --kstWeight=0.744 --directionWeight=0.756
+--relativeStrengthWeight=0.006 --zachsRatingWeight=0.853 --kstWeight=0.730
+--relativeStrengthWeight=0.118 --volatilityWeight=0.421 --popularityWeight=0.206
+--directionWeight=0.661 --volatilityWeight=0.779 --zachsRatingWeight=0.583
+--relativeStrengthWeight=0.618 --directionWeight=0.209 --kstWeight=0.434
+--volatilityWeight=0.014 --relativeStrengthWeight=0.456 --popularityWeight=0.938 --directionWeight=0.543
+--directionWeight=0.026 --popularityWeight=0.953
+--volatilityWeight=0.121 --zachsRatingWeight=0.127 --relativeStrengthWeight=0.266
+--zachsRatingWeight=0.639 --kstWeight=0.041 --directionWeight=0.748 --relativeStrengthWeight=0.892
+--directionWeight=0.555 --popularityWeight=0.019 --kstWeight=0.595 --zachsRatingWeight=0.015
+--directionWeight=0.005 --kstWeight=0.578 --popularityWeight=0.477
+--directionWeight=0.163 --kstWeight=0.571 --zachsRatingWeight=0.869
+--popularityWeight=0.249 --zachsRatingWeight=0.732 --relativeStrengthWeight=0.895
+--kstWeight=0.326 --directionWeight=0.900 --relativeStrengthWeight=0.801
+--popularityWeight=0.230
+--kstWeight=0.248 --popularityWeight=0.181 --directionWeight=0.571
+--zachsRatingWeight=0.956 --directionWeight=0.065
+--zachsRatingWeight=0.123 --directionWeight=0.572
+--volatilityWeight=0.989 --relativeStrengthWeight=0.242 --directionWeight=0.392
+--kstWeight=0.951 --relativeStrengthWeight=0.250 --zachsRatingWeight=0.485
+--kstWeight=0.205 --volatilityWeight=0.948 --relativeStrengthWeight=0.533
+--zachsRatingWeight=0.664 --popularityWeight=0.188
+--kstWeight=0.884 --zachsRatingWeight=0.498 --relativeStrengthWeight=0.606
+--directionWeight=0.314 --kstWeight=0.885 --relativeStrengthWeight=0.040
+--directionWeight=0.303 --kstWeight=0.869
+--volatilityWeight=0.992 --kstWeight=0.829 --relativeStrengthWeight=0.679
+--kstWeight=0.303 --directionWeight=0.203 --relativeStrengthWeight=0.894 --volatilityWeight=0.272
+--popularityWeight=0.782 --kstWeight=0.158 --zachsRatingWeight=0.493
+--popularityWeight=0.706 --volatilityWeight=0.827 --kstWeight=0.690
+--directionWeight=0.174 --volatilityWeight=0.717 --kstWeight=0.307
+--kstWeight=0.001 --relativeStrengthWeight=0.455 --popularityWeight=0.623 --volatilityWeight=0.739
+--volatilityWeight=0.006 --zachsRatingWeight=0.360 --popularityWeight=0.291 --directionWeight=0.028
+--popularityWeight=0.807 --directionWeight=0.880 --kstWeight=0.134
+--kstWeight=0.869 --directionWeight=0.336
+--popularityWeight=0.728 --zachsRatingWeight=0.804 --kstWeight=0.879
+--zachsRatingWeight=0.586 --volatilityWeight=0.631
+--relativeStrengthWeight=0.409 --popularityWeight=0.148 --directionWeight=0.536 --kstWeight=0.337
+--volatilityWeight=0.672 --directionWeight=0.191 --kstWeight=0.668
+--relativeStrengthWeight=0.131 --volatilityWeight=0.701 --popularityWeight=0.731
+--zachsRatingWeight=0.329 --popularityWeight=0.045 --relativeStrengthWeight=0.424 --directionWeight=0.146
+--kstWeight=0.978 --zachsRatingWeight=0.515 --directionWeight=0.552 --relativeStrengthWeight=0.010
+--relativeStrengthWeight=0.831 --volatilityWeight=0.750
+--volatilityWeight=0.873 --popularityWeight=0.785 --kstWeight=0.479
+--kstWeight=0.840 --relativeStrengthWeight=0.568 --popularityWeight=0.126
+--volatilityWeight=0.687 --popularityWeight=0.856 --kstWeight=0.742
+--volatilityWeight=0.454 --zachsRatingWeight=0.682
+--volatilityWeight=0.463 --directionWeight=0.533 --kstWeight=0.876
+--directionWeight=0.789 --volatilityWeight=0.236 --zachsRatingWeight=0.555
+--popularityWeight=0.908 --directionWeight=0.548 --volatilityWeight=0.277
+--popularityWeight=0.868 --zachsRatingWeight=0.913 --volatilityWeight=0.614
+--volatilityWeight=0.775 --popularityWeight=0.236
+--volatilityWeight=0.006 --popularityWeight=0.817
+--kstWeight=0.873 --directionWeight=0.723 --zachsRatingWeight=0.076
+--volatilityWeight=0.419 --popularityWeight=0.906 --relativeStrengthWeight=0.830 --zachsRatingWeight=0.311
+--kstWeight=0.764 --popularityWeight=0.581 --zachsRatingWeight=0.455 --directionWeight=0.110
+--directionWeight=0.821 --popularityWeight=0.459 --kstWeight=0.141
+--volatilityWeight=0.756 --popularityWeight=0.887 --relativeStrengthWeight=0.716
+--volatilityWeight=0.905 --directionWeight=0.235 --relativeStrengthWeight=0.755
+--relativeStrengthWeight=0.027 --popularityWeight=0.370 --volatilityWeight=0.065
+--kstWeight=0.692 --zachsRatingWeight=0.105
+--popularityWeight=0.428 --directionWeight=0.266
+--popularityWeight=0.062 --kstWeight=0.593
+--relativeStrengthWeight=0.751 --kstWeight=0.135
+--relativeStrengthWeight=0.667 --volatilityWeight=0.626 --directionWeight=0.920
+--relativeStrengthWeight=0.682 --zachsRatingWeight=0.917 --directionWeight=0.764
+--relativeStrengthWeight=0.998 --zachsRatingWeight=0.562 --directionWeight=0.721 --popularityWeight=0.046
+--relativeStrengthWeight=0.528 --zachsRatingWeight=0.239 --kstWeight=0.280 --directionWeight=0.411
+--popularityWeight=0.112 --directionWeight=0.772 --relativeStrengthWeight=0.676
+--zachsRatingWeight=0.152 --relativeStrengthWeight=0.265 --popularityWeight=0.160
+--directionWeight=0.426 --relativeStrengthWeight=0.185
+--popularityWeight=0.422 --zachsRatingWeight=0.325
+--kstWeight=0.971 --directionWeight=0.982 --zachsRatingWeight=0.558
+--kstWeight=0.286 --zachsRatingWeight=0.284 --volatilityWeight=0.099
+--directionWeight=0.183 --popularityWeight=0.833 --kstWeight=0.121
+--directionWeight=0.890 --zachsRatingWeight=0.059
+--relativeStrengthWeight=0.166 --zachsRatingWeight=0.531 --directionWeight=0.133 --kstWeight=0.661
+--kstWeight=0.963 --volatilityWeight=0.241 --popularityWeight=0.994
+--zachsRatingWeight=0.944 --popularityWeight=0.113 --directionWeight=0.956
+--zachsRatingWeight=0.201 --kstWeight=0.489 --popularityWeight=0.309 --directionWeight=0.067
+--zachsRatingWeight=0.114 --popularityWeight=0.522
+--zachsRatingWeight=0.506 --volatilityWeight=0.154 --kstWeight=0.540 --relativeStrengthWeight=0.783
+--popularityWeight=0.654 --directionWeight=0.513 --relativeStrengthWeight=0.936
+--directionWeight=0.543 --volatilityWeight=0.514 --kstWeight=0.326 --relativeStrengthWeight=0.002
+--volatilityWeight=0.248 --zachsRatingWeight=0.440
+--zachsRatingWeight=0.323 --kstWeight=0.606
+--kstWeight=0.765 --relativeStrengthWeight=0.230 --directionWeight=0.799
+--kstWeight=0.188 --zachsRatingWeight=0.324 --volatilityWeight=0.092
+--directionWeight=0.592 --popularityWeight=0.772
+--popularityWeight=0.252 --relativeStrengthWeight=0.941 --zachsRatingWeight=0.404
+--volatilityWeight=0.286 --directionWeight=0.174 --popularityWeight=0.705
+--volatilityWeight=0.814 --directionWeight=0.997 --popularityWeight=0.452 --relativeStrengthWeight=0.978
+--kstWeight=0.860 --popularityWeight=0.666 --directionWeight=0.421
+--kstWeight=0.574 --volatilityWeight=0.785 --relativeStrengthWeight=0.005
+--directionWeight=0.544 --kstWeight=0.141 --popularityWeight=0.630
+--popularityWeight=0.936 --volatilityWeight=0.814 --kstWeight=0.299 --directionWeight=0.946
+--directionWeight=0.214 --volatilityWeight=0.036 --zachsRatingWeight=0.686
+--volatilityWeight=0.292 --zachsRatingWeight=0.880 --popularityWeight=0.255
+--zachsRatingWeight=0.954 --popularityWeight=0.027 --volatilityWeight=0.065 --relativeStrengthWeight=0.794
+--relativeStrengthWeight=0.147 --volatilityWeight=0.337
+--directionWeight=0.442 --relativeStrengthWeight=0.651 --kstWeight=0.948 --popularityWeight=0.113
+--kstWeight=0.839 --relativeStrengthWeight=0.533 --popularityWeight=0.895 --volatilityWeight=0.935
+--popularityWeight=0.769 --kstWeight=0.670 --relativeStrengthWeight=0.064
+--kstWeight=0.580 --popularityWeight=0.776 --directionWeight=0.715 --zachsRatingWeight=0.786
+--zachsRatingWeight=0.135 --directionWeight=0.546 --kstWeight=0.925
+--relativeStrengthWeight=0.142 --directionWeight=0.190 --popularityWeight=0.202 --kstWeight=0.694
+--zachsRatingWeight=0.616 --volatilityWeight=0.312 --kstWeight=0.505 --directionWeight=0.895
+--zachsRatingWeight=0.587 --kstWeight=0.731 --volatilityWeight=0.794
+--directionWeight=0.622 --volatilityWeight=0.615 --relativeStrengthWeight=0.068
+--zachsRatingWeight=0.466 --popularityWeight=0.357 --directionWeight=0.251 --relativeStrengthWeight=0.787
+--kstWeight=0.200 --zachsRatingWeight=0.300 --volatilityWeight=0.774
+--popularityWeight=0.980 --zachsRatingWeight=0.330 --relativeStrengthWeight=0.256
+--kstWeight=0.969 --relativeStrengthWeight=0.716 --directionWeight=0.244
+--popularityWeight=0.150 --zachsRatingWeight=0.120 --directionWeight=0.112
+--kstWeight=0.961 --directionWeight=0.259 --volatilityWeight=0.385
+--volatilityWeight=0.305 --kstWeight=0.496 --relativeStrengthWeight=0.178
+--directionWeight=0.332 --kstWeight=0.779 --relativeStrengthWeight=0.981 --zachsRatingWeight=0.775
+--zachsRatingWeight=0.466 --relativeStrengthWeight=0.864 --kstWeight=0.999 --popularityWeight=0.760
+--kstWeight=0.528 --zachsRatingWeight=0.241 --popularityWeight=0.972
+--popularityWeight=0.222 --volatilityWeight=0.717 --zachsRatingWeight=0.797 --kstWeight=0.252
+--relativeStrengthWeight=0.271 --directionWeight=0.710 --volatilityWeight=0.049 --zachsRatingWeight=0.090
+--zachsRatingWeight=0.337 --volatilityWeight=0.689 --directionWeight=0.278
+--relativeStrengthWeight=0.589 --kstWeight=0.414
+--kstWeight=0.810 --directionWeight=0.704 --relativeStrengthWeight=0.196
+--popularityWeight=0.954 --kstWeight=0.685
+--directionWeight=0.554 --kstWeight=0.679 --volatilityWeight=0.062 --relativeStrengthWeight=0.955
+--relativeStrengthWeight=0.968 --zachsRatingWeight=0.111 --directionWeight=0.341 --popularityWeight=0.913
+--zachsRatingWeight=0.683
+--relativeStrengthWeight=0.589 --kstWeight=0.137 --volatilityWeight=0.385
+--kstWeight=0.029 --volatilityWeight=0.058 --popularityWeight=0.949
+--zachsRatingWeight=0.722 --volatilityWeight=0.015 --relativeStrengthWeight=0.778
+--relativeStrengthWeight=0.490 --volatilityWeight=0.383 --directionWeight=0.526 --popularityWeight=0.924
+--popularityWeight=0.572 --relativeStrengthWeight=0.344 --zachsRatingWeight=0.643
+--volatilityWeight=0.893 --zachsRatingWeight=0.391 --popularityWeight=0.253
+--volatilityWeight=0.023 --directionWeight=0.136 --relativeStrengthWeight=0.316 --zachsRatingWeight=0.654
+--volatilityWeight=0.662 --popularityWeight=0.401
+--volatilityWeight=0.220 --popularityWeight=0.043 --relativeStrengthWeight=0.539
+--directionWeight=0.731 --popularityWeight=0.085 --volatilityWeight=0.336 --zachsRatingWeight=0.829
+--kstWeight=0.611 --volatilityWeight=0.923 --relativeStrengthWeight=0.290 --popularityWeight=0.825
+--relativeStrengthWeight=0.285 --zachsRatingWeight=0.379 --popularityWeight=0.421 --directionWeight=0.379
+--volatilityWeight=0.192 --relativeStrengthWeight=0.994 --popularityWeight=0.580
+--directionWeight=0.958 --zachsRatingWeight=0.844
+--volatilityWeight=0.132 --zachsRatingWeight=0.997 --kstWeight=0.294 --popularityWeight=0.836
+--directionWeight=0.650 --relativeStrengthWeight=0.202
+--zachsRatingWeight=0.939 --relativeStrengthWeight=0.228 --directionWeight=0.336 --volatilityWeight=0.376
+--zachsRatingWeight=0.772 --directionWeight=0.729 --volatilityWeight=0.285
+--popularityWeight=0.349 --zachsRatingWeight=0.210
+--popularityWeight=0.132 --kstWeight=0.139 --directionWeight=0.400
+--kstWeight=0.840 --popularityWeight=0.320 --zachsRatingWeight=0.158
+--popularityWeight=0.495 --kstWeight=0.701
+--relativeStrengthWeight=0.970 --volatilityWeight=0.497
+--kstWeight=0.108 --volatilityWeight=0.100 --zachsRatingWeight=0.889
+--kstWeight=0.705 --relativeStrengthWeight=0.701 --zachsRatingWeight=0.125 --volatilityWeight=0.097
+--zachsRatingWeight=0.591 --relativeStrengthWeight=0.309 --directionWeight=0.347 --popularityWeight=0.174
+--relativeStrengthWeight=0.240 --kstWeight=0.070 --volatilityWeight=0.175 --directionWeight=0.931
+--popularityWeight=0.792 --directionWeight=0.139 --relativeStrengthWeight=0.721
+--volatilityWeight=0.129 --popularityWeight=0.093
+--relativeStrengthWeight=0.390 --popularityWeight=0.647
+--zachsRatingWeight=0.889 --kstWeight=0.393 --relativeStrengthWeight=0.959
+--popularityWeight=0.918 --relativeStrengthWeight=0.381 --directionWeight=0.968
+--kstWeight=0.946 --popularityWeight=0.381 --directionWeight=0.779
+--relativeStrengthWeight=0.326 --popularityWeight=0.381 --kstWeight=0.793
+--popularityWeight=0.109 --relativeStrengthWeight=0.472 --kstWeight=0.449
+--relativeStrengthWeight=0.671 --volatilityWeight=0.473 --kstWeight=0.068 --directionWeight=0.037
+--volatilityWeight=0.064 --directionWeight=0.250 --zachsRatingWeight=0.924 --kstWeight=0.725
+--directionWeight=0.489 --zachsRatingWeight=0.666 --volatilityWeight=0.421
+--volatilityWeight=0.878 --zachsRatingWeight=0.778
+--volatilityWeight=0.127 --popularityWeight=0.361 --directionWeight=0.699 --zachsRatingWeight=0.856
+--relativeStrengthWeight=0.737 --volatilityWeight=0.998 --zachsRatingWeight=0.695 --kstWeight=0.998
+--relativeStrengthWeight=0.518 --zachsRatingWeight=0.940 --volatilityWeight=0.460
+--directionWeight=0.539 --relativeStrengthWeight=0.652 --kstWeight=0.229
+--relativeStrengthWeight=0.600 --volatilityWeight=0.546 --popularityWeight=0.827
+--zachsRatingWeight=0.106 --kstWeight=0.629 --relativeStrengthWeight=0.649
+--zachsRatingWeight=0.734 --popularityWeight=0.821 --relativeStrengthWeight=0.581 --volatilityWeight=0.030
+--volatilityWeight=0.687 --zachsRatingWeight=0.342 --popularityWeight=0.109
+--popularityWeight=0.919 --directionWeight=0.795
+--kstWeight=0.224 --zachsRatingWeight=0.902
+--directionWeight=0.648 --relativeStrengthWeight=0.948 --zachsRatingWeight=0.784
+--directionWeight=0.720 --popularityWeight=0.171 --relativeStrengthWeight=0.246
+--directionWeight=0.447 --popularityWeight=0.965 --relativeStrengthWeight=0.104
+--popularityWeight=0.674 --volatilityWeight=0.975 --zachsRatingWeight=0.174
+--volatilityWeight=0.980 --directionWeight=0.612 --kstWeight=0.310
+--popularityWeight=0.570 --directionWeight=0.938 --zachsRatingWeight=0.982
+--relativeStrengthWeight=0.798 --zachsRatingWeight=0.376
+--volatilityWeight=0.898 --kstWeight=0.955 --directionWeight=0.736 --relativeStrengthWeight=0.886
+--kstWeight=0.495 --volatilityWeight=0.959 --relativeStrengthWeight=0.977
+--volatilityWeight=0.228 --relativeStrengthWeight=0.901
+--volatilityWeight=0.525 --popularityWeight=0.486
+--kstWeight=0.230 --zachsRatingWeight=0.658 --directionWeight=0.189
+--volatilityWeight=0.200 --relativeStrengthWeight=0.024
+--relativeStrengthWeight=0.825 --kstWeight=0.863 --popularityWeight=0.527 --volatilityWeight=0.203
+--zachsRatingWeight=0.220 --popularityWeight=0.690 --directionWeight=0.491
+--kstWeight=0.511 --directionWeight=0.694 --popularityWeight=0.200
+--volatilityWeight=0.132 --relativeStrengthWeight=0.097 --popularityWeight=0.650
+--directionWeight=0.119 --kstWeight=0.303
+--relativeStrengthWeight=0.445 --directionWeight=0.832 --kstWeight=0.434
+--kstWeight=0.715 --directionWeight=0.776 --volatilityWeight=0.223
+--zachsRatingWeight=0.082 --volatilityWeight=0.055 --kstWeight=0.486
+--popularityWeight=0.150 --relativeStrengthWeight=0.627 --zachsRatingWeight=0.386
+--zachsRatingWeight=0.078 --popularityWeight=0.946 --kstWeight=0.864
+--popularityWeight=0.041 --kstWeight=0.320 --zachsRatingWeight=0.697
+--popularityWeight=0.299 --volatilityWeight=0.634 --directionWeight=0.739
+--directionWeight=0.646 --relativeStrengthWeight=0.516 --volatilityWeight=0.577
+--volatilityWeight=0.258 --popularityWeight=0.679 --kstWeight=0.808
+--volatilityWeight=0.309 --kstWeight=0.473 --popularityWeight=0.560 --relativeStrengthWeight=0.520
+--directionWeight=0.750
+--volatilityWeight=0.005
+--zachsRatingWeight=0.315 --popularityWeight=0.859 --directionWeight=0.261
+--zachsRatingWeight=0.018 --relativeStrengthWeight=0.284 --volatilityWeight=0.064
+--kstWeight=0.673 --relativeStrengthWeight=0.624
+--zachsRatingWeight=0.631 --volatilityWeight=0.269 --kstWeight=0.296
+--volatilityWeight=0.815 --relativeStrengthWeight=0.144
+--directionWeight=0.184 --kstWeight=0.324 --popularityWeight=0.649 --zachsRatingWeight=0.667
+--kstWeight=0.161 --directionWeight=0.271 --zachsRatingWeight=0.582
+--volatilityWeight=0.137 --directionWeight=0.820
+--directionWeight=0.068 --relativeStrengthWeight=0.884 --zachsRatingWeight=0.406 --volatilityWeight=0.016
+--relativeStrengthWeight=0.692 --directionWeight=0.977 --kstWeight=0.859
+--kstWeight=0.987 --zachsRatingWeight=0.408
+--kstWeight=0.980 --relativeStrengthWeight=0.187 --zachsRatingWeight=0.779
+--zachsRatingWeight=0.404 --volatilityWeight=0.689 --popularityWeight=0.539
+--kstWeight=0.413 --zachsRatingWeight=0.970 --popularityWeight=0.929
+--volatilityWeight=0.285 --relativeStrengthWeight=0.174 --kstWeight=0.342
+--volatilityWeight=0.138 --relativeStrengthWeight=0.547 --zachsRatingWeight=0.618
+--zachsRatingWeight=0.568 --directionWeight=0.857 --popularityWeight=0.083 --relativeStrengthWeight=0.410
+--zachsRatingWeight=0.310 --volatilityWeight=0.080 --relativeStrengthWeight=0.964
+--relativeStrengthWeight=0.150 --kstWeight=0.429 --volatilityWeight=0.513
+--volatilityWeight=0.920 --relativeStrengthWeight=0.953 --zachsRatingWeight=0.430 --kstWeight=0.278
+--popularityWeight=0.780 --volatilityWeight=0.867 --directionWeight=0.779
+--zachsRatingWeight=0.905 --directionWeight=0.630 --relativeStrengthWeight=0.065
+--zachsRatingWeight=0.519 --volatilityWeight=0.997 --kstWeight=0.830 --relativeStrengthWeight=0.873
+--zachsRatingWeight=0.705 --directionWeight=0.472 --popularityWeight=0.037 --relativeStrengthWeight=0.864
+--kstWeight=0.124 --popularityWeight=0.730
+--volatilityWeight=0.185 --relativeStrengthWeight=0.986 --popularityWeight=0.130 --directionWeight=0.585
+--popularityWeight=0.834 --volatilityWeight=0.453 --kstWeight=0.260
+--relativeStrengthWeight=0.185 --zachsRatingWeight=0.164
+--kstWeight=0.057 --popularityWeight=0.660 --volatilityWeight=0.270
+--directionWeight=0.178 --popularityWeight=0.225 --relativeStrengthWeight=0.997
+--relativeStrengthWeight=0.210 --kstWeight=0.224 --volatilityWeight=0.782
+--zachsRatingWeight=0.132 --directionWeight=0.145
+--directionWeight=0.460 --kstWeight=0.693 --relativeStrengthWeight=0.379
+--directionWeight=0.374 --zachsRatingWeight=0.936 --relativeStrengthWeight=0.533
+--directionWeight=0.980 --relativeStrengthWeight=0.413 --kstWeight=0.174
+--popularityWeight=0.470 --relativeStrengthWeight=0.806
+--zachsRatingWeight=0.567 --volatilityWeight=0.713 --popularityWeight=0.089 --kstWeight=0.938
+--volatilityWeight=0.479 --zachsRatingWeight=0.449 --kstWeight=0.754
+--relativeStrengthWeight=0.223 --zachsRatingWeight=0.050 --popularityWeight=0.880 --volatilityWeight=0.763
+--kstWeight=0.778 --directionWeight=0.820 --zachsRatingWeight=0.744
+--directionWeight=0.057 --volatilityWeight=0.307 --popularityWeight=0.120
+--zachsRatingWeight=0.423 --kstWeight=0.791 --directionWeight=0.545
+--directionWeight=0.624 --zachsRatingWeight=0.930 --popularityWeight=0.849
+--relativeStrengthWeight=0.433 --volatilityWeight=0.102
+--kstWeight=0.808 --volatilityWeight=0.632 --directionWeight=0.523
+--relativeStrengthWeight=0.895 --directionWeight=0.368 --kstWeight=0.900
+--popularityWeight=0.404 --directionWeight=0.307 --volatilityWeight=0.255
+--popularityWeight=0.629 --zachsRatingWeight=0.589 --relativeStrengthWeight=0.477
+--volatilityWeight=0.322 --kstWeight=0.224 --zachsRatingWeight=0.805
+--zachsRatingWeight=0.904 --relativeStrengthWeight=0.946 --kstWeight=0.928
+--zachsRatingWeight=0.476 --relativeStrengthWeight=0.559 --volatilityWeight=0.777
+--popularityWeight=0.895 --directionWeight=0.756
+--kstWeight=0.831 --directionWeight=0.649 --relativeStrengthWeight=0.856
+--zachsRatingWeight=0.246 --kstWeight=0.861
+--zachsRatingWeight=0.681 --directionWeight=0.695 --popularityWeight=0.934 --volatilityWeight=0.953
+--popularityWeight=0.422 --zachsRatingWeight=0.796 --kstWeight=0.702 --directionWeight=0.612
+--relativeStrengthWeight=0.348 --directionWeight=0.920 --zachsRatingWeight=0.394
+--popularityWeight=0.018 --kstWeight=0.647 --directionWeight=0.715
+--zachsRatingWeight=0.927 --relativeStrengthWeight=0.676 --popularityWeight=0.661
+--zachsRatingWeight=0.424 --relativeStrengthWeight=0.462 --directionWeight=0.687
+--popularityWeight=0.095 --kstWeight=0.053 --directionWeight=0.071
+--relativeStrengthWeight=0.737 --kstWeight=0.625
+--volatilityWeight=0.939 --kstWeight=0.043 --directionWeight=0.918
+--volatilityWeight=0.316 --kstWeight=0.477 --popularityWeight=0.713
+--volatilityWeight=0.591 --popularityWeight=0.931 --kstWeight=0.276
+--directionWeight=0.440 --zachsRatingWeight=0.399 --relativeStrengthWeight=0.739
+--relativeStrengthWeight=0.443 --directionWeight=0.093
+--popularityWeight=0.476 --kstWeight=0.625 --relativeStrengthWeight=0.342 --volatilityWeight=0.782
+--relativeStrengthWeight=0.807 --kstWeight=0.580
+--volatilityWeight=0.692 --kstWeight=0.773 --zachsRatingWeight=0.205
+--popularityWeight=0.239 --zachsRatingWeight=0.998 --relativeStrengthWeight=0.473 --directionWeight=0.631
+--kstWeight=0.682 --volatilityWeight=0.427 --zachsRatingWeight=0.981
+--volatilityWeight=0.554 --directionWeight=0.222 --popularityWeight=0.350
+--relativeStrengthWeight=0.913 --popularityWeight=0.836
+--popularityWeight=0.242 --kstWeight=0.811 --directionWeight=0.648 --volatilityWeight=0.299
+--kstWeight=0.605 --zachsRatingWeight=0.564 --volatilityWeight=0.397 --relativeStrengthWeight=0.705
+--directionWeight=0.267 --kstWeight=0.184 --zachsRatingWeight=0.152
+--zachsRatingWeight=0.422 --directionWeight=0.449 --popularityWeight=0.796
+--zachsRatingWeight=0.913 --popularityWeight=0.948
+--zachsRatingWeight=0.799 --relativeStrengthWeight=0.912 --directionWeight=0.149
+--zachsRatingWeight=0.657 --directionWeight=0.487 --relativeStrengthWeight=0.210
+--relativeStrengthWeight=0.834 --kstWeight=0.576 --directionWeight=0.568 --volatilityWeight=0.256
+--relativeStrengthWeight=0.478 --popularityWeight=0.953 --zachsRatingWeight=0.059
+--popularityWeight=0.426 --relativeStrengthWeight=0.936 --kstWeight=0.284
+--popularityWeight=0.091 --volatilityWeight=0.068
+--relativeStrengthWeight=0.481 --kstWeight=0.312 --zachsRatingWeight=0.245
+--volatilityWeight=0.450 --popularityWeight=0.266 --relativeStrengthWeight=0.222 --zachsRatingWeight=0.839
+--relativeStrengthWeight=0.770 --directionWeight=0.781 --zachsRatingWeight=0.470 --kstWeight=0.082
+--popularityWeight=0.723 --directionWeight=0.998 --zachsRatingWeight=0.226
+--zachsRatingWeight=0.407 --popularityWeight=0.058
+--volatilityWeight=0.663 --zachsRatingWeight=0.921 --popularityWeight=0.780 --kstWeight=0.067
+--relativeStrengthWeight=0.231 --volatilityWeight=0.563 --directionWeight=0.850
+--zachsRatingWeight=0.248 --kstWeight=0.524 --volatilityWeight=0.348 --popularityWeight=0.204
+--volatilityWeight=0.861 --directionWeight=0.676 --relativeStrengthWeight=0.696
+--volatilityWeight=0.390 --popularityWeight=0.497 --zachsRatingWeight=0.108
+--kstWeight=0.716 --popularityWeight=0.017 --volatilityWeight=0.015
+--relativeStrengthWeight=0.894 --kstWeight=0.158 --zachsRatingWeight=0.820 --directionWeight=0.919
+--zachsRatingWeight=0.655 --directionWeight=0.308 --popularityWeight=0.923
+--zachsRatingWeight=0.098 --relativeStrengthWeight=0.314 --directionWeight=0.156
+--directionWeight=0.652 --kstWeight=0.446 --zachsRatingWeight=0.160
+--directionWeight=0.365 --popularityWeight=0.548 --relativeStrengthWeight=0.861
+--popularityWeight=0.778 --directionWeight=0.204 --relativeStrengthWeight=0.909
+--zachsRatingWeight=0.376 --directionWeight=0.458 --relativeStrengthWeight=0.271 --kstWeight=0.818
+--volatilityWeight=0.563 --popularityWeight=0.145
+--kstWeight=0.867 --relativeStrengthWeight=0.336 --volatilityWeight=0.490 --zachsRatingWeight=0.240
+--kstWeight=0.059 --relativeStrengthWeight=0.563 --directionWeight=0.492 --volatilityWeight=0.183
+--zachsRatingWeight=0.915 --popularityWeight=0.452 --volatilityWeight=0.896
+--zachsRatingWeight=0.683 --directionWeight=0.316 --popularityWeight=0.487
+--zachsRatingWeight=0.408 --kstWeight=0.904
+--relativeStrengthWeight=0.383
+--relativeStrengthWeight=0.514 --popularityWeight=0.455 --directionWeight=0.689
+--volatilityWeight=0.943 --kstWeight=0.074 --directionWeight=0.536
+--volatilityWeight=0.221 --kstWeight=0.509 --directionWeight=0.006 --zachsRatingWeight=0.485
+--volatilityWeight=0.289 --directionWeight=0.828 --popularityWeight=0.914
+--kstWeight=0.971 --volatilityWeight=0.867
+--zachsRatingWeight=0.020 --directionWeight=0.574 --volatilityWeight=0.480
+--relativeStrengthWeight=0.906 --kstWeight=0.237 --directionWeight=0.928 --volatilityWeight=0.198
+--kstWeight=0.786 --volatilityWeight=0.250
+--volatilityWeight=0.441 --relativeStrengthWeight=0.802 --zachsRatingWeight=0.376
+--kstWeight=0.578 --directionWeight=0.198 --popularityWeight=0.979
+--popularityWeight=0.423 --volatilityWeight=0.639 --kstWeight=0.099 --directionWeight=0.471
+--kstWeight=0.949 --popularityWeight=0.965
+--kstWeight=0.737 --volatilityWeight=0.035 --popularityWeight=0.694
+--relativeStrengthWeight=0.791 --directionWeight=0.934
+--zachsRatingWeight=0.534 --kstWeight=0.524 --relativeStrengthWeight=0.753
+--kstWeight=0.065 --zachsRatingWeight=0.959 --relativeStrengthWeight=0.871 --directionWeight=0.386
+--popularityWeight=0.218 --zachsRatingWeight=0.118 --directionWeight=0.991
+--zachsRatingWeight=0.013 --directionWeight=0.300 --relativeStrengthWeight=0.014
+--zachsRatingWeight=0.198 --kstWeight=0.945
+--popularityWeight=0.621 --kstWeight=0.967 --volatilityWeight=0.835
+--directionWeight=0.560 --volatilityWeight=0.145
+--popularityWeight=0.535 --directionWeight=0.226 --volatilityWeight=0.081
+--popularityWeight=0.060 --kstWeight=0.722
+--relativeStrengthWeight=0.648 --directionWeight=0.222
+--volatilityWeight=0.539 --zachsRatingWeight=0.908 --kstWeight=0.224
+--zachsRatingWeight=0.424 --kstWeight=0.455 --popularityWeight=0.532
+--popularityWeight=0.782 --zachsRatingWeight=0.100 --volatilityWeight=0.131
+--relativeStrengthWeight=0.057 --directionWeight=0.275 --kstWeight=0.079
+--zachsRatingWeight=0.964 --relativeStrengthWeight=0.209 --popularityWeight=0.965 --volatilityWeight=0.799
+--volatilityWeight=0.625 --popularityWeight=0.076 --relativeStrengthWeight=0.266
+--kstWeight=0.805 --relativeStrengthWeight=0.696 --volatilityWeight=0.821
+--relativeStrengthWeight=0.997 --popularityWeight=0.642 --kstWeight=0.809 --volatilityWeight=0.225
+--relativeStrengthWeight=0.784 --kstWeight=0.011 --zachsRatingWeight=0.541
+--kstWeight=0.357 --directionWeight=0.555 --volatilityWeight=0.358 --popularityWeight=0.618
+--zachsRatingWeight=0.042 --relativeStrengthWeight=0.494 --popularityWeight=0.415
+--directionWeight=0.019 --popularityWeight=0.619 --volatilityWeight=0.459 --kstWeight=0.207
+--zachsRatingWeight=0.302 --volatilityWeight=0.911 --directionWeight=0.796
+--volatilityWeight=0.018 --directionWeight=0.082 --kstWeight=0.664
+--kstWeight=0.620 --volatilityWeight=0.263 --popularityWeight=0.359
+--zachsRatingWeight=0.898 --directionWeight=0.858 --popularityWeight=0.933
+--zachsRatingWeight=0.467 --kstWeight=0.000 --volatilityWeight=0.497
+--volatilityWeight=0.819 --relativeStrengthWeight=0.045 --kstWeight=0.240
+--popularityWeight=0.888 --relativeStrengthWeight=0.807 --kstWeight=0.559
+--popularityWeight=0.624 --relativeStrengthWeight=0.221 --directionWeight=0.642
+--directionWeight=0.931 --popularityWeight=0.697 --kstWeight=0.539
+--popularityWeight=0.398 --zachsRatingWeight=0.942 --volatilityWeight=0.899 --kstWeight=0.519
+--kstWeight=0.465 --directionWeight=0.678 --popularityWeight=0.477
+--directionWeight=0.094 --kstWeight=0.890 --popularityWeight=0.389
+--volatilityWeight=0.901
+--kstWeight=0.742 --relativeStrengthWeight=0.829 --popularityWeight=0.661
+--directionWeight=0.661 --relativeStrengthWeight=0.685
+--kstWeight=0.349 --zachsRatingWeight=0.068 --volatilityWeight=0.985
+--directionWeight=0.833 --popularityWeight=0.098
+--zachsRatingWeight=0.685 --relativeStrengthWeight=0.220 --directionWeight=0.474
+--volatilityWeight=0.862 --kstWeight=0.468 --zachsRatingWeight=0.063
+--directionWeight=0.625 --kstWeight=0.713 --relativeStrengthWeight=0.539
+--popularityWeight=0.470 --kstWeight=0.319 --zachsRatingWeight=0.358
+--zachsRatingWeight=0.573 --kstWeight=0.153
+--volatilityWeight=0.935 --popularityWeight=0.326 --directionWeight=0.697
+--kstWeight=0.638 --popularityWeight=0.147 --directionWeight=0.478 --volatilityWeight=0.948
+--volatilityWeight=0.794 --relativeStrengthWeight=0.435 --kstWeight=0.631
+--directionWeight=0.629 --volatilityWeight=0.797
+--relativeStrengthWeight=0.482 --directionWeight=0.992 --kstWeight=0.531
+--directionWeight=0.391 --volatilityWeight=0.576 --zachsRatingWeight=0.100 --kstWeight=0.788
+--zachsRatingWeight=0.856 --kstWeight=0.526
+--popularityWeight=0.399 --zachsRatingWeight=0.482
+--zachsRatingWeight=0.754 --kstWeight=0.760 --relativeStrengthWeight=0.452
+--relativeStrengthWeight=0.444 --zachsRatingWeight=0.274 --directionWeight=0.348 --popularityWeight=0.068
+--volatilityWeight=0.096 --kstWeight=0.372 --relativeStrengthWeight=0.627
+--volatilityWeight=0.170 --directionWeight=0.322 --zachsRatingWeight=0.135 --kstWeight=0.329
+--kstWeight=0.812 --directionWeight=0.252 --volatilityWeight=0.799
+--popularityWeight=0.712 --kstWeight=0.606 --directionWeight=0.580
+--volatilityWeight=0.702 --directionWeight=0.172
+--kstWeight=0.469 --volatilityWeight=0.425 --zachsRatingWeight=0.687
+--kstWeight=0.728 --zachsRatingWeight=0.414 --volatilityWeight=0.432
+--relativeStrengthWeight=0.911 --volatilityWeight=0.684 --kstWeight=0.848 --directionWeight=0.675
+--directionWeight=0.675 --zachsRatingWeight=0.974 --volatilityWeight=0.651
+--zachsRatingWeight=0.034 --volatilityWeight=0.102 --kstWeight=0.431
+--popularityWeight=0.013 --directionWeight=0.369 --zachsRatingWeight=0.408
+--kstWeight=0.246 --popularityWeight=0.026 --directionWeight=0.141 --zachsRatingWeight=0.876
+--kstWeight=0.919 --directionWeight=0.487
+--zachsRatingWeight=0.191 --kstWeight=0.629 --volatilityWeight=0.900 --directionWeight=0.606
+--zachsRatingWeight=0.889 --volatilityWeight=0.579 --kstWeight=0.252
+--directionWeight=0.726 --popularityWeight=0.439 --zachsRatingWeight=0.520
+--relativeStrengthWeight=0.989 --directionWeight=0.553
+--kstWeight=0.191 --zachsRatingWeight=0.700 --relativeStrengthWeight=0.666
+--zachsRatingWeight=0.130 --relativeStrengthWeight=0.294 --kstWeight=0.225
+--zachsRatingWeight=0.309 --popularityWeight=0.535 --volatilityWeight=0.883
+--directionWeight=0.865 --popularityWeight=0.954
+--relativeStrengthWeight=0.275 --popularityWeight=0.967
+--kstWeight=0.535 --volatilityWeight=0.963 --popularityWeight=0.599
+--kstWeight=0.786 --relativeStrengthWeight=0.264 --popularityWeight=0.270
+--volatilityWeight=0.962 --popularityWeight=0.006 --relativeStrengthWeight=0.675
+--directionWeight=0.557 --zachsRatingWeight=0.959
+--zachsRatingWeight=0.431 --popularityWeight=0.462 --relativeStrengthWeight=0.949 --kstWeight=0.234
+--volatilityWeight=0.188 --zachsRatingWeight=0.482
+--relativeStrengthWeight=0.333 --popularityWeight=0.435 --directionWeight=0.171
+--relativeStrengthWeight=0.298 --popularityWeight=0.913 --zachsRatingWeight=0.715 --directionWeight=0.052
+--kstWeight=0.944 --volatilityWeight=0.470 --zachsRatingWeight=0.829
+--popularityWeight=0.006 --zachsRatingWeight=0.930 --directionWeight=0.962
+--zachsRatingWeight=0.199 --relativeStrengthWeight=0.373 --kstWeight=0.045
+--relativeStrengthWeight=0.177 --popularityWeight=0.243 --kstWeight=0.230
+--relativeStrengthWeight=0.796 --directionWeight=0.210 --kstWeight=0.566
+--directionWeight=0.861 --volatilityWeight=0.588 --zachsRatingWeight=0.209
+--directionWeight=0.052 --relativeStrengthWeight=0.853 --kstWeight=0.843 --zachsRatingWeight=0.411
+--relativeStrengthWeight=0.884 --popularityWeight=0.530 --directionWeight=0.681 --zachsRatingWeight=0.507
+--volatilityWeight=0.647 --popularityWeight=0.303
+--popularityWeight=0.999 --directionWeight=0.242 --kstWeight=0.761 --relativeStrengthWeight=0.233
+--directionWeight=0.512 --volatilityWeight=0.520 --zachsRatingWeight=0.324
+--volatilityWeight=0.647 --directionWeight=0.369 --relativeStrengthWeight=0.518
+--directionWeight=0.796 --zachsRatingWeight=0.940 --volatilityWeight=0.377 --popularityWeight=0.892
+--popularityWeight=0.944 --directionWeight=0.888 --relativeStrengthWeight=0.428
+--zachsRatingWeight=0.832 --kstWeight=0.767 --popularityWeight=0.061
+--relativeStrengthWeight=0.584 --zachsRatingWeight=0.981 --directionWeight=0.551 --popularityWeight=0.997
+--volatilityWeight=0.680 --directionWeight=0.886 --popularityWeight=0.650
+--zachsRatingWeight=0.373 --directionWeight=0.688 --popularityWeight=0.955
+--kstWeight=0.227 --popularityWeight=0.940
+--popularityWeight=0.765 --directionWeight=0.845
+--volatilityWeight=0.383 --relativeStrengthWeight=0.134 --kstWeight=0.180
+--directionWeight=0.871 --relativeStrengthWeight=0.786 --kstWeight=0.764
+--directionWeight=0.685 --zachsRatingWeight=0.194 --relativeStrengthWeight=0.238 --kstWeight=0.079
+--kstWeight=0.145 --zachsRatingWeight=0.923 --volatilityWeight=0.580
+--volatilityWeight=0.855 --popularityWeight=0.438 --kstWeight=0.540
+--kstWeight=0.669 --zachsRatingWeight=0.808 --relativeStrengthWeight=0.466 --popularityWeight=0.094
+--zachsRatingWeight=0.076 --kstWeight=0.885 --popularityWeight=0.133
+--popularityWeight=0.971 --volatilityWeight=0.792 --zachsRatingWeight=0.782 --kstWeight=0.118
+--kstWeight=0.342 --popularityWeight=0.182 --volatilityWeight=0.621
+--zachsRatingWeight=0.486 --volatilityWeight=0.022 --relativeStrengthWeight=0.631
+--kstWeight=0.434 --directionWeight=0.650 --zachsRatingWeight=0.039
+--relativeStrengthWeight=0.734 --kstWeight=0.923 --directionWeight=0.709
+--zachsRatingWeight=0.281 --volatilityWeight=0.753 --directionWeight=0.877 --relativeStrengthWeight=0.121
+--volatilityWeight=0.239 --kstWeight=0.903 --popularityWeight=0.460 --zachsRatingWeight=0.333
+--directionWeight=0.259 --volatilityWeight=0.110 --popularityWeight=0.560 --relativeStrengthWeight=0.326
+--volatilityWeight=0.886 --popularityWeight=0.429 --zachsRatingWeight=0.105
+--kstWeight=0.260 --popularityWeight=0.396 --volatilityWeight=0.941
+--volatilityWeight=0.621 --kstWeight=0.186 --zachsRatingWeight=0.106
+--directionWeight=0.663 --volatilityWeight=0.952 --relativeStrengthWeight=0.813
+--popularityWeight=0.229 --relativeStrengthWeight=0.578 --zachsRatingWeight=0.891
+--kstWeight=0.130 --zachsRatingWeight=0.614 --relativeStrengthWeight=0.163
+--popularityWeight=0.958 --kstWeight=0.405 --zachsRatingWeight=0.791
+--relativeStrengthWeight=0.390 --kstWeight=0.529 --popularityWeight=0.373 --directionWeight=0.065
+--kstWeight=0.310 --relativeStrengthWeight=0.498 --zachsRatingWeight=0.393 --directionWeight=0.533
+--directionWeight=0.148 --volatilityWeight=0.408 --popularityWeight=0.068
+--kstWeight=0.617 --popularityWeight=0.865
+--kstWeight=0.491 --relativeStrengthWeight=0.026 --volatilityWeight=0.961
+--directionWeight=0.403 --volatilityWeight=0.449 --kstWeight=0.219
+--popularityWeight=0.921 --directionWeight=0.606 --kstWeight=0.132
+--volatilityWeight=0.127 --relativeStrengthWeight=0.121
+--zachsRatingWeight=0.083 --directionWeight=0.308 --volatilityWeight=0.256
+--relativeStrengthWeight=0.905 --popularityWeight=0.865 --kstWeight=0.828
+--zachsRatingWeight=0.389 --kstWeight=0.467 --directionWeight=0.489
+--kstWeight=0.046 --zachsRatingWeight=0.076 --volatilityWeight=0.868 --popularityWeight=0.837
+--volatilityWeight=0.044 --directionWeight=0.509
+--kstWeight=0.356 --volatilityWeight=0.216 --directionWeight=0.525 --relativeStrengthWeight=0.868
+--volatilityWeight=0.107 --zachsRatingWeight=0.282 --relativeStrengthWeight=0.067 --kstWeight=0.698
+--relativeStrengthWeight=0.475 --zachsRatingWeight=0.271
+--zachsRatingWeight=0.836 --kstWeight=0.659 --popularityWeight=0.726 --directionWeight=0.311
+--kstWeight=0.524 --zachsRatingWeight=0.085
+--relativeStrengthWeight=0.678 --zachsRatingWeight=0.474 --directionWeight=0.129 --popularityWeight=0.065
+--zachsRatingWeight=0.112 --directionWeight=0.975 --relativeStrengthWeight=0.414 --popularityWeight=0.284
+--directionWeight=0.700 --volatilityWeight=0.854 --zachsRatingWeight=0.514
+--volatilityWeight=0.264 --relativeStrengthWeight=0.312 --popularityWeight=0.953
+--relativeStrengthWeight=0.581 --zachsRatingWeight=0.879 --popularityWeight=0.811 --volatilityWeight=0.510
+--volatilityWeight=0.512 --zachsRatingWeight=0.507 --relativeStrengthWeight=0.444 --kstWeight=0.513
+--volatilityWeight=0.286 --popularityWeight=0.678 --relativeStrengthWeight=0.667
+--directionWeight=0.211 --relativeStrengthWeight=0.570 --volatilityWeight=0.526
+--directionWeight=0.471 --popularityWeight=0.820 --relativeStrengthWeight=0.580
+--volatilityWeight=0.185 --relativeStrengthWeight=0.228 --kstWeight=0.163
+--directionWeight=0.030 --popularityWeight=0.321 --kstWeight=0.319 --zachsRatingWeight=0.381
+--volatilityWeight=0.133 --zachsRatingWeight=0.174 --relativeStrengthWeight=0.370 --kstWeight=0.971
+--popularityWeight=0.528 --zachsRatingWeight=0.445 --directionWeight=0.826
+--kstWeight=0.682 --popularityWeight=0.190 --directionWeight=0.129 --zachsRatingWeight=0.092
+--zachsRatingWeight=0.999 --directionWeight=0.283 --kstWeight=0.312 --popularityWeight=0.754
+--relativeStrengthWeight=0.811 --popularityWeight=0.935
+--volatilityWeight=0.946 --popularityWeight=0.572 --zachsRatingWeight=0.314 --directionWeight=0.095
+--relativeStrengthWeight=0.036 --popularityWeight=0.881 --directionWeight=0.854
+--kstWeight=0.841 --zachsRatingWeight=0.090 --relativeStrengthWeight=0.651
+--zachsRatingWeight=0.052 --popularityWeight=0.487 --kstWeight=0.713
+--zachsRatingWeight=0.645 --directionWeight=0.951 --relativeStrengthWeight=0.929 --popularityWeight=0.399
+--relativeStrengthWeight=0.418 --kstWeight=0.958 --directionWeight=0.371
+--volatilityWeight=0.403 --directionWeight=0.171 --relativeStrengthWeight=0.366
+--kstWeight=0.290 --volatilityWeight=0.119 --zachsRatingWeight=0.846
+--popularityWeight=0.779 --relativeStrengthWeight=0.206 --zachsRatingWeight=0.783 --directionWeight=0.944
+--zachsRatingWeight=0.447 --volatilityWeight=0.503 --popularityWeight=0.564
+--kstWeight=0.603 --relativeStrengthWeight=0.335 --zachsRatingWeight=0.315 --directionWeight=0.082
+--relativeStrengthWeight=0.430 --popularityWeight=0.563 --directionWeight=0.348
+--volatilityWeight=0.371 --popularityWeight=0.910
+--directionWeight=0.240 --relativeStrengthWeight=0.437 --zachsRatingWeight=0.480
+--directionWeight=0.866 --popularityWeight=0.599 --zachsRatingWeight=0.183 --relativeStrengthWeight=0.376
+--relativeStrengthWeight=0.363 --kstWeight=0.301
+--directionWeight=0.823 --relativeStrengthWeight=0.556 --volatilityWeight=0.187
+--kstWeight=0.257 --volatilityWeight=0.491 --relativeStrengthWeight=0.004 --directionWeight=0.499
+--relativeStrengthWeight=0.481 --directionWeight=0.150 --popularityWeight=0.020 --zachsRatingWeight=0.248
+--zachsRatingWeight=0.607 --directionWeight=0.955 --kstWeight=0.178
+--kstWeight=0.244 --relativeStrengthWeight=0.420 --volatilityWeight=0.535
+--directionWeight=0.248 --volatilityWeight=0.053 --popularityWeight=0.025
+--zachsRatingWeight=0.065 --directionWeight=0.668 --volatilityWeight=0.564 --popularityWeight=0.195
+--zachsRatingWeight=0.281 --volatilityWeight=0.113 --popularityWeight=0.079
+--zachsRatingWeight=0.612 --directionWeight=0.820
+--kstWeight=0.304 --relativeStrengthWeight=0.147 --volatilityWeight=0.975 --zachsRatingWeight=0.869
+--volatilityWeight=0.351 --directionWeight=0.010
+--directionWeight=0.649 --kstWeight=0.896
+--popularityWeight=0.285 --kstWeight=0.429 --directionWeight=0.992 --zachsRatingWeight=0.547
+--relativeStrengthWeight=0.232 --zachsRatingWeight=0.077 --kstWeight=0.195
+--directionWeight=0.236 --popularityWeight=0.806 --volatilityWeight=0.740
+--relativeStrengthWeight=0.573 --kstWeight=0.221 --popularityWeight=0.752
+--relativeStrengthWeight=0.687 --directionWeight=0.317 --zachsRatingWeight=0.615
+--popularityWeight=0.645 --relativeStrengthWeight=0.860 --directionWeight=0.824
+--zachsRatingWeight=0.462 --kstWeight=0.548 --relativeStrengthWeight=0.620 --popularityWeight=0.917
+--popularityWeight=0.299 --relativeStrengthWeight=0.554
+--relativeStrengthWeight=0.300 --volatilityWeight=0.613 --kstWeight=0.264
+--directionWeight=0.989 --volatilityWeight=0.806 --popularityWeight=0.923 --relativeStrengthWeight=0.728
+--relativeStrengthWeight=0.422 --volatilityWeight=0.366 --popularityWeight=0.567 --zachsRatingWeight=0.310
+--popularityWeight=0.438 --zachsRatingWeight=0.175 --kstWeight=0.554
+--volatilityWeight=0.302 --relativeStrengthWeight=0.011 --directionWeight=0.212 --popularityWeight=0.522
+--directionWeight=0.920 --zachsRatingWeight=0.048 --volatilityWeight=0.808 --popularityWeight=0.360
+--popularityWeight=0.066 --volatilityWeight=0.889 --zachsRatingWeight=0.283 --kstWeight=0.836
+--kstWeight=0.012 --zachsRatingWeight=0.726 --volatilityWeight=0.016
+--zachsRatingWeight=0.632 --volatilityWeight=0.642
+--directionWeight=0.685 --relativeStrengthWeight=0.931 --kstWeight=0.583
+--directionWeight=0.925 --popularityWeight=0.058 --zachsRatingWeight=0.020
+--zachsRatingWeight=0.781 --volatilityWeight=0.953 --directionWeight=0.592
+--relativeStrengthWeight=0.376 --zachsRatingWeight=0.851 --kstWeight=0.620 --volatilityWeight=0.140
+--volatilityWeight=0.469 --relativeStrengthWeight=0.339 --popularityWeight=0.566
+--directionWeight=0.627 --volatilityWeight=0.332 --popularityWeight=0.355 --zachsRatingWeight=0.183
+--popularityWeight=0.489 --kstWeight=0.104 --directionWeight=0.104
+--kstWeight=0.042 --volatilityWeight=0.071 --directionWeight=0.761
+--directionWeight=0.795 --volatilityWeight=0.811 --relativeStrengthWeight=0.915
+--relativeStrengthWeight=0.382 --zachsRatingWeight=0.236
+--zachsRatingWeight=0.552 --popularityWeight=0.298
+--directionWeight=0.843 --volatilityWeight=0.631
+--kstWeight=0.566 --relativeStrengthWeight=0.354
+--directionWeight=0.197 --popularityWeight=0.956 --volatilityWeight=0.027 --kstWeight=0.897
+--relativeStrengthWeight=0.875 --popularityWeight=0.195 --directionWeight=0.790 --volatilityWeight=0.810
+--zachsRatingWeight=0.149 --relativeStrengthWeight=0.526
+--volatilityWeight=0.335 --popularityWeight=0.825 --directionWeight=0.326
+--directionWeight=0.545 --volatilityWeight=0.480 --kstWeight=0.296 --popularityWeight=0.919
+--kstWeight=0.284 --directionWeight=0.266 --volatilityWeight=0.577
+--volatilityWeight=0.496 --zachsRatingWeight=0.614 --popularityWeight=0.337 --relativeStrengthWeight=0.426
+--popularityWeight=0.977 --relativeStrengthWeight=0.974 --volatilityWeight=0.432
+--kstWeight=0.542 --relativeStrengthWeight=0.356 --volatilityWeight=0.368
+--zachsRatingWeight=0.267 --popularityWeight=0.022
+--kstWeight=0.109 --zachsRatingWeight=0.950 --relativeStrengthWeight=0.395
+--directionWeight=0.762 --relativeStrengthWeight=0.940 --zachsRatingWeight=0.998
+--volatilityWeight=0.163 --relativeStrengthWeight=0.706
+--volatilityWeight=0.828 --kstWeight=0.710
+--directionWeight=0.372 --zachsRatingWeight=0.464
+--popularityWeight=0.647 --kstWeight=0.750
+--relativeStrengthWeight=0.382 --zachsRatingWeight=0.711 --volatilityWeight=0.355 --directionWeight=0.173
+--volatilityWeight=0.351 --directionWeight=0.921 --popularityWeight=0.674
+--relativeStrengthWeight=0.164 --zachsRatingWeight=0.155
+--relativeStrengthWeight=0.893 --volatilityWeight=0.796
+--popularityWeight=0.882 --zachsRatingWeight=0.368 --directionWeight=0.824 --volatilityWeight=0.455
+--popularityWeight=0.266 --directionWeight=0.337 --relativeStrengthWeight=0.192 --volatilityWeight=0.992
+--popularityWeight=0.426 --zachsRatingWeight=0.932 --kstWeight=0.572 --relativeStrengthWeight=0.347
+--directionWeight=0.163 --relativeStrengthWeight=0.687 --zachsRatingWeight=0.105
+--relativeStrengthWeight=0.544 --directionWeight=0.113 --zachsRatingWeight=0.235
+--relativeStrengthWeight=0.252 --kstWeight=0.989 --volatilityWeight=0.680 --zachsRatingWeight=0.886
+--relativeStrengthWeight=0.487 --zachsRatingWeight=0.519 --directionWeight=0.093 --volatilityWeight=0.927
+--volatilityWeight=0.591 --popularityWeight=0.664
+--popularityWeight=0.820 --relativeStrengthWeight=0.752 --kstWeight=0.917 --directionWeight=0.462
+--directionWeight=0.066 --kstWeight=0.404 --zachsRatingWeight=0.353
+--directionWeight=0.650 --relativeStrengthWeight=0.024 --volatilityWeight=0.540 --popularityWeight=0.071
+--relativeStrengthWeight=0.425 --volatilityWeight=0.173 --popularityWeight=0.795 --directionWeight=0.134
+--volatilityWeight=0.197 --kstWeight=0.616 --popularityWeight=0.015 --zachsRatingWeight=0.996
+--kstWeight=0.725 --zachsRatingWeight=0.484 --relativeStrengthWeight=0.095
+--relativeStrengthWeight=0.705 --volatilityWeight=0.458 --kstWeight=0.996
+--kstWeight=0.511 --zachsRatingWeight=0.663 --volatilityWeight=0.004
+--directionWeight=0.308 --kstWeight=0.416 --relativeStrengthWeight=0.492
+--zachsRatingWeight=0.081 --relativeStrengthWeight=0.449 --popularityWeight=0.312
+--kstWeight=0.307 --relativeStrengthWeight=0.421 --popularityWeight=0.876
+--directionWeight=0.488 --popularityWeight=0.782 --zachsRatingWeight=0.591
+--zachsRatingWeight=0.917 --directionWeight=0.317 --volatilityWeight=0.450
+--relativeStrengthWeight=0.734 --zachsRatingWeight=0.451 --volatilityWeight=0.485
+--volatilityWeight=0.783 --popularityWeight=0.643 --directionWeight=0.267
+--popularityWeight=0.475 --volatilityWeight=0.196 --kstWeight=0.437
+--kstWeight=0.730 --zachsRatingWeight=0.372 --relativeStrengthWeight=0.280
+--directionWeight=0.552 --volatilityWeight=0.645 --relativeStrengthWeight=0.287
+--relativeStrengthWeight=0.927 --zachsRatingWeight=0.316 --directionWeight=0.845 --popularityWeight=0.525
+--relativeStrengthWeight=0.521 --volatilityWeight=0.359 --popularityWeight=0.905
+--relativeStrengthWeight=0.564 --zachsRatingWeight=0.826
+--relativeStrengthWeight=0.494 --volatilityWeight=0.843
+--zachsRatingWeight=0.591 --relativeStrengthWeight=0.207 --kstWeight=0.288
+--kstWeight=0.042 --volatilityWeight=0.852 --zachsRatingWeight=0.050 --popularityWeight=0.613
+--volatilityWeight=0.514 --popularityWeight=0.097 --kstWeight=0.687 --relativeStrengthWeight=0.010
+--zachsRatingWeight=0.793 --relativeStrengthWeight=0.087 --popularityWeight=0.071 --volatilityWeight=0.783
+--relativeStrengthWeight=0.519 --zachsRatingWeight=0.052
+--relativeStrengthWeight=0.065 --zachsRatingWeight=0.633 --directionWeight=0.321 --popularityWeight=0.641
+--relativeStrengthWeight=0.566 --popularityWeight=0.345 --zachsRatingWeight=0.411
+--zachsRatingWeight=0.387 --directionWeight=0.040 --popularityWeight=0.512
+--zachsRatingWeight=0.098 --popularityWeight=0.874
+--relativeStrengthWeight=0.735 --kstWeight=0.037
+--kstWeight=0.431 --directionWeight=0.211 --volatilityWeight=0.113 --popularityWeight=0.317
+--directionWeight=0.748 --zachsRatingWeight=0.713 --popularityWeight=0.625 --volatilityWeight=0.088
+--popularityWeight=0.795 --zachsRatingWeight=0.137 --directionWeight=0.785
+--volatilityWeight=0.099 --directionWeight=0.319 --zachsRatingWeight=0.558 --relativeStrengthWeight=0.387
+--relativeStrengthWeight=0.041 --directionWeight=0.969 --zachsRatingWeight=0.534
+--directionWeight=0.911 --zachsRatingWeight=0.837 --relativeStrengthWeight=0.651 --kstWeight=0.933
+--popularityWeight=0.965 --directionWeight=0.695 --volatilityWeight=0.002
+--popularityWeight=0.569 --relativeStrengthWeight=0.405 --directionWeight=0.097 --kstWeight=0.938
+--zachsRatingWeight=0.776 --kstWeight=0.476 --relativeStrengthWeight=0.968
+--directionWeight=0.552 --zachsRatingWeight=0.231 --relativeStrengthWeight=0.409 --kstWeight=0.829
+--zachsRatingWeight=0.551 --popularityWeight=0.321 --volatilityWeight=0.368 --relativeStrengthWeight=0.581
+--volatilityWeight=0.498 --kstWeight=0.757 --relativeStrengthWeight=0.141
+--directionWeight=0.376 --kstWeight=0.113 --zachsRatingWeight=0.663
+--popularityWeight=0.304 --directionWeight=0.063 --relativeStrengthWeight=0.553 --volatilityWeight=0.852
+--directionWeight=0.573 --volatilityWeight=0.970 --kstWeight=0.807
+--popularityWeight=0.383 --directionWeight=0.873 --volatilityWeight=0.470
+--popularityWeight=0.664 --zachsRatingWeight=0.834 --relativeStrengthWeight=0.370
+--kstWeight=0.790 --zachsRatingWeight=0.599 --popularityWeight=0.730 --volatilityWeight=0.461
+--volatilityWeight=0.459 --zachsRatingWeight=0.532
+--volatilityWeight=0.296 --popularityWeight=0.674
+--popularityWeight=0.872 --directionWeight=0.664 --zachsRatingWeight=0.811
+--popularityWeight=0.242 --directionWeight=0.999 --zachsRatingWeight=0.478
+--volatilityWeight=0.963 --kstWeight=0.643 --popularityWeight=0.215 --relativeStrengthWeight=0.762
+--volatilityWeight=0.272 --zachsRatingWeight=0.371 --popularityWeight=0.656
+--relativeStrengthWeight=0.074 --popularityWeight=0.020 --volatilityWeight=0.633
+--kstWeight=0.889 --zachsRatingWeight=0.443 --relativeStrengthWeight=0.709
+--kstWeight=0.622 --directionWeight=0.547 --popularityWeight=0.138
+--kstWeight=0.350 --zachsRatingWeight=0.238 --popularityWeight=0.802 --directionWeight=0.329
+--zachsRatingWeight=0.622 --relativeStrengthWeight=0.761 --kstWeight=0.165
+--kstWeight=0.973 --zachsRatingWeight=0.526 --volatilityWeight=0.583
+--zachsRatingWeight=0.780 --volatilityWeight=0.883 --directionWeight=0.169 --relativeStrengthWeight=0.483
+--directionWeight=0.986 --relativeStrengthWeight=0.509 --volatilityWeight=0.443 --zachsRatingWeight=0.030
+--relativeStrengthWeight=0.904 --directionWeight=0.334 --popularityWeight=0.149
+--kstWeight=0.130 --relativeStrengthWeight=0.458 --popularityWeight=0.828
+--relativeStrengthWeight=0.444 --popularityWeight=0.248
+--popularityWeight=0.320 --relativeStrengthWeight=0.977 --zachsRatingWeight=0.113
+--kstWeight=0.462 --volatilityWeight=0.440 --popularityWeight=0.109
+--kstWeight=0.172 --volatilityWeight=0.230 --zachsRatingWeight=0.027
+--relativeStrengthWeight=0.789 --kstWeight=0.494 --popularityWeight=0.451
+--popularityWeight=0.087 --directionWeight=0.327 --relativeStrengthWeight=0.236 --zachsRatingWeight=0.251
+--kstWeight=0.693 --zachsRatingWeight=0.779 --volatilityWeight=0.578
+--zachsRatingWeight=0.661 --directionWeight=0.307 --volatilityWeight=0.567
+--zachsRatingWeight=0.513 --kstWeight=0.369 --popularityWeight=0.138
+--relativeStrengthWeight=0.798 --zachsRatingWeight=0.424 --directionWeight=0.639
+--popularityWeight=0.922 --directionWeight=0.081 --relativeStrengthWeight=0.342
+--relativeStrengthWeight=0.494 --volatilityWeight=0.391 --directionWeight=0.513
+--directionWeight=0.370 --volatilityWeight=0.683 --kstWeight=0.309 --popularityWeight=0.240
+--popularityWeight=0.815 --relativeStrengthWeight=0.644 --volatilityWeight=0.325
+--directionWeight=0.902 --volatilityWeight=0.085 --zachsRatingWeight=0.412 --popularityWeight=0.485
+--directionWeight=0.683 --kstWeight=0.362 --zachsRatingWeight=0.544
+--zachsRatingWeight=0.167 --popularityWeight=0.996
+--popularityWeight=0.142 --kstWeight=0.936 --volatilityWeight=0.943
+--popularityWeight=0.910 --zachsRatingWeight=0.382 --directionWeight=0.152
+--popularityWeight=0.900 --relativeStrengthWeight=0.499 --volatilityWeight=0.235
+--popularityWeight=0.935 --volatilityWeight=0.757 --zachsRatingWeight=0.739
+--zachsRatingWeight=0.720 --relativeStrengthWeight=0.101
+--volatilityWeight=0.381 --kstWeight=0.386 --zachsRatingWeight=0.045 --directionWeight=0.956
+--volatilityWeight=0.540 --relativeStrengthWeight=0.948 --zachsRatingWeight=0.232 --directionWeight=0.341
+--relativeStrengthWeight=0.908 --kstWeight=0.709 --volatilityWeight=0.516 --directionWeight=0.880
+--zachsRatingWeight=0.213 --directionWeight=0.321 --kstWeight=0.681
+--kstWeight=0.897 --popularityWeight=0.669 --relativeStrengthWeight=0.463
+--relativeStrengthWeight=0.345 --popularityWeight=0.080 --kstWeight=0.257 --volatilityWeight=0.952
+--relativeStrengthWeight=0.459 --kstWeight=0.698 --zachsRatingWeight=0.817 --volatilityWeight=0.068
+--directionWeight=0.325 --zachsRatingWeight=0.207 --volatilityWeight=0.454
+--zachsRatingWeight=0.708 --kstWeight=0.253 --popularityWeight=0.920
+--directionWeight=0.695 --volatilityWeight=0.687 --relativeStrengthWeight=0.575
+--volatilityWeight=0.845 --relativeStrengthWeight=0.896 --popularityWeight=0.337
+--relativeStrengthWeight=0.607 --zachsRatingWeight=0.414 --kstWeight=0.823 --directionWeight=0.779
+--kstWeight=0.676 --popularityWeight=0.711 --volatilityWeight=0.069
+--popularityWeight=0.839 --zachsRatingWeight=0.605 --volatilityWeight=0.661
+--popularityWeight=0.855 --kstWeight=0.884 --volatilityWeight=0.664
+--directionWeight=0.901 --kstWeight=0.530 --popularityWeight=0.773 --relativeStrengthWeight=0.179
+--popularityWeight=0.665 --kstWeight=0.877 --directionWeight=0.205 --zachsRatingWeight=0.924
+--relativeStrengthWeight=0.937 --kstWeight=0.582 --volatilityWeight=0.955
+--popularityWeight=0.194 --volatilityWeight=0.009
+--zachsRatingWeight=0.755 --popularityWeight=0.803 --directionWeight=0.393
+--zachsRatingWeight=0.241 --relativeStrengthWeight=0.302 --kstWeight=0.010 --volatilityWeight=0.778
+--directionWeight=0.382 --volatilityWeight=0.598 --popularityWeight=0.788
+--volatilityWeight=0.946 --relativeStrengthWeight=0.769 --directionWeight=0.441 --kstWeight=0.182
+--popularityWeight=0.724 --relativeStrengthWeight=0.903 --kstWeight=0.063 --directionWeight=0.913
+--volatilityWeight=0.300 --directionWeight=0.998 --kstWeight=0.328
+--zachsRatingWeight=0.162 --volatilityWeight=0.624
+--volatilityWeight=0.647 --directionWeight=0.514 --zachsRatingWeight=0.683
+--directionWeight=0.668 --relativeStrengthWeight=0.012 --popularityWeight=0.684
+--directionWeight=0.769 --popularityWeight=0.579 --zachsRatingWeight=0.745 --volatilityWeight=0.542
+--relativeStrengthWeight=0.395 --zachsRatingWeight=0.655 --kstWeight=0.977
+--zachsRatingWeight=0.111 --relativeStrengthWeight=0.410 --volatilityWeight=0.857
+--popularityWeight=0.158 --volatilityWeight=0.046 --zachsRatingWeight=0.981
+--kstWeight=0.048 --relativeStrengthWeight=0.664 --popularityWeight=0.477 --directionWeight=0.837
+--zachsRatingWeight=0.767 --volatilityWeight=0.474
+--directionWeight=0.387 --kstWeight=0.778 --relativeStrengthWeight=0.692
+--zachsRatingWeight=0.290 --relativeStrengthWeight=0.290 --kstWeight=0.807
+--zachsRatingWeight=0.808 --directionWeight=0.444
+--popularityWeight=0.056 --volatilityWeight=0.946 --zachsRatingWeight=0.717
+--directionWeight=0.526 --relativeStrengthWeight=0.668 --popularityWeight=0.404 --zachsRatingWeight=0.496
+--volatilityWeight=0.848 --directionWeight=0.571 --kstWeight=0.152 --relativeStrengthWeight=0.964
+--popularityWeight=0.122 --kstWeight=0.385 --zachsRatingWeight=0.077 --volatilityWeight=0.004
+--kstWeight=0.214 --popularityWeight=0.007 --relativeStrengthWeight=0.444 --directionWeight=0.326
+--kstWeight=0.581 --zachsRatingWeight=0.988 --directionWeight=0.055
+--directionWeight=0.007 --volatilityWeight=0.894 --zachsRatingWeight=0.289
+--volatilityWeight=0.322 --directionWeight=0.416 --relativeStrengthWeight=0.468 --popularityWeight=0.925
+--zachsRatingWeight=0.954 --relativeStrengthWeight=0.456 --volatilityWeight=0.991
+--popularityWeight=0.330 --kstWeight=0.647
+--kstWeight=0.132 --zachsRatingWeight=0.065 --relativeStrengthWeight=0.532 --popularityWeight=0.088
+--kstWeight=0.095 --relativeStrengthWeight=0.758 --zachsRatingWeight=0.203
+--directionWeight=0.483 --kstWeight=0.729 --popularityWeight=0.633 --volatilityWeight=0.783
+--volatilityWeight=0.430 --kstWeight=0.140 --popularityWeight=0.074
+--zachsRatingWeight=0.882 --relativeStrengthWeight=0.618
+--relativeStrengthWeight=0.851 --volatilityWeight=0.325 --directionWeight=0.959 --kstWeight=0.841
+--zachsRatingWeight=0.902 --popularityWeight=0.891 --kstWeight=0.591 --volatilityWeight=0.697
+--volatilityWeight=0.779 --relativeStrengthWeight=0.336 --kstWeight=0.848
+--zachsRatingWeight=0.978 --kstWeight=0.351 --relativeStrengthWeight=0.061
+--kstWeight=0.119 --volatilityWeight=0.845 --relativeStrengthWeight=0.956 --directionWeight=0.734
+--popularityWeight=0.298 --directionWeight=0.514 --kstWeight=0.923 --volatilityWeight=0.566
+--zachsRatingWeight=0.203 --popularityWeight=0.423 --relativeStrengthWeight=0.986
+--directionWeight=0.917 --relativeStrengthWeight=0.767 --popularityWeight=0.420
+--zachsRatingWeight=0.241 --volatilityWeight=0.088 --popularityWeight=0.012 --kstWeight=0.022
+--relativeStrengthWeight=0.874 --popularityWeight=0.007 --zachsRatingWeight=0.364
+--zachsRatingWeight=0.483 --volatilityWeight=0.233 --relativeStrengthWeight=0.090
+--popularityWeight=0.804 --zachsRatingWeight=0.402 --relativeStrengthWeight=0.856 --volatilityWeight=0.086
+--directionWeight=0.793 --kstWeight=0.929 --relativeStrengthWeight=0.889 --volatilityWeight=0.018
+--zachsRatingWeight=0.116 --volatilityWeight=0.669 --popularityWeight=0.374
+--kstWeight=0.132 --relativeStrengthWeight=0.306 --volatilityWeight=0.686 --directionWeight=0.888
+--volatilityWeight=0.324 --zachsRatingWeight=0.003
+--volatilityWeight=0.680 --popularityWeight=0.499 --relativeStrengthWeight=0.859 --kstWeight=0.177
+--volatilityWeight=0.223 --popularityWeight=0.540 --zachsRatingWeight=0.448 --kstWeight=0.810
+--zachsRatingWeight=0.534 --directionWeight=0.520
+--zachsRatingWeight=0.843 --directionWeight=0.998
+--directionWeight=0.548 --zachsRatingWeight=0.852 --popularityWeight=0.087
+--kstWeight=0.997 --volatilityWeight=0.847 --directionWeight=0.986
+--directionWeight=0.501 --volatilityWeight=0.890 --zachsRatingWeight=0.899
+--volatilityWeight=0.923 --popularityWeight=0.188 --kstWeight=0.726 --zachsRatingWeight=0.702
+--zachsRatingWeight=0.922 --kstWeight=0.800 --directionWeight=0.099
+--zachsRatingWeight=0.239 --relativeStrengthWeight=0.657 --directionWeight=0.254
+--relativeStrengthWeight=0.382 --popularityWeight=0.998 --kstWeight=0.848
+--volatilityWeight=0.012 --popularityWeight=0.559 --kstWeight=0.128
+--directionWeight=0.984 --zachsRatingWeight=0.440 --kstWeight=0.516
+--kstWeight=0.760 --zachsRatingWeight=0.590 --volatilityWeight=0.479
+--popularityWeight=0.472 --relativeStrengthWeight=0.521 --zachsRatingWeight=0.531
+--relativeStrengthWeight=0.982 --directionWeight=0.541 --zachsRatingWeight=0.372 --popularityWeight=0.507
+--zachsRatingWeight=0.805 --relativeStrengthWeight=0.287 --popularityWeight=0.767
+--zachsRatingWeight=0.371 --volatilityWeight=0.843 --kstWeight=0.396
+--kstWeight=0.273 --volatilityWeight=0.027 --directionWeight=0.255 --zachsRatingWeight=0.533
+--kstWeight=0.300 --zachsRatingWeight=0.122 --relativeStrengthWeight=0.382 --popularityWeight=0.097
+--popularityWeight=0.437 --relativeStrengthWeight=0.359 --kstWeight=0.466 --directionWeight=0.500
+--volatilityWeight=0.845 --relativeStrengthWeight=0.688 --zachsRatingWeight=0.840 --directionWeight=0.661
+--volatilityWeight=0.410 --popularityWeight=0.782 --kstWeight=0.773
+--volatilityWeight=0.995 --kstWeight=0.966 --relativeStrengthWeight=0.951
+--popularityWeight=0.044 --directionWeight=0.591 --kstWeight=0.695 --zachsRatingWeight=0.309
+--zachsRatingWeight=0.080 --directionWeight=0.965
+--kstWeight=0.552 --popularityWeight=0.669 --relativeStrengthWeight=0.395
+--volatilityWeight=0.165 --relativeStrengthWeight=0.548 --kstWeight=0.705
+--kstWeight=0.947 --zachsRatingWeight=0.295 --directionWeight=0.998 --popularityWeight=0.488
+--relativeStrengthWeight=0.817 --kstWeight=0.829
+--volatilityWeight=0.872 --relativeStrengthWeight=0.853
+--volatilityWeight=0.330 --popularityWeight=0.239 --zachsRatingWeight=0.992
+--directionWeight=0.640 --zachsRatingWeight=0.236 --popularityWeight=0.485
+--volatilityWeight=0.149 --popularityWeight=0.605 --zachsRatingWeight=0.364
+--popularityWeight=0.316 --zachsRatingWeight=0.452 --kstWeight=0.891 --relativeStrengthWeight=0.094
+--zachsRatingWeight=0.894 --kstWeight=0.972 --relativeStrengthWeight=0.811 --volatilityWeight=0.956
+--directionWeight=0.624 --zachsRatingWeight=0.680 --popularityWeight=0.145 --kstWeight=0.871
+--volatilityWeight=0.938 --relativeStrengthWeight=0.451 --directionWeight=0.502
+--relativeStrengthWeight=0.697 --directionWeight=0.009
+--popularityWeight=0.194 --zachsRatingWeight=0.018 --directionWeight=0.250
+--relativeStrengthWeight=0.593 --volatilityWeight=0.926 --zachsRatingWeight=0.411 --popularityWeight=0.589
+--zachsRatingWeight=0.105 --relativeStrengthWeight=0.686 --volatilityWeight=0.576
+--kstWeight=0.501 --popularityWeight=0.151 --zachsRatingWeight=0.344
+--zachsRatingWeight=0.135 --relativeStrengthWeight=0.055 --volatilityWeight=0.291
+--directionWeight=0.691 --volatilityWeight=0.335 --kstWeight=0.061
+--zachsRatingWeight=0.605 --volatilityWeight=0.820 --relativeStrengthWeight=0.012 --kstWeight=0.095
+--volatilityWeight=0.520 --zachsRatingWeight=0.916
+--volatilityWeight=0.089 --relativeStrengthWeight=0.542 --directionWeight=0.829
+--zachsRatingWeight=0.145 --directionWeight=0.530 --relativeStrengthWeight=0.923
+--popularityWeight=0.458 --kstWeight=0.960 --relativeStrengthWeight=0.845
+--popularityWeight=0.892 --directionWeight=0.201 --kstWeight=0.848
+--zachsRatingWeight=0.232 --popularityWeight=0.543 --volatilityWeight=0.708 --kstWeight=0.914
+--relativeStrengthWeight=0.721 --zachsRatingWeight=0.584 --kstWeight=0.548
+--relativeStrengthWeight=0.437 --volatilityWeight=0.181 --directionWeight=0.196 --kstWeight=0.651
+--volatilityWeight=0.436 --kstWeight=0.043 --popularityWeight=0.445 --directionWeight=0.206
+--directionWeight=0.360 --kstWeight=0.778 --zachsRatingWeight=0.017
+--kstWeight=0.798 --zachsRatingWeight=0.375 --relativeStrengthWeight=0.201 --popularityWeight=0.294
+--zachsRatingWeight=0.780 --kstWeight=0.598 --directionWeight=0.624
+--popularityWeight=0.532 --kstWeight=0.421
+--relativeStrengthWeight=0.489 --popularityWeight=0.007 --volatilityWeight=0.517 --kstWeight=0.427
+--relativeStrengthWeight=0.032 --popularityWeight=0.243
+--popularityWeight=0.953 --relativeStrengthWeight=0.412 --zachsRatingWeight=0.713 --directionWeight=0.809
+--volatilityWeight=0.950 --directionWeight=0.989 --zachsRatingWeight=0.215
+--kstWeight=0.414 --popularityWeight=0.188 --volatilityWeight=0.597
+--directionWeight=0.862 --volatilityWeight=0.415 --relativeStrengthWeight=0.524
+--volatilityWeight=0.973 --zachsRatingWeight=0.376 --relativeStrengthWeight=0.093
+--zachsRatingWeight=0.004 --popularityWeight=0.654 --relativeStrengthWeight=0.781 --kstWeight=0.784
+--kstWeight=0.220 --relativeStrengthWeight=0.148 --directionWeight=0.121
+--relativeStrengthWeight=0.719 --kstWeight=0.202
+--directionWeight=0.462 --kstWeight=0.158
+--relativeStrengthWeight=0.562 --zachsRatingWeight=0.416
+--relativeStrengthWeight=0.424 --kstWeight=0.288
+--relativeStrengthWeight=0.076 --popularityWeight=0.576
+--directionWeight=0.438 --volatilityWeight=0.790 --popularityWeight=0.418
+--volatilityWeight=0.438 --relativeStrengthWeight=0.879 --kstWeight=0.343 --directionWeight=0.991
+--popularityWeight=0.381 --relativeStrengthWeight=0.919 --kstWeight=0.038
+--zachsRatingWeight=0.148 --popularityWeight=0.077 --relativeStrengthWeight=0.502 --volatilityWeight=0.426
+--popularityWeight=0.952 --directionWeight=0.271 --relativeStrengthWeight=0.102 --volatilityWeight=0.956
+--popularityWeight=0.656 --relativeStrengthWeight=0.201 --zachsRatingWeight=0.494
+--zachsRatingWeight=0.929 --popularityWeight=0.667 --directionWeight=0.464
+--relativeStrengthWeight=0.179 --directionWeight=0.689 --volatilityWeight=0.999
+--volatilityWeight=0.291 --directionWeight=0.305 --popularityWeight=0.442
+--volatilityWeight=0.370 --relativeStrengthWeight=0.849 --kstWeight=0.481 --popularityWeight=0.986
+--kstWeight=0.378 --relativeStrengthWeight=0.546 --volatilityWeight=0.332
+--zachsRatingWeight=0.159 --kstWeight=0.584 --volatilityWeight=0.287 --popularityWeight=0.273
+--zachsRatingWeight=0.931 --volatilityWeight=0.065 --popularityWeight=0.901
+--zachsRatingWeight=0.844 --popularityWeight=0.483 --kstWeight=0.455
