@@ -29,10 +29,11 @@ class Variables {
   // Testing
   // startDate = '4/17/2018';
   // startDate = '6/1/2018';
-  startDate = '7/1/2018';
-  endDate = '9/1/2018';
+  startDate = '7/13/2018';
+  endDate = '9/13/2018';
   volatilityDays = 10;
-  testStepSize = 1;
+  testStepSize = 6;
+  useSubset: boolean = false;
 
   // WPR
   wprStepSize = 4;
@@ -42,9 +43,9 @@ class Variables {
   indicatorTypes = ['popularity', 'direction', 'volatility', 'zachs', 'relative-strength', 'kst', 'wpr'];
   changeWeight = 0;
   directionWeight = 0; // 0.06329439146188465; //0.9133038580684016;
-  volatilityWeight = 0.0; // 0.6896129933778206;
+  volatilityWeight = 0.497; // 0.6896129933778206;
   popularityWeight = 0; // 0.5155262904678888;
-  relativeStrengthWeight = 0; // 0.036733819676656676;
+  relativeStrengthWeight = 0.970; // 0.036733819676656676;
   kstWeight = 0; // 0.036733819676656676;
   wprWeight = 0;
   nasdaqRatingWeight = 0;
