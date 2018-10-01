@@ -3,7 +3,7 @@ import { RequestAPI, Request, CoreOptions } from 'request';
 
 const getCache: any = {};
 export let endpoints = {
-  login: 'https://api.robinhood.com/api-token-auth/',
+  login: 'https://api.robinhood.com/oauth2/token/',
   investment_profile: 'https://api.robinhood.com/user/investment_profile/',
   accounts: 'https://api.robinhood.com/accounts/',
   ach_iav_auth: 'https://api.robinhood.com/ach/iav/auth/',
@@ -73,14 +73,18 @@ export class Robinhood {
     const loginBody = await this.post({
       uri: endpoints.login,
       form: {
+        grant_type: 'password',
+        client_id: 'c82SH0WZOsabOXGP2sxqcj34FxkvfnWRZBKlBjFS',
         username: this.username,
         password: this.password
       }
     });
-    this.authToken = loginBody.token;
-    this.headers.Authorization = 'Token ' + this.authToken;
+    this.authToken = loginBody.access_token;
+    console.log(this.authToken, loginBody);
+    this.headers.Authorization = 'Bearer ' + this.authToken;
 
     const accounts = await this.accounts();
+    console.log(accounts);
     this.account = accounts.results[0].url;
   }
 
