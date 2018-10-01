@@ -63,6 +63,7 @@ export class Buyer {
         }
 
         const stocksSoldToday = await this.getStocksSoldOnDate(robinhood, dateUtil.today);
+        console.log(`Stocks to buy: ${JSON.stringify(stocksToBuy)}`);
         const quoteDatas = (await robinhood.quote_data(stocksToBuy.map(s => s.symbol).join(','))).results.filter(q => !!q);
         this.inflatePrices(stocksToBuy, quoteDatas);
 
