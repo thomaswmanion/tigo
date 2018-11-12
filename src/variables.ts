@@ -1,8 +1,8 @@
 import { argv } from 'yargs';
 
 class Variables {
-  numPrevDays = 4;
-  numPredictedDays = 4;
+  numPrevDays = 2;
+  numPredictedDays = 2;
 
   mapStepSize = 4;
   mapSteps = 4;
